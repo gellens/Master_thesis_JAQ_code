@@ -1,0 +1,46 @@
+{
+  "id": "76a4499c-b28d-4767-b027-7abc50b8c229",
+  "name": "ask_pizza",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "6bea57a3-154b-458c-bd4d-740d5f03004c",
+          "required": false,
+          "dataType": "@sys.number",
+          "name": "number",
+          "value": "$number",
+          "prompts": [],
+          "defaultValue": "1",
+          "isList": false
+        },
+        {
+          "id": "c4010be9-ec6e-4fc3-bd68-09145376fd9c",
+          "dataType": "@pizza_type",
+          "name": "pizza_type",
+          "value": "$pizza_type",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Here it comes"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1539691813,
+  "fallbackIntent": false,
+  "events": []
+}

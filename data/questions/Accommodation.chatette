@@ -1,0 +1,189 @@
+// This file contains templates for the "Accommodation" part of the visualization.
+
+//============ Aliases ==============
+~[get practical info about]
+	{~[give me]/~[tell me]/~[do you have]/~[I want]/~[I want to acquire]?} practical ~[information] {about/on}
+
+~[UCL kot]
+	~[UCL] ~[kot]
+	~[kot] owned by ~[UCL]
+	~[kot] that ~[belong to] ~[UCL]
+~[UCL kots]
+	~[UCL] ~[kots]
+	~[kots] owned by ~[UCL]
+	~[kots] that ~[belong to] ~[UCL]
+
+//============== Intents ==================
+%[kot-meaning](60)
+	~[request definition$kot]
+	~[request definition$KOT]
+
+%[what-kot-owner](120)
+	{what/which} ~[type of?] ~[kot owner] ~[is there#plural] ~[at HERE?]
+	who can ~[rent] a ~[kot] [to me?]
+
+%[specificities-ucl-kots](120)
+	~[what are] the ~[specificities] of ~[UCL kots]
+	~[what is] a ~[UCL kot]
+
+%[specificities-private-kots](120)
+	~[what are] the ~[specificities] of ~[privately:kot owner] owned ~[kots]
+	~[what are] the ~[specificities] of ~[kots] {that ~[belong to]/~[belonging to]} ~[private:kot owner] ~[kot owners]
+	~[what is] a ~[privately:kot owner] owned ~[kot]
+
+%[list-private-kot-owners](120)
+	~[get info about] ~[private:kot owner] ~[kot owners]
+	{~[how to] ~[acquire]/~[do you have]} a ~[list] of ~[private:kot owner] ~[kot owners]
+	who are ~[private:kot owner] ~[kot owners]
+	~[I am searching for] [the?] ~[contact information] of ~[private:kot owner] ~[kot owners] [please?]
+
+%[specificities-real-estate-kots](120)
+	~[what are] {the ~[specificities] of?} ~[kots] {owned by/that ~[belong to]/~[belonging to]} real estate [agencies?]
+	~[is there#plural] ~[kots] {that ~[belong to]/~[belonging to]} real estate [agencies?]
+
+%[list-real-estate](120)
+	~[get info about] real estate agencies
+	{~[how to] have/~[do you have]} a ~[list] of real estate agencies
+	~[I am searching for] a {~[list] of the?} [real?] estate agencies
+
+%[what-kot-types](120)
+	{what/which} ~[type of?]  ~[kots] {~[is there#plural]/exist} ~[at HERE?]
+	what possibilities of ~[kot] {~[is there#plural]/do I have} ~[at HERE?]
+	~[is there#plural] {different/several} ~[types of] ~[kots] ~[at HERE?]
+
+%[more-info-ucl-shared-kot](50)
+	~[get more info about] ~[UCL?] shared ~[kots]
+	~[get info about] ~[UCL?] shared ~[kots]
+%[more-info-ucl-bedsit](50)
+	~[get more info about] ~[UCL?] besits
+	~[get info about] ~[UCL?] besits
+%[more-info-ucl-studios](50)
+	~[get more info about] ~[UCL?] studios
+	~[get info about] ~[UCL?] studios
+%[more-info-ucl-family-kot](50)
+	~[get more info about] ~[UCL?] family ~[kots]
+	~[get info about] ~[UCL?] family ~[kots]
+%[more-info-adapted-kots](50)
+	~[get more info about] ~[UCL?] {adapted ~[kots]/~[kots] for disabled people/~[kots] for handicaped ~[student#plural]}
+	~[get info about] ~[UCL?] {adapted ~[kots]/~[kots] for disabled people/~[kots] for handicaped ~[student#plural]}
+
+%[what-neighborhoods-lln](120)
+	{what/which} ~[neighborhoods] ~[is there#plural] {in/at} ~[lln]
+	{~[how to] ~[acquire]/~[do you have]} a ~[list] of the ~[neighborhoods] {in/at} ~[lln]
+	{what/which} are the [different?] {parts/~[neighborhoods]} {in/at/of} ~[lln]
+
+%[where-kots](120)
+	~[where are] ~[kots]
+	where are ~[kots] ~[located]
+	where ~[can I] find ~[kots]
+	~[get info about] ~[kots] ~[locations]
+
+%[are-there-hotels](120)
+	~[is there#plural] ~[hotels] {in/at} ~[lln]
+	~[is there#plural] ~[hotels]
+	~[where are] ~[hotels] {in/at} ~[lln]
+	~[where are] ~[hotels]
+	~[I am searching for] {a ~[hotel]/~[hotels]} {in/at} ~[lln]
+%[are-there-youth-hostels](120)
+	~[is there#plural] youth ~[hotels] {in/at} ~[lln]
+	~[is there#plural] youth ~[hotels]
+	~[where are] youth ~[hotels] {in/at} ~[lln]
+	~[where are] youth ~[hotels]
+	~[I am searching for] {a youth ~[hotel]/youth ~[hotels]/youth hostels} {in/at} ~[lln]
+
+%[useful-info-kots](120)
+	~[get practical info about] ~[kots]
+	what about ~[kots] in practice
+	~[how to] ~[acquire] practical ~[information] {about/on} ~[kots]
+	~[I am searching for] useful ~[information] about ~[kots]
+
+%[info-support-kot](120)
+	~[how to] ~[acquire] {~[information]/~[help]} about ~[kots]
+	~[is there#singular] a ~[help] service for ~[kot] {problems/advice/support}
+	~[request definition$syello]
+	~[I am searching for] ~[help] {about/for} ~[kots] [problems?]
+
+%[what-housing-possibilities](220)
+	~[get info about] ~[kots] {possibilities/solutions?}
+	~[what are] {the/my} ~[housing] {possibilities/solutions}
+	{~[how to]/~[can I]} {~[acquire]/~[rent]/find} a ~[kot] {to ~[accommodate]?}
+	~[I want to X who contact$get a kot]
+	~[I want to X who contact$get an accommodation]
+	~[who contact for X$getting a kot]
+	~[I want] to {~[acquire]/find} a {~[kot]/place to ~[live]}
+	where ~[can I] ~[accommodate]
+	~[I am searching for] a {~[kot]/place to ~[live]}
+
+%[get-ucl-kot](120)
+	~[how to] ~[acquire] a ~[UCL kot]
+	~[get info about] getting a ~[UCL kot]
+	~[I am searching for] a ~[UCL kot]
+
+%[contact-ucl-housing-service](120)
+	~[how to?] ~[contact] [the?] ~[UCL?] ~[housing] [service][s?]
+	~[get info about] ~[UCL?] ~[housing] [service][s?]
+	~[what are] the ~[contact information] of [the?] ~[UCL?] ~[housing] [service]
+	{~[I want]/~[I need]} to ~[contact] [the?] ~[UCL?] ~[housing] [service][s?]
+	~[I want to X who contact$get a UCLouvain kot]
+
+%[get-private-kot](120)
+	~[how to] ~[acquire] a ~[privately:kot owner] owned ~[kot]
+	~[get info about] getting a ~[privately:kot owner] owned ~[kot]
+	~[how to] ~[acquire] a ~[kot] {that ~[belongs to]/~[belonging to]} a ~[private:kot owner] ~[kot owner]
+	~[get info about] getting a ~[kot] {that ~[belongs to]/~[belonging to]}  a ~[private:kot owner] ~[kot owner]
+	~[I want to X who contact$get a privately owned kot]
+
+%[get-real-estate-kot](120)
+	~[how to] ~[acquire] a real estate [agency?] ~[kot]
+	~[get info about] getting a real estate [agency?] ~[kot]
+	~[how to] ~[acquire] a ~[kot] {that ~[belongs to]/~[belonging to]} a real estate agency
+	~[get info about] getting a ~[kot] {that ~[belongs to]/~[belonging to]} a real estate agency
+	~[I want to X who contact$get a real estate kot]
+
+%[get-kot-keys](120)
+	~[how to] ~[acquire] the key[s?] of {the/my} ~[kot]
+	~[get info about] ~[kot] key[s?]
+	{~[I need]/~[I want]} the key[s?] of {the/my} ~[kot]
+
+%[price-ucl-kots](120)
+	~[what is] the ~[standard?] [monthly?] ~[cost] of ~[UCL] ~[kots]
+	~[how much money] do {I/~[student#plural]} pay [monthly?] for a ~[UCL] ~[kot]
+	~[I am searching for] the [monthly?] ~[cost] {for/of} a ~[UCL] ~[kot]
+	is it ~[expensive] to ~[acquire] a ~[UCL] ~[kot]
+	~[how much money] does a ~[UCL] ~[kot] ~[cost:verb]
+
+%[how-pay-monthly-kot](120)
+	~[how to] pay the [monthly?] {amount of money/~[rent:noun]} {for my ~[kot]}
+	~[get info about] [mmonthly?] payment for {the/my} ~[kot]
+
+%[what-if-not-pay-kot](120)
+	~[what if] {I/~[student]} {don't/forget to} pay {the/my} [monthly?] ~[rent:noun] {for the ~[kot]?} [on time?]
+	~[what if] {I/~[student]} pay {the/my} [monthly?] ~[rent:noun] {for my ~[kot]?} [too?] late
+	~[what if] {I am/I'm} late on {the/my} [monthly?] payment for {the/my} ~[kot]
+
+%[get-kot-request-proof](120)
+	~[how to] ~[acquire] {a/the} ~[testimony] that I {requested/asked for} a ~[UCL?] ~[kot]
+	~[how to] ~[acquire] {a/the} ~[UCL?] ~[housing] request ~[testimony]
+	~[I am searching for] {a/the/my} ~[UCL?] ~[housing] ~[testimony]
+
+%[first-thing-to-do-kot](120)
+	~[what is] the first {thing to do/stuff to do/action to take/action to do} ~[when I arrive] {at/in} {the/my} ~[kot]
+	~[what are] the first {things to do/actions to take/actions to do} ~[when I arrive] {at/in} {the/my} ~[kot]
+	what {~[should I]/~[do I have to]} do ~[when I arrive] {at/in} {my/the} ~[UCL?] ~[kot]
+	~[is there#plural] ~[mandatory?] {things/stuff} to do ~[when I arrive] {at/in/to} {my/the} ~[kot]
+
+%[to-do-before-leaving-kot](120)
+	what {~[should I]/~[do I have to]} do ~[before I leave] {the/my/a} ~[kot]
+	~[is there#plural] ~[mandatory?] {things/stuff} to do ~[before I leave] {the/my} ~[kot]
+
+%[no-exit-inventory](120)
+	~[what if] {I/~[student]} {don't/didn't/couldn't} {come to/have/request} {an exit/a departure} inventory ~[before I leave?]
+	~[what if] I {don't/didn't/couldn't} make an {appointment/rendez-vous} for {an exit/a departure} inventory ~[before I leave]
+
+%[may-sublet](50)
+	~[am I allowed to] ~[rent] {the/my} ~[kot] {to other ~[student#plural]/to other people?}
+
+%[what-deposit-for-kot](120)
+	~[request definition$safety deposit]
+	~[request definition$deposit]
+	what ~[actually?] is {a/the} [safety?] deposit [of money?] for {when ~[acquiring] a ~[kot]?}

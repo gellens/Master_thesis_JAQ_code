@@ -1,0 +1,21 @@
+{
+    "type": "standard",
+    "title": "TODO",
+    "output": {
+        "generic": [
+            {
+                "values": [
+                    {
+                        "text": "TODO"
+                    }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+            }
+        ]
+    },
+    "metadata": {},
+    "conditions": "#intent",
+    "dialog_node": "TODO",
+    "previous_sibling": "TODO"
+}

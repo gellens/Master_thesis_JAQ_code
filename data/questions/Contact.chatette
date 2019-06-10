@@ -1,0 +1,132 @@
+// This file contains the intents for the part "Contact" of the visualization.
+
+//============= Intents =================
+%[what-student-associations](120)
+	~[is there#plural] ~[student] ~[associations] ~[at HERE?]
+	what ~[student] ~[associations] ~[is there#plural] ~[at HERE?]
+	~[I am searching for] {a ~[student] ~[association]/~[student] ~[associations]} ~[at HERE?]
+
+%[what-is-agl](120)
+	~[what is] ~[AGL]
+	~[what is] ~[AGL]
+	~[get info about] ~[AGL]
+	~[get info about] ~[AGL]
+	~[request definition$AGL]
+	~[request definition$AGL]
+	~[request definition$the Assemblee Generale des etudiants de Louvain]
+
+%[contact-agl](120)
+	~[how to] ~[contact] [the?] ~[AGL]
+	~[get info about] [the?] ~[contact information] of ~[AGL] [please?]
+	{~[give me]/~[tell me]} [the?] ~[contact information] of ~[AGL] [please?]
+	when is the ~[AGL] ~[office?] open[ed?][\??]
+	when are the ~[AGL] ~[offices] open[ed?][\??]
+	where is the ~[AGL] ~[office][\??]
+	where are the ~[AGL] ~[offices][\??]
+
+%[student-delegate](120)
+	~[is there#singular] a ~[student?] representation {by ~[auditorium#plural]?}
+	~[is there#plural] ~[student?] delegate {elections/decisions}
+	~[get info about] ~[student?] delegates
+	~[request definition$delegate]
+
+%[french-speaking-student-representation](120)
+	~[is there#singular] a french{-/ }speaking ~[student?] representation
+	~[is there#singular] a representation of french{-/ }speaking ~[student]
+	~[can I] be represented at the level of the wallonia-brussels federation
+	~[is there#singular] a ~[student?] representation at the level of the wallonia-brussels federation
+
+%[what-is-kap](110)
+	~[request definition$KAP]
+	~[request definition$kap]
+	~[request definition$kot a projet]
+
+%[contact-kap](120)
+	~[is there#singular] a ~[list] of ~[KAPs] [that exist?]
+	{~[can I] have/~[give me]/~[tell me]} the ~[contact information] of ~[KAPs]
+	~[I want to X who contact$get in a KAP]
+	~[I want to X who contact$be part of a Kot A Projet]
+	{how/where?} ~[can I] ~[acquire] a {~[agenda]/~[list]} of the ~[events] ~[organized] by ~[KAPs] [please?]
+	~[is there#singular] a ~[agenda] of the ~[events] ~[organized] by ~[KAPs]
+	when are ~[events] ~[organized] by ~[KAPs]
+
+%[what-are-regionals](120)
+	~[request definition$regional]
+	~[request definition$regionals]
+	~[request definition$une régionale]
+
+%[contact-cgei](120)
+	~[how to] ~[contact] [the?] ~[CGEI]
+	~[get info about] [the?] ~[contact information] of ~[CGEI] [please?]
+	{~[give me]/~[tell me]} [the?] ~[contact information] of ~[CGEI] [please?]
+	~[where is] ~[CGEI]
+	~[where are] ~[CGEI]['s?] ~[offices]
+	~[get info about] where ~[CGEI] ~[offices] are ~[located?]
+	~[get info about] ~[CGEI] ~[location]
+	~[how to] ~[go to] ~[CGEI]'s ~[offices]
+	~[where are] the ~[offices] of ~[CGEI] ~[located?]
+
+%[contact-esn](120)
+	~[how to] ~[contact] [the?] ~[ESN]
+	~[get info about] [the?] ~[contact information] of ~[ESN] [please?]
+	{~[give me]/~[tell me]} [the?] ~[contact information] of ~[ESN] [please?]
+	~[where is] ~[ESN]
+	~[where are] ~[ESN]['s?] ~[offices]
+	~[get info about] where ~[ESN] ~[offices] are ~[located?]
+	~[get info about] ~[ESN] ~[location]
+	~[how to] ~[go to] ~[ESN]'s ~[offices]
+	~[where are] the ~[offices] of ~[ESN] ~[located?]
+
+%[contact-student-support-services](120)
+	~[how to] ~[contact] [the?] ~[support service]
+	~[get info about] [the?] ~[contact information] of ~[support service] [please?]
+	{~[give me]/~[tell me]} [the?] ~[contact information] of ~[support service] [please?]
+
+%[where-student-support-services](120)
+	~[where is] ~[support service]
+	~[where are] ~[support service]['s?] ~[offices]
+	~[get info about] where ~[support service] ~[offices] are [located?]
+	~[get info about] ~[support service] ~[location]
+	~[how to] ~[go to] ~[support service]'s ~[offices]
+	~[where are] the ~[offices] of ~[support service] ~[located?]
+	~[I am searching for] the ~[offices] of [the?] ~[support service]
+
+%[who-exchange-student-coordinators](120)
+	who is the ~[exchange student#singular] coordinator for ~[MY FACULTY]
+	~[how to] ~[contact] the ~[exchange student#singular] coordinator for ~[MY FACULTY]
+	~[get info about] ~[exchange student#singular] coordinators
+	{~[give me]/~[tell me]} [the?] ~[contact information] of [the?] ~[exchange student] coordinator {for ~[MY FACULTY]?}
+
+%[contact-ucl](120)
+	~[how to] ~[contact] ~[UCL]
+	~[get info about] [the?] ~[contact information] of ~[UCL] [please?]
+	{~[give me]/~[tell me]/~[I am searching for]} [the?] ~[contact information] of ~[UCL] [please?]
+	~[I want to X who contact$contact the university]
+	~[I want to X who contact$get in touch with UCLouvain]
+	~[get info about] [the?] contact person of ~[UCL]
+	~[I am searching for] the ~[contact information] of the contact person of ~[UCL]
+
+%[contact-faculty](120)
+	~[how to] ~[contact] ~[MY FACULTY]
+	~[get info about] [the?] ~[contact information] of ~[MY FACULTY] [please?]
+	{~[give me]/~[tell me]} [the?] ~[contact information] of ~[MY FACULTY] [please?]
+%[where-faculty-offices](120)
+	~[where are] ~[MY FACULTY]['s?] ~[offices]
+	~[get info about] where ~[MY FACULTY] ~[offices] are [located?]
+	~[get info about] ~[MY FACULTY] ~[offices] ~[location]
+	~[how to] ~[go to] ~[MY FACULTY]'s ~[offices]
+	~[where are] the ~[offices] of ~[MY FACULTY]
+	~[I am searching for] the ~[offices] of ~[MY FACULTY]
+
+%[where-auditorium](120)
+	~[is there] a ~[map] of the ~[auditorium#plural]
+	~[get info about] the ~[location] of the ~[auditorium#plural] [please?]
+	~[where is] ~[AUDITORIUM X]
+	~[how to] ~[go to] ~[AUDITORIUM X]
+
+%[who-contact-help](120)
+	who {~[can I]/~[should I]} ~[contact] {if/when} {~[I need]/~[I want]} ~[help]
+	if {~[I want]/~[I need]} ~[help] who {~[can I]/~[should I]} ~[contact]
+	who can ~[help:verb] {me/~[international student#plural]}
+	who {~[can I]/~[should I]} {~[call]/~[contact]} {for/[in order ?]to get} {some/more/some more?} ~[help]
+	~[I want] to ~[speak] {to/with} a {human [being?]/[real?] person}

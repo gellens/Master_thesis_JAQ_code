@@ -1,0 +1,36 @@
+{
+  "id": "9018ed73-7455-4adf-9cfe-952739c7999f",
+  "name": "Visa - Nationality",
+  "auto": true,
+  "contexts": [
+    "nationality"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "nationality",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "I remember you give me your nationality just before, I may..."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 750000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1548611495,
+  "fallbackIntent": false,
+  "events": []
+}

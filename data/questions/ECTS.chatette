@@ -1,0 +1,20 @@
+// This file contains the intent templates for the "ECTS" part of the visualization.
+
+//============= Intents ===============
+%[what-is-ects](120)
+	~[request definition$ECTS]
+	~[request definition$ects]
+	~[request definition$credits]
+	~[request definition$workload credits]
+	~[get info about] ~[ECTS]
+
+%[what-is-recommended-workload](120)
+	~[what is] the {~[recommended]/~[standard]/~[mandatory]?} ~[workload] ~[at HERE?]
+	how {much/long/regularly} ~[should I] work [for the university?] ~[at HERE]
+	how many ~[ECTS] is the {~[recommended]/~[standard]/~[mandatory]?} {amount/~[workload]?} {for a year/for one year/for 1 year?}
+	how many ~[ECTS] {for a year/for one year/for 1 year}
+
+%[min-max-workload](120)
+	~[what is] the {~[minimal]/~[maximal]/~[maximal] and ~[minimal]/~[minimal] and ~[maximal]} ~[workload] ~[at HERE?]
+	~[get info about] {~[minimal]/~[maximal]/~[maximal] and ~[minimal]/~[minimal] and ~[maximal]} ~[workload] ~[at HERE?]
+	how many ~[ECTS] is the {~[minimal]/~[maximal]/~[maximal] and ~[minimal]/~[minimal] and ~[maximal]} {amount/~[workload]?} {for a year/for one year/for 1 year?}

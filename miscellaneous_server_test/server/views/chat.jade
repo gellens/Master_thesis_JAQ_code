@@ -1,0 +1,14 @@
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Chatbot
+    link(rel="stylesheet" href="/s/style.css")
+    script(src="/socket.io/socket.io.js")
+    script(src="/s/script.js")
+  body#b
+    #page-bloc
+      ul#messages(class="#{engine}")
+      img#loading.hidden(src="/s/loading.gif", alt="loading image")
+    form(id="f" onsubmit="return send#{fake ? 'Fake': '_'+engine}();")
+        input(id="m" autocomplete="off" autofocus)
+        button(class="#{engine}") Send

@@ -1,0 +1,5 @@
+BEFORE running execute in the folder Chatette:
+>> pip install -e .
+
+Then to generate the workspace, run:
+>> python main.py

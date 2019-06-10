@@ -1,0 +1,59 @@
+// This files contains the intents for the "Registration" part of the data visualization.
+
+//========== Aliases ==========
+~[into UCL]
+	{to/into/at} ~[UCL]
+
+~[Enrolment Office]
+	Enrolment Office[s?]
+	~[registration] {office[s?]/service[s?]}
+
+//========== Intents ================
+%[how-to-enrol-ucl](240)
+	~[how to] ~[register] ~[into UCL]
+	~[get info about] [the?] ~[registration] ~[process] ~[into UCL?]
+	~[what is] the ~[registration] ~[process] ~[in order to] {~[study] at ~[UCL]/get accepted ~[into UCL]}
+	~[I want to X who contact$register at UCLouvain]
+	~[I want to X who contact$enrol in UCL]
+	~[I want to X who contact$study at UCLouvain]
+	~[I want] to ~[study] at ~[UCL]
+	~[who contact for X$studying at UCL]
+	~[who contact for X$registering into the university]
+
+%[how-to-enrol-faculty](120)
+	~[how to] ~[register] {in/into} ~[MY FACULTY]
+	~[get info about] [the?] ~[registration] ~[process] {in/into} ~[MY FACULTY]
+
+%[requirements-registration](120)
+	{~[what are] [the?]/~[is there#plural]} [legal?] ~[requirements] ~[to be allowed?] to ~[register] ~[into UCL?] [please?]
+
+%[how-when-pay-tuition-fees](120)
+	~[how to] [re?]pay {~[tuition fees]/~[registration]} {at ~[UCL]?}
+	when {~[do I have to]/~[should I]/to} [re?]pay [the?] {~[tuition fees]/~[registration]} {at ~[UCL]?} [please?]
+	~[get info about] {when/how/when and how/how and when} to pay {~[tuition fees]/~[registration]}
+
+%[what-doc-after-registration](120)
+	{what/which} ~[documents?] {do/would/will} {I/~[student#plural]} ~[acquire] after ~[registering] ~[into UCL?]
+	{do/will/would} I ~[acquire] ~[documents] after {I ~[register]/~[registering]} ~[into UCL?]
+
+%[what-certificates-on-request](120)
+	{what/which} ~[documents?] ~[can I] {~[acquire]/be provided} {on/upon} request
+	{what/which} ~[documents] can be provided [to me?] [up?]on request
+	{what/which} ~[documents] ~[can I] request [the university?]
+
+%[get-degree](120)
+	~[how to] ~[acquire] {the/my} {degree ~[testimony?]/~[degree]}
+	~[get info about] ~[acquiring] {the/my} degree ~[testimony?]
+	~[get info about] ~[acquiring] {the/my} ~[degree]
+	~[I want to X who contact$get my diploma]
+	~[I am searching for] {my/the} ~[degree] ~[testimony?]
+
+%[what-required-doc-registration](120)
+	{~[what are] [the?]/~[is there#plural]} ~[required] ~[documents] {for ~[registration]/~[to be allowed?] to ~[register]} ~[into UCL?]
+	{what/which} ~[documents?] {do I need/~[do I have to] ~[bring]} upon ~[registration] ~[into UCL?]
+	{what/which} ~[documents?] {do I need/~[do I have to] ~[bring]} ~[in order to] ~[register] ~[into UCL?]
+
+%[contact-enrolment-office](120)
+	~[how to] ~[contact] [the?] ~[Enrolment Office]
+	~[get info about] [the?] ~[contact information] of [the?] ~[Enrolment Office]
+	~[I am searching for] the ~[contact information] of the ~[Enrolment Office]

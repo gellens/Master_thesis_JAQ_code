@@ -1,0 +1,62 @@
+// This file contains templates for the "Study organization" part of the data visualization.
+
+//=========== Intents ===============
+%[course-prerequisite](120)
+	{what/which} ~[courses] {~[should I]/~[am I allowed to]} ~[follow]
+	~[how to] know {what/which} ~[courses] ~[I can] ~[follow]
+	I {do not/don't} know {what/which} ~[courses] {I am/I'm} {allowed/permitted} to ~[follow]
+	~[am I allowed to] ~[choose] {what/which} ~[courses] I{'ll/ will} ~[follow]
+
+%[where-course-descriptions](120)
+	{where/how?} ~[can I] ~[acquire] {~[courses] descriptions/descriptions of ~[courses]}
+	~[get info about] ~[courses]
+	what [topic?] ~[can I] ~[study]
+	what ~[courses] {do you ~[at HERE]/does ~[UCL] propose}
+	~[how to] know what [topic?] a ~[course] is about
+
+%[when-choose-course](120)
+	when {~[should I]/~[am I allowed to]/~[do I have to]} ~[choose] {[my?] ~[courses]/which ~[courses] I will ~[follow]}
+	when is the ~[deadline] for ~[choosing] {[my?] ~[courses]/which ~[courses] I will ~[follow]}
+
+%[important-courses](120)
+	~[is there#plural] {~[very]/more?} ~[important] ~[courses]
+	~[is there#plural] ~[mandatory] ~[courses]
+	{what/which} ~[courses] are {~[mandatory]/~[very?] ~[important]}
+	~[is there#plural] ~[courses] ~[I have to] ~[follow]
+	~[how to] know {if/whether} a ~[course] is ~[important]
+
+%[how-register-courses](120)
+	~[how to] ~[register] {into/to} ~[courses]
+	~[get info about] ~[course] ~[registration]
+	~[I want to X who contact$take a philosophy course]
+	~[I want to X who contact$follow a mathematics course]
+	~[I want to X who contact$follow a theology course]
+	~[I want to X who contact$follow an architecture course]	
+
+%[have-to-register](80)
+	~[do I have to] ~[register] {into/to} [my?] ~[courses]
+	I don't want to ~[register] {into/to} [my?] ~[courses]
+
+%[what-learning-agreement](120)
+	~[request definition$learning agreement]
+	~[request definition$Learning Agreement]
+
+%[what-major](120)
+	~[request definition$a major]
+	~[what is] a major for
+
+%[what-minor](120)
+	~[request definition$a minor]
+	~[what is] a minor for
+
+%[what-options](120)
+	~[request definition$an option]
+	~[request definition$a specialization]
+	~[request definition$a specialisation]
+	~[what are] options ~[actually?]
+	~[what is] an option for
+
+%[list-major-minor-option](120)
+	{what/which} {majors/minors/majors and minors/minors and majors/options/specialisations} ~[is there#plural] ~[at HERE?]
+	{~[I am searching for]/~[give me]/show me} a ~[list] of the {majors/minors/majors and minors/minors and majors/options/specialisations} ~[at HERE?]
+	~[I want] to {follow/do/make} the {engineering/mathematics/psychology} {program[me?]/bachelor/master}

@@ -1,0 +1,24 @@
+// This file contains the intents for the "SmallTalk" interaction.
+// It can use aliases and slots from `common.chatette`.
+
+//============= Intents ================
+%[who-are-you](120)
+    ~[hi?] who are you
+    ~[hi?] ~[what is] your purpose
+    what are you ~[intended] [to be used?] for
+    what ~[can] you {do/perform}
+    what are you {able/capable} to {do/perform}
+    ~[what is] your name
+    ~[get info about] your name
+    how are you {called/named}
+    {how/what name} {can I/~[should I]} call you
+
+%[I-know](60)
+    {~[yes]/~[no]/well?} I [already?] {know/knew} {that/this/the answer?}
+    {~[yes]/~[no]/well?} I {know/knew} {that/this/this answer} already
+
+%[my-name-is](60)
+    ~[hi?] {I am/I'm} ~[NAME]
+    ~[hi?] my name is ~[NAME]
+    ~[hi?] {I am/I'm} a new ~[student#singular] at ~[UCL]
+    ~[hi?] {I am/I'm} not ~[registered] {in ~[UCL]?} [yet?]

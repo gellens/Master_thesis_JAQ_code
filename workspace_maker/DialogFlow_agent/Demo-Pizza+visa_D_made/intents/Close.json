@@ -1,0 +1,48 @@
+{
+  "id": "8e90c1bb-a929-4a93-84b9-1017ebdace10",
+  "name": "Close",
+  "auto": true,
+  "contexts": [
+    "named"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "named",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "1dd9b87b-7349-4527-9a8f-13a98d5a17f3",
+          "required": false,
+          "dataType": "@sys.date",
+          "name": "date_close",
+          "value": "$date_close",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "You asked about #named.date before #named.given-name",
+            "I thing #named.given-name"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1541710880,
+  "fallbackIntent": false,
+  "events": []
+}

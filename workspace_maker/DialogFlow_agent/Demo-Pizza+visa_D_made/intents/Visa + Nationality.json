@@ -1,0 +1,43 @@
+{
+  "id": "c7386a66-4c0c-4e6b-93ae-8223f517c2ec",
+  "name": "Visa + Nationality",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "nationality",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "4e22988c-087c-4e46-ab3f-ebe86031d17d",
+          "required": false,
+          "dataType": "@Nationality",
+          "name": "Nationality",
+          "value": "$Nationality",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "May be..."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1548611560,
+  "fallbackIntent": false,
+  "events": []
+}

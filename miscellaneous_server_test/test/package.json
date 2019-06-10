@@ -1,0 +1,14 @@
+{
+	"name": "TestChatbot",
+	"version": "0.0.1",
+	"description": "Test the chatbot made with Google Dialogflow and provide an evaluation of the performance",
+	"main": "test.js",
+	"scripts": {
+		"start": "node test.js",
+		"test": "node test.js"
+	},
+	"author": "Simon Gustin && Arrnaud Gellens",
+	"dependencies": {
+		"dialogflow": "^0.7.0"
+	}
+}

@@ -1,0 +1,85 @@
+// This file contains templates for the "UCLouvain presentation" part of the data visualization.
+
+//========== Aliases ===============
+~[bibliographic resource]
+	bibliographic {resource[s?]/articles}
+	scientific {resource[s?]/articles}
+	libraries
+	[e-?]books
+	scientific {research/magazines}
+	[scientific?] research {~[documents]/publications}
+
+~[restaurants]
+	restaurants
+	cafeteria
+	coffee shops
+
+~[history]
+	history
+	past
+	annals
+	records
+
+//=========== Intents =================
+%[what-is-ucl](120)
+	~[request definition$UCLouvain]
+	~[request definition$UCL]
+	~[can you] {introduce/present} ~[UCL] [please?]
+	~[I am searching for] [general?] ~[information] about ~[UCL]
+
+%[ucl-physical-sites](120)
+	~[what are] ~[UCL] ~[physical sites]
+	how many ~[physical sites] for ~[UCL] ~[is there#plural]
+	how many ~[physical sites] does ~[UCL] {has/own}
+	where is ~[UCL] ~[located]
+
+%[what-vision-ucl](120)
+	~[what is] the vision behind ~[UCL]
+	~[what are] ~[important] values at ~[UCL]
+	what {does/would} ~[UCL] {strive/fight} for
+	~[what is] ~[important] for ~[UCL]
+
+%[history-ucl](120)
+	~[get info about] {~[UCL]'s ~[history]/the ~[history] of ~[UCL]}
+	~[what is] {~[UCL]'s ~[history]/the ~[history] of ~[UCL]}
+	how {old/young/recent} is ~[UCL] {as a ~[university]?}
+	~[can you] {narrate/tell} [me?] {~[UCL]'s ~[history]/the ~[history] of ~[UCL]} [please?]
+	~[I want] to {know/learn} about the ~[history] of ~[UCL]
+
+%[bibliographic-resource](120)
+	{do/would/will} {i/~[student#plural]} ~[get access to] {~[bibliographic resource]/~[libraries]} ~[at HERE]
+	~[how to] ~[get access to] [the?] ~[bibliographic resource] {made/written/studied} at ~[UCL]
+	~[get info about] {~[bibliographic resource]/~[library]} [access?]
+	~[how to] {get in/~[get access to]} {~[bibliographic resource]/~[libraries]} {at ~[UCL]?}
+
+%[are-there-student-restaurants](120)
+	~[is there#plural] ~[restaurants] for ~[student#plural] ~[at HERE]
+	~[is there#plural] ~[student] ~[restaurants] ~[at HERE]
+	{do/would/will} i ~[get access to] ~[restaurants] as a ~[student] ~[at HERE]
+	~[get info about] ~[student] ~[restaurants]
+	~[how to] ~[acquire] ~[discount#plural] when going to the ~[restaurant] {as a ~[student]?}
+
+%[culture-card](120)
+	~[request definition$the culture card]
+	{does/would/will} ~[UCL] give an [easy?] access to ~[cultural events]
+	~[can I] have an [easy?] access to ~[cultural events]
+	~[how to] ~[acquire] ~[discount#plural] {for/when going to} ~[cultural events] {as a ~[student]?}
+	~[what is] {the/my} ~[culture card] ~[intended?] for
+	what ~[should I] use {the/my} ~[culture card] for
+	what does {the/my} ~[culture card] {give/provide} me ~[access to]
+
+%[what-student-card-noma-for](120)
+	~[what is] {my/the} {~[NOMA]/~[student card]/~[FGS]} for
+	~[what are] {my/the} ~[NOMA] and {my/the} ~[student card] for
+	what {do/would/should} {i/~[student#plural]} do with the {~[NOMA]/~[FGS]/~[student card]}
+	~[request definition$student card]
+	~[request definition$NOMA]
+	what does {the/my} ~[student card] {give/provide} me ~[access to]
+
+%[what-access-card-for](120)
+	~[what is] {my/the} ~[access card] for
+	what ~[actually?] ~[should I] do with {the/my} ~[access card]
+	how ~[should I] use {the/my} ~[access card]
+	what ~[should I] use {the/my} ~[access card] for
+	~[request definition$access card]
+	what does {the/my} ~[access card] {give/provide} me ~[access to]

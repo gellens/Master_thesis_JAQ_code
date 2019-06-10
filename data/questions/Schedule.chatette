@@ -1,0 +1,22 @@
+// This file contains templates for the "Schedule" part of the data visualization.
+
+//========== Intents ==================
+%[what-academic-calendar](120)
+	~[request definition$academic calendar]
+	~[what is] the ~[standard?] ~[organization] of {a/one/1} year ~[at HERE?]
+	how is {the/a[n?]/one/1} [academic?] year {~[organized]/divided/scheduled}
+	~[what is] {the/a[n?]/one/1} [academic?] year like ~[at HERE]
+	when are ~[holidays] {~[organized]/planned}
+
+%[term-organization](50)
+	~[what is] the ~[standard?] ~[organization] of {a/one/two/1/2} ~[quadrimester] ~[at HERE?]
+	how is {the/a/one/1} [academic?] ~[quadrimester] {~[organized]/divided}
+	~[what is] {the/a/one/1} [academic?] ~[quadrimester] like
+
+%[typical-lecture-hours](120)
+	~[what are] the ~[standard] hours in a ~[student] ~[schedule] ~[at HERE?]
+	{when/at what time} are ~[lectures] ~[typically] {made/given/scheduled} ~[at HERE?]
+	~[what is] the ~[standard?] ~[course?] ~[schedule] ~[at HERE?]
+	{when/what time} do ~[courses] {~[begin]/~[end]/~[begin] and ~[end]}
+	{when/what time} are ~[courses] {supposed/meant/intended} to {~[begin]/~[end]/~[begin] and ~[end]}
+	how {long is/many hours in} a ~[lecture]

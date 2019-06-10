@@ -1,0 +1,15 @@
+// This file contains intents that are the answers to questions the chatbot asks the user.
+
+%[ans:give-nationality](120)
+	I{'d be/ would be/ am} @[PLACEHOLDER:nationality]
+	I {am/was/come} from @[PLACEHOLDER:nationality]
+	my nation[ality?]{'d be/ would be/is} @[PLACEHOLDER:nationality] ~[actually?]
+	{it is/it's?} @[PLACEHOLDER:nationality] ~[actually?]
+
+
+%[ans:give-faculty](120)
+	I{'m/ would be/ am} ~[intrested] in [the?] @[PLACEHOLDER:faculty] [faculty?]
+	~[get info about] @[PLACEHOLDER:faculty] [faculty?]
+	@[PLACEHOLDER:faculty] ~[actually?] [please?]
+	[The?] @[PLACEHOLDER:faculty] interests me
+	{it is/it's?} @[PLACEHOLDER:faculty]

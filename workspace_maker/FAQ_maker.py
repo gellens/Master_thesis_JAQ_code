@@ -1,0 +1,399 @@
+import json
+import io
+import os
+from subprocess import call
+import shutil
+import argparse  # used to parse the argument of this program
+from pprint import pprint
+from copy import deepcopy
+
+
+environment = "Arnaud"
+#environment = "Simon"
+
+if environment == "Arnaud":
+    visualization_path = "../data/"
+    PYTHON = "python"
+elif environment == "Simon":
+    visualization_path = "../../data/viz/"
+    PYTHON = "python3.6"
+
+
+# Utilities fonction
+def open_load_json(f_path):
+    with open(f_path) as f:
+            return json.load(f)
+
+def parent_folder(path):
+    return os.path.abspath(os.path.join(path, ".."))
+
+
+class FAQMaker:
+    template_file_path = "tmp_chatette_input_file"
+    template_output_file_path = "tmp_chatette_output_file"
+    intent_chatette_id = True
+    DEBUG = False
+    QUITE = True # if False the program print warning message for duplicate intent generated
+
+    def __init__(self, Template_files):
+        self.Template_files = Template_files
+
+        # IQR_array contains dictionaries {"intent": "...", "questions": "...", "response": "..."}
+        # the intent field may not be defined
+        self.IQR_array = []
+        self.questions_merged = {}
+        self.parse_input()
+        self.generate_chatette_input()
+        self.ask_chatette_to_work()
+        self.parse_chatette_input()
+
+
+    def append_IQR(self, title, questions):
+        response = questions[-1]
+        questions = questions[:-1]
+        self.IQR_array.append(
+            {
+                "intent": title,
+                "questions": questions,
+                "response": response
+            })
+
+
+    def parse_input(self):
+        title = None
+        questions = []
+        for Template_file in self.Template_files:
+            with open(Template_file) as f:
+                for line in f:
+                    line_clean = line.rstrip()
+                    if (line_clean == ""):  # it is an empty line -> we create the intents and the node
+                        self.append_IQR(title, questions)
+                        questions = []
+                        title = None
+                    elif (line_clean[0] == '#'):  # there is a title
+                        title = line_clean[1:]
+                    else:
+                        questions.append(line_clean)
+
+                if (len(questions) != 0):  # append the last the IQR if not yet done
+                    self.append_IQR(title, questions)
+                    questions = []
+                    title = None
+
+
+    def generate_chatette_input(self):
+        with open(self.template_file_path, 'w') as f:
+            for i in range(len(self.IQR_array)):
+                f.write("%["+str(i)+"]\n")
+                # print(self.IQR_array[i]["questions"])
+                for q in self.IQR_array[i]["questions"]:
+                    f.write("\t"+q+"\n")
+                f.write("\n")
+            f.write("|./Template/Template_synonyme.txt")
+
+
+    def ask_chatette_to_work(self):
+        call(["python", "-m", "chatette",  "-s", "''", "-o",
+             self.template_output_file_path, self.template_file_path])
+
+
+    def merge_template_output(self, template_output, additional_template_output):
+        """"/!\ WARNING : DOES MERGE ONLY 'common_examples' which are supposed to be not duplicated (not 'entity_synonyms' and 'regex_features')"""
+
+        template_output["rasa_nlu_data"]["common_examples"].extend(additional_template_output["rasa_nlu_data"]["common_examples"])
+        return template_output
+
+
+    def read_template_output(self):
+        """Read all the files on the output directory of chatette and merge them. Suppose that the directory contains only files of the same format."""
+
+        template_path = os.path.join(self.template_output_file_path, "train")
+        out_files = [os.path.join(template_path, f) for f in os.listdir(template_path) if os.path.isfile(os.path.join(template_path, f))]
+
+        template_output = None
+        for f_path in out_files:
+            with open(f_path) as f:
+                if template_output is None:
+                    template_output = json.load(f)
+                else:
+                    template_output = self.merge_template_output(template_output, json.load(f))
+
+        return template_output
+
+
+    def is_complex_intent_ch(self, q):
+        """Test if the intent of chatette is complex, i.e. it contains a entiity.
+        This is done with two tests to check the concistency"""
+        test1 = len(q["intent"]) >= 9 and q["intent"][:9] == "ans:give-"
+        test2 = len(q["entities"]) > 0
+
+        if test1 and test2:
+            return True
+        elif not test1 and not test2:
+            return False
+        else:
+            print("[ERR] FAQ_merger.py: Concistancy check fail for complex intent")
+            # intent are sorted later base on the begining of their title so it muste begin with "ans:give-"
+            exit()
+
+
+    def parse_chatette_input(self):
+        """Parse the result generated by Chatette and check if there is two times 
+        the same question, if this is the case, only one is kept"""
+        template_output = self.read_template_output()
+
+        self.questions_merged = {} # dictionary (key: intent) of array of questions (string)
+        self.questions_merged_entity_start_end = {} # dictionary (key: intent) of array of tuple (start, end)
+        dup_reccord = {} # dictionnary (key: intent) of dictionnary (question)
+
+        # merging the qustion for the same intent
+        for q in template_output["rasa_nlu_data"]["common_examples"]:
+            if q["intent"] not in self.questions_merged:
+                self.questions_merged[q["intent"]] = []
+                self.questions_merged_entity_start_end[q["intent"]] = []
+                dup_reccord[q["intent"]] = {}
+
+            if q["text"] == "":
+                print("[WARN] - Found empty intent for '"+ q["intent"] +"'")
+            elif q["text"] not in dup_reccord[q["intent"]]:
+                self.questions_merged[q["intent"]].append(q["text"])
+                if self.is_complex_intent_ch(q):
+                    self.questions_merged_entity_start_end[q["intent"]].append(
+                        (q["entities"][0]["start"], q["entities"][0]["end"]))
+                dup_reccord[q["intent"]][q["text"]] = True
+            elif not self.QUITE:
+                print("[WARN] - Found dup intent in ("+ q["intent"] +") : "+q["text"])
+
+
+
+    def rm_temp_file(self):
+        if not self.DEBUG:
+            os.remove(self.template_file_path)
+            shutil.rmtree(self.template_output_file_path)
+
+
+    def generate(self, output_file):
+        with open(output_file, 'w') as f:
+            for i in range(len(self.IQR_array)):
+                intent_ch = str(i) if self.intent_chatette_id else self.IQR_array[i]["intent"]
+                if intent_ch not in self.questions_merged:
+                    print("[WARN] !! Intent missing in chatette template:", intent_ch)
+                else:
+                    if self.IQR_array[i]["intent"] is not None:
+                        f.write("#"+self.IQR_array[i]["intent"]+"\n")
+
+
+                    for q in self.questions_merged[intent_ch]:
+                        f.write(q+"\n")
+
+                    f.write(self.IQR_array[i]["response"]+"\n\n")
+
+        self.rm_temp_file()
+
+
+class FAQMakerV2(FAQMaker):
+    """Parse the new template format that can be found at the locaalisation just bellow"""
+
+    # used to indicate the intenties handled
+    # handled_additionnal_entities = set(["student origin: EU", "student origin: non-EU"])
+
+    template_file_path = visualization_path+"questions/main.chatette"
+    intent_chatette_id = False
+
+    special_char = set(["#", "*"])
+
+    def __init__(self, template_files):
+        self.read_entities_filling()
+        self.complex_IR = {}
+        super().__init__(template_files)
+
+    def read_entities_filling(self):
+        """Read the file entities_filling.json"""
+        entities_filling_path = visualization_path+"intent-answers/entities_filling.json"
+
+        with open(entities_filling_path) as f:
+            entities_filling_json = json.load(f)
+            self.entities_filling = entities_filling_json["entities_filling"]
+            self.entities_conditions = {min(a["options"].keys()): a for a in entities_filling_json["conditions"]}
+            self.handled_additionnal_entities = {i: a["entity"] for a in entities_filling_json["conditions"] for i in a["options"].keys()}
+
+
+    def generate_chatette_input(self):
+        """Overwrite this methode because the file is allready done"""
+        pass
+
+    def rm_temp_file(self):
+        """This version does not suppress the chatette file"""
+        if not self.DEBUG:
+            shutil.rmtree(self.template_output_file_path)
+
+    def clean_answers(self, answers):
+        """Transform the array of line of the answers to an string with new line html tag separating the previous part of the array"""
+        while answers[0] == "":
+            answers = answers[1:]
+        while answers[-1] == "":
+            answers = answers[:-1]
+        nl = "<br>"
+        return nl.join(answers)
+
+
+    def append_IR(self, title, response):
+        response_clean = self.clean_answers(response)
+        self.IQR_array.append(
+            {
+                "intent": title,
+                "response": response_clean
+            })
+
+    def append_complex_IR(self, title, complex_response):
+        print("COMPLEX found:", title)
+        self.complex_IR[title] = complex_response
+
+    def parse_input(self):
+        """Parse the answers file"""
+        title = None
+        answers = []
+        complex_curr_q_answers = {}
+        complex_curr_q = None # store the current complex question category (that need to be in self.handle_additionnal_entities to be treated)
+        complex_flow = None # used when an intentity is required to process the intent
+        skiping = True # used to skip the introduction of the file or when the answer is too complex and have special context
+
+        for Template_file in self.Template_files:
+            with open(Template_file) as f:
+                for line in f:
+                    line_clean = line.strip()
+
+                    if len(line_clean) > 5 and line_clean[0] in self.special_char:
+                        if line_clean[0:4] == "####":
+                            if title is not None:
+                                if complex_flow:
+                                    if len(answers) > 0:
+                                        complex_curr_q_answers[complex_curr_q] = self.clean_answers(answers)
+                                    answers = [self.entities_filling[self.handled_additionnal_entities[complex_curr_q]]["question"]]
+                                    self.append_complex_IR(title, complex_curr_q_answers)
+                                self.append_IR(title, answers)
+                            answers = []
+                            complex_curr_q_answers = {}
+                            skiping = False
+                            complex_flow = None
+                            title = line_clean[5:]
+                    elif len(line_clean) >= 3 and line_clean[0:3] == "- *":
+                        if line_clean[3:-1] in self.handled_additionnal_entities and complex_flow != False:
+                            if complex_flow and len(answers) > 0:
+                                complex_curr_q_answers[complex_curr_q] = self.clean_answers(answers)
+                                answers = []
+                            complex_curr_q = line_clean[3:-1]
+                            complex_flow = True
+                        else:
+                            skiping = True
+                            complex_flow = False
+                            title = None
+                            answers = []
+                    elif not skiping:
+                        answers.append(line_clean)
+
+
+                if (len(answers) != 0):  # append the last the IR if not yet done
+                    if complex_flow:
+                        if len(answers) > 0:
+                            complex_curr_q_answers[complex_curr_q] = self.clean_answers(answers)
+
+                        # the answer is the question to get the missing entity
+                        answers = [self.entities_filling[self.handled_additionnal_entities[complex_curr_q]]["question"]]
+                        self.append_complex_IR(title, complex_curr_q_answers)
+                    self.append_IR(title, answers)
+                    # answers = []
+                    title = None
+
+
+    def merge_old_complex_output(self, path, entities_filling_answers):
+        """merge the present entities_filling_answers file with the build one. 
+        Suppose that the 'entities_filling' part is the same"""
+        if os.path.isfile(path):
+            entities_filling_answers_old = open_load_json(path)
+            for intent in entities_filling_answers["intents_complex"]:
+                entities_filling_answers_old["intents_complex"][intent] = entities_filling_answers["intents_complex"][intent]
+            return entities_filling_answers_old
+        else:
+            return entities_filling_answers
+
+
+    def generate_complex(self, output_file):
+        """generate the file entities_filling_answers"""
+        
+        # build the output path
+        path_parent = parent_folder(output_file)
+        path = os.path.join(path_parent, "entities_filling_answers.json")
+
+        intents_complex = {}
+        for intent in self.complex_IR:
+            condition = min(self.complex_IR[intent].keys())
+            intents_complex[intent] = deepcopy(self.entities_conditions[condition])
+            intents_complex[intent]["options_answers"] = self.complex_IR[intent]
+
+        entities_filling_answers = {
+            "intents_complex": intents_complex,
+            "entities_filling": self.entities_filling
+        }
+
+        entities_filling_answers_merged = self.merge_old_complex_output(path, entities_filling_answers)
+
+        with open(path, 'w') as out_f:
+            json.dump(entities_filling_answers_merged, out_f, indent=4, ensure_ascii=False)
+
+
+    def tag_intent(self, q, r):
+        """add a {} around the entity (q) delimited by s and e.
+        This can be used to find the entity."""
+        (s, e) = r
+        return q[:s] + "{" + q[s:e] + "}" + q[e:]
+
+
+    def generate_entities_filling(self, output_file):
+        """Generates the user input for the entities"""
+        with open(output_file, 'a') as f:
+            for intent in self.entities_filling:
+                intent_ch = "ans:give-" + intent
+
+                if intent_ch not in self.questions_merged:
+                    print("[WARN] !! Intent (to fill an entity) missing in chatette template:", intent_ch)
+                else:
+                    f.write("#"+intent_ch+"\n")
+                    for i in range(len(self.questions_merged[intent_ch])):
+                        q = self.tag_intent(self.questions_merged[intent_ch][i], self.questions_merged_entity_start_end[intent_ch][i])
+                        f.write(q+"\n")
+                    f.write(self.entities_filling[intent]["ack"] + "\n\n")  # TODO
+
+
+    def generate(self, output_file):
+        super().generate(output_file)
+        self.generate_complex(output_file)
+        self.generate_entities_filling(output_file)
+
+def parse_args():
+    """Parse the input argument of the program"""
+    parser = argparse.ArgumentParser(
+        description='Process FAQ template files to create the FAQ.')
+
+    parser.add_argument('-i', '--input', required=True, metavar='I', nargs='+',
+                        help='FAQ files parsed')
+    parser.add_argument('-o', '--output', metavar='O', nargs=1,
+                        help='output file')
+    parser.add_argument('-v1', '--version_1', action='store_true',
+                        help='create the workspace with the first version of the template')
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+    fm = None
+
+    if args.version_1 is True:
+        fm = FAQMaker(args.input)
+    else:
+        fm = FAQMakerV2(args.input)
+
+    fm.generate('./FAQ/output_FAQ.txt' if args.output is None else args.output[0])
+
+if __name__ == '__main__':
+    main()

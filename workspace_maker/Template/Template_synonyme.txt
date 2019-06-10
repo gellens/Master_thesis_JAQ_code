@@ -1,0 +1,155 @@
+~[greet]
+    hi
+    hello
+    howdy
+    hey
+
+~[how]
+    how
+    do you know how
+
+~[accommodation]
+    accommodation
+    dwelling place
+    housing
+    room
+    kot
+
+~[rental]
+    rental
+    rent
+    fee
+    price
+
+~[visa application]
+    for my visa application
+    I must do a visa application.
+
+~[I have]
+    [&i]'ve
+    [&i] have
+
+~[I am]
+    [&i] am
+    [&i]'m
+
+~[I want]
+    [&i] want
+    [&i] would like
+    [&i] would want
+    [&i] wish
+    [&i]'d like
+    [&i]'d want
+
+~[can I]
+    can [&i]
+    might [&i]
+    may [&i]
+    should [&i]  // TODO check if this is right in all situations
+
+~[Can you suggest]
+    Can you suggest
+    Is there
+
+~[What can I do if]
+    What can [&i] do {if/when}
+    What do [&i] do {if/when}
+    Something [&i] can do {if/when}
+
+~[UCL]
+    UCL 
+    UCLouvain 
+    Université {Catholique/catholique} de Louvain 
+    UCL university
+    {the/your?} university
+
+~[receive]
+    receive
+    get
+
+~[received]
+    received
+    got
+
+~[letter]
+    letter
+    post letter
+    missive
+
+~[email]
+    mail
+    email
+
+~[question]
+    question
+    interrogation
+
+~[deadline]
+    deadline
+    due date
+
+~[upon]
+    upon
+    after
+    once
+
+~[exchange]
+    exchange
+    foreign
+    erasmus
+
+~[enrollment]
+    enrollment
+    registration
+    recruitement
+    admission
+    enlistment
+
+~[enroll]
+    enroll
+    register
+    get admitted
+
+~[website]
+    website
+    {Web/web?} site
+
+~[which]
+    which
+    what
+
+~[ECTS]
+    ECTS [credits?]
+    credits
+    crédits
+
+~[start#infinitive]
+    start
+    begin
+~[start#3rd-person]
+    starts
+    begins
+
+~[learning agreement]
+    learning agreement
+    Erasmus agreement
+
+~[should I]
+    should [&i]
+    could [&i]
+    can [&i]
+    may [&i]
+    will [&i]
+
+~[should I do]
+    ~[should I] do
+~[should I go]
+    ~[should I] go
+
+~[in Belgium]
+    in Belgium
+    in belgium
+    there
+    in {lln/LLN}
+    in {Louvain-la-Neuve/louvain-la-neuve/Louvain la Neuve/louvain la neuve}
+

@@ -1,0 +1,122 @@
+// This file contains the intents for the "Language" part of the visualization.
+// It can use aliases and slots from `common.chatette`.
+
+//============= Nouns ==============
+~[language]
+	language
+	language
+	language // force it to choose "language" more often
+	dialect
+
+~[instruction language]
+	{course/instruction} ~[language]
+	~[language] of instruction
+	teaching ~[language]
+
+~[French]
+	french
+
+~[ILV]
+	ILV [Language School?]
+	ilv [language school?]
+	Institut des Langues Vivantes
+	institut des langues vivantes
+~[CLL]
+	CLL
+	cll
+	Centre des Langues de Louvain
+	centre des langues de louvain
+~[Placet]
+	[the?] Placet {center/centre?}
+
+~[intensive]
+	intensive
+	accelerated
+
+//============= Intents ================
+%[what-language-in-belgium](80)
+	{what/which} ~[language][s?] {is/gets} {spoken/used} in {~[Belgium]/~[lln]}
+	~[get info about?] ~[language] in ~[Belgium]
+
+%[instruction-language](120)
+	{~[what is]/which is} the ~[instruction language] {at ~[UCL]?}
+	~[get info about?] [the?] ~[instruction language] [please?]
+	{what/which} ~[language] is spoken {during ~[lectures]?} at ~[UCL]
+	{what/which} ~[language] do {people/teachers/professors/students} {speak/use} at ~[UCL]
+	is ~[UCL] {Erasmus/~[international student#singular]} friendly
+	is it ~[difficult] to study at ~[UCL] ~[for international students]
+
+%[need-french](120)
+	~[should I] {know/be ~[capable] to speak} ~[French] ~[when I arrive?]
+	~[should I] {know/be ~[capable] to speak} ~[French] ~[in order to] {~[study]/come/~[register]} {at/in} ~[UCL]
+	is it {strongly/~[very]?} advised to {know/be ~[capable] to speak} ~[French] ~[in order to] {~[study]/come/~[register]} {at/in} ~[UCL]
+
+%[can-french-course](50)
+	{~[should I]/~[am I allowed to]} {take/get} {~[French]/~[language]} ~[courses]
+	~[get info about] {~[French]/~[language]} ~[courses]
+	~[how to] {~[study]/learn/~[practice] [my?]} ~[French]
+
+%[lang-placement-test](120)
+	~[is there#singular] a ~[language] [placement?] {test/checking} {I ~[can] take?}
+	~[can I] take a ~[language?] [placement?] test ~[in order to] {know/find [out?]} my level in ~[French]
+	~[how to] {know/find [out?]} my level in ~[French]
+	{~[how to] know/~[how to] find [out?]?} {which/what} {~[French]/~[language]} ~[course] ~[should I] ~[follow]
+
+%[what-available-lang-courses](120)
+	{what/which} ~[type of?] {~[language]/~[French]} ~[courses] {~[is there#plural]/are available}
+	~[get info about] ~[available] {~[language]/~[French]} ~[courses] {at ~[ILV]/in ~[CLL]/at ~[Placet]?}
+
+%[register-lang-course-ilv](120)
+	~[how to] ~[register] {to/into/at/for} a {~[language]/~[French]?} ~[course] at ~[ILV]
+	~[I want to X who contact$register into a course at ILV]
+
+%[are-there-intensive-lang-courses](80)
+	~[is there#plural] ~[intensive] {~[language]/~[French]} ~[courses] {~[at HERE]/at ~[CLL]/at ~[ILV]?}
+	~[is there#singular] an ~[intensive] {~[language]/~[French]} ~[course] {~[at HERE]/at ~[CLL]/at ~[ILV]?}
+
+%[register-lang-course-cll](120)
+	~[how to] ~[register] {to/into/at/for} ~[intensive?] {~[language]/~[French]} ~[courses] {at/in} ~[CLL]
+	~[how to] ~[register] {to/into/at/for} the ~[intensive?] {~[language]/~[French]} ~[course] {at/in} ~[CLL]
+	~[I want to X who contact$register into the intensive language course in CLL]
+
+%[ilv-info-session](120)
+	~[is there#singular] {some kind of/a} ~[information] {session/event} {~[organized] by/at} ~[ILV]
+	~[get more info about] ~[language] ~[courses] {at~[ILV]?}
+	{where/when} is the ~[ILV] ~[language?] ~[information] {session/event} ~[organized?]
+
+%[get-french-certificate](120)
+	{~[how to]/do I/would I/will I} ~[acquire] a {~[testimony]/degree/diploma} {for/about} {the/my} ~[French] ~[courses]
+
+%[official-lang-test](60)
+	~[is there#plural] ~[official] {~[language]/~[French]} {test/checking}
+	~[can I] take an ~[official] {~[language]/~[French]} test
+	~[is there#plural] {DELF/DALF/DELF or DALF} examination ~[center#plural] {in ~[Belgium]/~[at HERE]?}
+
+%[what-student-activities-lang](120)
+	{what/which} ~[type of?] ~[student] ~[event] ~[is there#plural] {for me/for ~[international student#plural]?} to ~[practice] {~[language]/~[French]}
+	{what/which} ~[type of?] ~[event] ~[organized] by ~[student#plural] {~[should I]/~[can I]} {go to/attend} {for me/for ~[international student#plural]?} to ~[practice] {~[language]/~[French]}
+	~[get info about] ~[practicing] [my?] ~[French] with other ~[student]
+
+%[contact-ilv](120)
+	~[how to] ~[contact] ~[ILV]
+	~[get info about] ~[contact information] of ~[ILV]
+	~[I am searching for] the ~[contact information] of [the?] ~[ILV]
+%[contact-cll](120)
+	~[how to] ~[contact] ~[CLL]
+	~[get info about] ~[contact information] of ~[CLL]
+	~[I am searching for] the ~[contact information] of [the?] ~[CLL]
+%[contact-placet-center](120)
+	~[how to] ~[contact] ~[Placet]
+	~[get info about] ~[contact information] of ~[Placet]
+	~[I am searching for] the ~[contact information] of ~[Placet]
+
+%[when-lang-courses](120)
+	when ~[actually?] do {~[language]/~[French]} ~[courses] take place {at/in} ~[ILV]
+	when ~[actually?] are {~[language]/~[French]} ~[courses] ~[organized?] {at/in} ~[ILV]
+	~[what is] the ~[schedule] of {~[language]/~[French]} ~[lectures] {at/in} ~[ILV]
+	when do ~[courses] at ~[ILV] {~[begin]/~[end]/~[begin] and ~[end]}
+
+%[when-lang-exam](70)
+	when ~[actually?] do {~[language]/~[French]} ~[exams] take place {at/in} ~[ILV]
+	when ~[actually?] are {~[language]/~[French]} ~[exams] ~[organized?] {at/in} ~[ILV]
+	when ~[actually?] are {~[language]/~[French]} ~[exams] ~[organized?]

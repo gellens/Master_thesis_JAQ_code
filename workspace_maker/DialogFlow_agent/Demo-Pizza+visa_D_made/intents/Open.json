@@ -1,0 +1,50 @@
+{
+  "id": "25b885a5-e28a-4cd3-949d-daaded83d8e5",
+  "name": "Open",
+  "auto": true,
+  "contexts": [
+    "named"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "named",
+          "parameters": {},
+          "lifespan": 1
+        },
+        {
+          "name": "Open-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "da54bde3-7dce-401c-9dcb-11f60ee8e3fe",
+          "required": false,
+          "dataType": "@sys.date",
+          "name": "date",
+          "value": "$date",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "No #named.given-name. Are your close to Paris ?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1541711555,
+  "fallbackIntent": false,
+  "events": []
+}

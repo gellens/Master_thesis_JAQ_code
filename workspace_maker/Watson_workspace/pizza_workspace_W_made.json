@@ -1,0 +1,510 @@
+{
+    "name": "Prototype_meeting_S4",
+    "intents": [
+        {
+            "intent": "what_pizza",
+            "examples": [
+                {
+                    "text": "What pizza do you do ?"
+                },
+                {
+                    "text": "What pizza do you have"
+                },
+                {
+                    "text": "What do you suggest in your restaurant ?"
+                },
+                {
+                    "text": "what can we eat on your place"
+                }
+            ],
+            "description": "User asks what pizza we have"
+        },
+        {
+            "intent": "greetings",
+            "examples": [
+                {
+                    "text": "yo"
+                },
+                {
+                    "text": "Hi"
+                },
+                {
+                    "text": "hello"
+                },
+                {
+                    "text": "Good morning"
+                }
+            ],
+            "description": "The user greets us"
+        },
+        {
+            "intent": "opening_houres",
+            "examples": [
+                {
+                    "text": "When are you open ?"
+                },
+                {
+                    "text": "What are the opening houres ?"
+                }
+            ],
+            "description": "User asks what are the opening houres"
+        },
+        {
+            "intent": "ask_pizza",
+            "examples": [
+                {
+                    "text": "I'd like to have 5 pizza margaritta"
+                },
+                {
+                    "text": "I would like a prosciutto pizza."
+                },
+                {
+                    "text": "Would it be possible to have a pizza with cheese ?"
+                },
+                {
+                    "text": "i'll take the 4 cheeses"
+                }
+            ],
+            "description": ""
+        },
+        {
+            "intent": "delivery_delay",
+            "examples": [
+                {
+                    "text": "When my pizza would be ready"
+                },
+                {
+                    "text": "When can I get my commande ?"
+                }
+            ],
+            "description": "User asks the deivery delay"
+        },
+        {
+            "intent": "validation",
+            "examples": [
+                {
+                    "text": "ok"
+                },
+                {
+                    "text": "yes"
+                },
+                {
+                    "text": "You have it all right"
+                },
+                {
+                    "text": "That's right"
+                },
+                {
+                    "text": "Thank you"
+                }
+            ],
+            "description": "The user is agree"
+        },
+        {
+            "intent": "modification",
+            "examples": [
+                {
+                    "text": "I would like pizza with cheese intead"
+                },
+                {
+                    "text": "Could you deliver it at n°4 on the road of the Queen, London"
+                }
+            ],
+            "description": "The user want to change an information"
+        }
+    ],
+    "entities": [
+        {
+            "entity": "address",
+            "values": [
+                {
+                    "type": "patterns",
+                    "value": "address",
+                    "patterns": [
+                        "(?: in | at | on )(\\w| )+(?:.| )"
+                    ]
+                }
+            ],
+            "fuzzy_match": true
+        },
+        {
+            "entity": "sys-number",
+            "values": []
+        },
+        {
+            "entity": "sys-location",
+            "values": []
+        },
+        {
+            "entity": "pizza_type",
+            "values": [
+                {
+                    "type": "synonyms",
+                    "value": "prosciutto",
+                    "synonyms": [
+                        "ham"
+                    ]
+                },
+                {
+                    "type": "synonyms",
+                    "value": "quattro fromaggi",
+                    "synonyms": [
+                        "four cheese",
+                        "cheeses"
+                    ]
+                },
+                {
+                    "type": "synonyms",
+                    "value": "margherita",
+                    "synonyms": [
+                        "marguerite",
+                        "nature",
+                        "simple",
+                        "margarita"
+                    ]
+                }
+            ],
+            "fuzzy_match": true
+        }
+    ],
+    "language": "en",
+    "metadata": {
+        "api_version": {
+            "major_version": "v1",
+            "minor_version": "2018-07-10"
+        }
+    },
+    "description": "Prototype for the meeting of week 4",
+    "dialog_nodes": [
+        {
+            "type": "response_condition",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "You have chosen @sys-number.value pizzas @pizza_type.value. Is that right ?"
+                            }
+                        ],
+                        "response_type": "text",
+                        "selection_policy": "sequential"
+                    }
+                ]
+            },
+            "parent": "node_2_1537803070730",
+            "metadata": {},
+            "conditions": "@pizza_type && @sys-number",
+            "dialog_node": "node_4_1538992639345",
+            "previous_sibling": "node_3_1538992263625"
+        },
+        {
+            "type": "response_condition",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "You have chosen the pizza @pizza_type. Is that right ?"
+                            }
+                        ],
+                        "response_type": "text",
+                        "selection_policy": "sequential"
+                    }
+                ]
+            },
+            "parent": "node_2_1537803070730",
+            "metadata": {},
+            "conditions": "@pizza_type",
+            "dialog_node": "node_4_1537864230149",
+            "previous_sibling": "node_5_1537864327661"
+        },
+        {
+            "type": "response_condition",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "The prosciutto is an excellent choice, this is my favorite. That was well your choice ?"
+                            }
+                        ],
+                        "response_type": "text"
+                    }
+                ]
+            },
+            "parent": "node_2_1537803070730",
+            "metadata": {},
+            "conditions": "@pizza_type:prosciutto",
+            "dialog_node": "node_5_1537864327661",
+            "previous_sibling": "node_4_1538992639345"
+        },
+        {
+            "type": "slot",
+            "output": {},
+            "parent": "node_2_1537803070730",
+            "metadata": {},
+            "variable": "$number_pizza",
+            "dialog_node": "slot_1_1539088092225",
+            "previous_sibling": "slot_1_1537863545947"
+        },
+        {
+            "type": "slot",
+            "output": {},
+            "parent": "node_2_1537803070730",
+            "metadata": {},
+            "variable": "$pizza_type",
+            "dialog_node": "slot_1_1537863545947",
+            "previous_sibling": "node_4_1537864230149"
+        },
+        {
+            "type": "standard",
+            "title": "Validation",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "Perfect your order will be ready in a short quarter."
+                            }
+                        ],
+                        "response_type": "text",
+                        "selection_policy": "sequential"
+                    }
+                ]
+            },
+            "parent": "node_2_1537803070730",
+            "metadata": {},
+            "conditions": "#validation",
+            "dialog_node": "node_3_1538992263625",
+            "digress_out": "allow_all"
+        },
+        {
+            "type": "event_handler",
+            "output": {},
+            "parent": "slot_1_1537863545947",
+            "context": {
+                "pizza_type": "@pizza_type",
+                "number_pizza": 1
+            },
+            "metadata": {},
+            "conditions": "@pizza_type",
+            "event_name": "input",
+            "dialog_node": "handler_2_1537863545947",
+            "previous_sibling": "handler_3_1537863545947"
+        },
+        {
+            "type": "event_handler",
+            "output": {
+                "text": "We have in our menu those pizza: the Margherita, the prosciutto and the quattro formaggi. Which one would you like ?"
+            },
+            "parent": "slot_1_1537863545947",
+            "metadata": {},
+            "event_name": "focus",
+            "dialog_node": "handler_3_1537863545947"
+        },
+        {
+            "type": "event_handler",
+            "output": {},
+            "parent": "slot_1_1539088092225",
+            "event_name": "focus",
+            "dialog_node": "handler_3_1539088092225",
+            "previous_sibling": "handler_2_1539088092225"
+        },
+        {
+            "type": "event_handler",
+            "output": {},
+            "parent": "slot_1_1539088092225",
+            "context": {
+                "number_pizza": "@sys-number"
+            },
+            "metadata": {},
+            "conditions": "@sys-number",
+            "event_name": "input",
+            "dialog_node": "handler_2_1539088092225"
+        },
+        {
+            "type": "standard",
+            "title": "Validation",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "Perfect your order will be ready in a quarter."
+                            }
+                        ],
+                        "response_type": "text",
+                        "selection_policy": "sequential"
+                    }
+                ]
+            },
+            "metadata": {},
+            "conditions": "#validation && $pizza_type",
+            "dialog_node": "node_6_1539088196763",
+            "previous_sibling": "node_2_1538991055519"
+        },
+        {
+            "type": "standard",
+            "title": "Delivery delay",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "Your pizza would be ready one quarter later you have made the order."
+                            }
+                        ],
+                        "response_type": "text",
+                        "selection_policy": "sequential"
+                    }
+                ]
+            },
+            "metadata": {},
+            "conditions": "#delivery_delay",
+            "dialog_node": "node_1_1538939780825",
+            "previous_sibling": "node_2_1537803070730"
+        },
+        {
+            "type": "standard",
+            "title": "Opening houres",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "We are open every day excepte monday from 7pm to 11pm."
+                            }
+                        ],
+                        "response_type": "text",
+                        "selection_policy": "sequential"
+                    }
+                ]
+            },
+            "metadata": {},
+            "conditions": "#opening_houres",
+            "dialog_node": "node_1_1538990866604",
+            "previous_sibling": "node_1_1538939780825"
+        },
+        {
+            "type": "standard",
+            "title": "What pizza",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "We have the pizza margherita, the prosciutto and the quatro froggi. <br> All are excellent !"
+                            }
+                        ],
+                        "response_type": "text",
+                        "selection_policy": "sequential"
+                    }
+                ]
+            },
+            "metadata": {},
+            "conditions": "#what_pizza",
+            "dialog_node": "node_2_1538991055519",
+            "previous_sibling": "node_1_1538990866604"
+        },
+        {
+            "type": "standard",
+            "title": "Anything else",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "I didn't understand. You can try rephrasing."
+                            },
+                            {
+                                "text": "Can you reword your statement? I'm not understanding."
+                            },
+                            {
+                                "text": "I didn't get your meaning."
+                            }
+                        ],
+                        "response_type": "text",
+                        "selection_policy": "sequential"
+                    }
+                ]
+            },
+            "metadata": {},
+            "conditions": "anything_else",
+            "dialog_node": "Anything else",
+            "previous_sibling": "node_6_1539088196763"
+        },
+        {
+            "type": "frame",
+            "title": "Ask a pizza",
+            "output": {},
+            "metadata": {
+                "fallback": "leave",
+                "_customization": {
+                    "mcr": true
+                }
+            },
+            "conditions": "#ask_pizza",
+            "digress_in": "does_not_return",
+            "dialog_node": "node_2_1537803070730",
+            "digress_out": "allow_all",
+            "previous_sibling": "node_1_1537796766596",
+            "digress_out_slots": "not_allowed"
+        },
+        {
+            "type": "standard",
+            "title": "Greetings",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "Hello, how can I help you ?"
+                            }
+                        ],
+                        "response_type": "text",
+                        "selection_policy": "sequential"
+                    }
+                ]
+            },
+            "metadata": {},
+            "conditions": "#greetings",
+            "dialog_node": "node_1_1537796766596",
+            "previous_sibling": "Welcome"
+        },
+        {
+            "type": "standard",
+            "title": "Welcome",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "Hello. How can I help you?"
+                            }
+                        ],
+                        "response_type": "text",
+                        "selection_policy": "sequential"
+                    }
+                ]
+            },
+            "metadata": {},
+            "conditions": "welcome",
+            "dialog_node": "Welcome"
+        }
+    ],
+    "workspace_id": "481f0a86-3bb4-4885-b7e3-5ad6c1e65d5f",
+    "counterexamples": [],
+    "system_settings": {
+        "tooling": {
+            "store_generic_responses": true
+        },
+        "disambiguation": {
+            "prompt": "Did you mean:",
+            "none_of_the_above_prompt": "None of the above"
+        },
+        "human_agent_assist": {
+            "prompt": "Did you mean:"
+        }
+    },
+    "learning_opt_out": false
+}

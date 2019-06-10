@@ -1,0 +1,22 @@
+[
+  {
+    "value": "need_visa",
+    "synonyms": [
+      "Afghan",
+      "Japanese"
+    ]
+  },
+  {
+    "value": "no_need_visa",
+    "synonyms": [
+      "French",
+      "Italian"
+    ]
+  },
+  {
+    "value": "Turkish",
+    "synonyms": [
+      "Turkish"
+    ]
+  }
+]

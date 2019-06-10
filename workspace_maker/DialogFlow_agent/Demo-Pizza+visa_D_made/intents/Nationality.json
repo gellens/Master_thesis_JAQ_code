@@ -1,0 +1,43 @@
+{
+  "id": "b2f8301d-92b0-46cb-8322-c28c9c293a49",
+  "name": "Nationality",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "nationality",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
+      "parameters": [
+        {
+          "id": "bf58bfa2-7044-4e35-84bf-587c7cc95a81",
+          "required": false,
+          "dataType": "@Nationality",
+          "name": "Nationality",
+          "value": "$Nationality",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1548610797,
+  "fallbackIntent": false,
+  "events": []
+}

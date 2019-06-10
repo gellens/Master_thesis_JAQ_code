@@ -1,0 +1,24 @@
+[
+  {
+    "id": "e1fccaa3-a017-45ef-90cc-e44d14a81e66",
+    "data": [
+      {
+        "text": "Are you close ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "date_close",
+        "meta": "@sys.date",
+        "userDefined": false
+      },
+      {
+        "text": " ?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1541710880
+  }
+]

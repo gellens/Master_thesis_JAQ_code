@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 13px Helvetica, Arial;
+}
+
+form {
+     padding: 3px;
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+}
+
+form input {
+     border: 0;
+     padding: 10px;
+     width: 90%;
+     margin-right: .5%;
+     outline: none;
+}
+
+form button {
+     width: 9%;
+     border: none;
+     padding: 10px;
+}
+
+form input, form button {
+    border: 2px solid #444;
+}
+    
+form button.watson {
+        background: #047bc070;
+}
+
+form button.dialogflow {
+        background: #f8be8f
+}
+
+
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages li {
+     padding: 5px 10px;
+}
+
+#messages.watson li.bot {
+     background: #047bc070;
+}
+
+#messages.dialogflow li.bot {
+     background: #ef6c0070;
+}
+
+#page-bloc {
+    margin-bottom: 50px;
+}
+
+
+/*Loading image style*/
+#loading {
+    height: 40px;
+    position: relative;
+    left: -12px;
+}
+.hidden {
+    display: none
+}
+
+.display {
+    display: block
+}

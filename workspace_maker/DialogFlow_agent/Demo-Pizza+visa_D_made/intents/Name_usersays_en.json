@@ -1,0 +1,38 @@
+[
+  {
+    "id": "efc84af2-c8f4-47f9-97f1-32e9c0ad58d6",
+    "data": [
+      {
+        "text": "I\u0027m ",
+        "userDefined": false
+      },
+      {
+        "text": "George",
+        "alias": "given-name",
+        "meta": "@sys.given-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1541709480
+  },
+  {
+    "id": "bffdbce6-d2c5-4284-9813-9d208845f996",
+    "data": [
+      {
+        "text": "My name is ",
+        "userDefined": false
+      },
+      {
+        "text": "Arnaud",
+        "alias": "given-name",
+        "meta": "@sys.given-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1541709422
+  }
+]

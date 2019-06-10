@@ -1,0 +1,50 @@
+{
+    "name": "UCLouvain chatbot",
+    "intents": [],
+    "entities": [],
+    "language": "en",
+    "metadata": {
+        "api_version": {
+            "major_version": "v1",
+            "minor_version": "2018-07-10"
+        }
+    },
+    "description": "GENERATED-Chatbot handling the questions that potential future students coming from abroad could have.",
+    "dialog_nodes": [
+        {
+            "type": "standard",
+            "title": "Welcome",
+            "output": {
+                "generic": [
+                    {
+                        "values": [
+                            {
+                                "text": "Hello. How can I help you?"
+                            }
+                        ],
+                        "response_type": "text",
+                        "selection_policy": "sequential"
+                    }
+                ]
+            },
+            "metadata": {},
+            "conditions": "welcome",
+            "dialog_node": "Welcome"
+        }
+    ],
+    "workspace_id": "6d2f627e-8cf8-4af8-b914-9148380c28ee",
+    "counterexamples": [],
+    "system_settings": {
+        "tooling": {
+            "store_generic_responses": true
+        },
+        "disambiguation": {
+            "prompt": "Did you mean:",
+            "none_of_the_above_prompt": "None of the above"
+        },
+        "human_agent_assist": {
+            "prompt": "Did you mean:"
+        }
+    },
+    "learning_opt_out": false
+}

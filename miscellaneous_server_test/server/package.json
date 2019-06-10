@@ -1,0 +1,21 @@
+{
+	"name": "SerChatbot",
+	"version": "0.0.1",
+	"description": "server for the chatbot made with Watson Assistant",
+	"main": "serv.js",
+	"scripts": {
+		"server": "node server.js",
+		"test_api_w": "node test_api_watson.js",
+		"test_api_d": "node test_api_dialogflow.js"
+	},
+	"author": "Simon Gustin && Arrnaud Gellens",
+	"dependencies": {
+		"http": "*",
+		"express": "^4.16.3",
+		"jade": "^1.11.0",
+		"watson-developer-cloud": "^3.11.1",
+		"dialogflow": "^0.7.0",
+		"socket.io": "2.1.1",
+		"pino": "^5.12.3"
+	}
+}

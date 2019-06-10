@@ -1,0 +1,208 @@
+// This file contains the intents for the "Welcome" part of the visualization.
+// It can use aliases and slots from `common.chatette`.
+
+//=========== Types of help =============
+@[help:problems#pb]
+	~[diff type:financial] ~[difficulty] = financial
+	~[diff type:educational] ~[difficulty] = educational
+	~[diff type:social] ~[difficulty] = social
+	~[diff type:personal] ~[difficulty] = personal
+	~[difficulty] with ~[diff type:social:suffix] = social
+@[help:problems#aid needed]
+	~[diff type:financial] {~[help]/~[advice]} = financial
+	~[diff type:educational] {~[help]/~[advice]} = educational
+	~[diff type:social] {~[help]/~[advice]} = social
+	my ~[diff type:question] answered = questions
+	to have {answers/responses} to my ~[diff type:question] = questions
+
+~[difficulty]
+	difficulty
+	difficulties
+	complication[s?]
+	crisis
+	inconvenience[s?]
+	trouble[s?]
+	struggle[s?]
+	embarrassment[s?]
+	burden[s?]
+	problems
+
+~[diff type:financial]
+	financial
+	economical
+	money
+	monetary
+	\$
+~[diff type:educational]
+	educational
+	study
+	studies
+~[diff type:social]
+	social
+	family
+	familial
+	relationship
+	flatmate
+~[diff type:social:suffix]
+	family
+	flatmates
+	{girlfriend/gf}
+	{boyfriend/bf}
+	{spouse/wife/husband}
+~[diff type:personal]
+	health
+	stress
+	diet
+	sleep
+	alcohol
+	drug
+	mood
+	sexual
+~[diff type:question]
+	questions
+	interrogations
+
+//=========== Nouns ============
+~[second hand furniture]
+	~[second hand?] {furniture/appliance/goods/bedding/bed/equipment}
+	
+~[second hand]
+	second hand
+	second-hand
+	secondhand
+	used
+	not new
+	previsouly owned
+	reach-me-down
+	reach me down
+	worn
+
+//=============== Services =================
+~[aide handi]
+	aide handi {unit/support?}
+	handi [help unit?]
+
+//============ Other ===============
+~[no place to stay]
+	no ~[kot]
+	no place to stay
+	nowhere to {go/stay/live}
+
+//=========== Intents ================
+%[where-info](120)
+	~[how to] ~[acquire] [general?] ~[information] ~[for international students?] [please?]
+	~[give me] [general?] ~[information] ~[for international students?] [please?]
+	[general?] ~[information] ~[for international students?] [please?]
+	~[get info about] [general?] [information] ~[for international students?] [please?]
+	~[get info about?] who {~[can I]/~[should I]} ~[call] {if/when} ~[I need] {some/more/some more?} ~[information]
+	~[I want to X who contact$general information]
+
+%[useful-links](120)
+	~[give me?] ~[useful?] ~[link] ~[for international students?] [please?]
+	{where/how} ~[can I] ~[acquire] ~[useful?] ~[link] ~[for international students?] [please?]
+	~[get info about] ~[useful] ~[link] ~[for international students?] [please?]
+
+%[welcome-guide](120)
+	{~[is there]/~[do you have]} a ~[guide] ~[for international students?] {with [more?] ~[information]}
+	{~[get info about] the?} ~[guide] ~[for international students] [please?]
+	~[give me?] the ~[link#singular] to the ~[guide] ~[for international students] [please?]
+
+%[to-do-on-arrival](120)
+	~[get info about?] what {~[I should]/~[should I]/[I have?] to/~[do I have to]} {do/make} ~[when I arrive]
+	~[get info about?] where {~[I should]/~[should I]/[I have?] to/~[do I have to]} go ~[when I arrive]
+	{~[is there] ~[something special]/what} {I have to/to/I should} do ~[when I arrive] [in Belgium?]
+	I [just?] ~[arrived] {[right?] now?} what {~[should I]/~[do I have to] do}
+
+%[pick-up-service](120)
+	~[can] ~[someone] ~[lift me] ~[when I arrive?] ~[at the train station]
+	~[is it possible to] ~[get] ~[someone] to ~[lift me] ~[when I arrive?] ~[at the train station]
+	~[is there#singular] a ~[lift] service ~[at the train station]
+	{~[can I]/~[is it possible to]} have ~[someone] ~[greet] me ~[when I arrive?] ~[at the train station]
+	{~[can I]/~[is it possible to]} meet ~[someone] {~[when I arrive]/~[at the train station]}
+	~[I want to X who contact$someone to meet me at the train station]
+
+%[meet-on-arrival](120)
+	~[get info about?] how ~[would] I be ~[greeted] ~[when I arrive]
+	~[get info about?] who ~[would] ~[greet] me ~[when I arrive]
+	~[get info about?] ~[greetings] ~[when I arrive] [please?]
+
+%[where-sport](120)
+	~[get info about?] ~[how to] ~[exercise] {in ~[lln]/~[at HERE]}
+	~[get info about?] ~[sport] [please?]
+	~[I am searching for] ~[sport] {~[center]/~[facility]}
+	~[is there#plural] ~[sport] {~[center#plural]/~[facility#plural]} {in ~[lln]/~[at HERE]}
+	~[is it possible to] ~[exercise] {in ~[lln]/~[at HERE]}
+
+%[how-access-sport](120)
+	~[get info about?] ~[how to] ~[get admitted into] ~[sport] ~[facility]
+	~[is it possible to] ~[get] {a ~[discount#singular]/~[discount#plural]} on ~[access to] ~[sport] {~[facility#plural]/~[center#plural]}
+	{does/would/will} ~[UCL] give an [easy?] access to ~[sport] {~[facility#plural]/~[center#plural]}
+	~[can I] have an [easy?] access to ~[sport] {~[facility#plural]/~[center#plural]}
+
+%[what-sport-membership](120)
+	what{~[is#elision]/ ~[is#no elision]} the ~[sport card] ~[actually?]
+	~[get info about?] the ~[sport card] [please?]
+	~[what is] the ~[sport membership] [card?]
+	~[request definition$the sport card]
+	~[how to] ~[acquire] ~[discount#plural] {for ~[sport]/for exercising/when going to ~[sport] ~[facility#plural]} {as a ~[student]?}
+	~[what is] {the/my} ~[sport card] ~[intended?] for
+	what ~[should I] use {the/my} ~[sport card] for
+	what does {the/my} ~[sport card] {give/provide} me ~[access to]
+	~[get info about] ~[how to] ~[acquire] {a/the} ~[sport card]
+
+%[which-sport-available](120)
+	~[get info about?] {what/which} sport {game/games?} ~[is there] ~[at HERE?]
+	{what/which} sport {game/games?} {is/are} ~[available] ~[at HERE?] {with the ~[sport card]?}
+	{what/which} sport ~[can I] play {with the ~[sport card]?}
+	what ~[can I] {do/play} with {the/my} ~[sport card]
+
+%[where-medical-centers](120)
+	~[get info about?] ~[where are] ~[medical center#plural] ~[located?] {in ~[lln]?}
+	~[get info about?] ~[where is] {a/the} ~[medical center#singular] ~[located?] {in ~[lln]?}
+	~[get info about] the ~[location] of ~[medical center]
+	~[I am searching for] a ~[medical center#singular]
+	{~[how to] ~[acquire]/~[do you have]} a ~[list] of ~[medical center]
+
+//%[where-help](120)
+//	~[get info about] where I ~[can] ~[acquire] ~[help] [please?]
+//	{where/how} ~[can I] ~[acquire] ~[help] [please?]
+//	where ~[should I] go {if/when} I{ need/~[want#elision]/ ~[want#no elision]} ~[help]
+//	{where/how} ~[can I] ~[acquire] ~[help] {with/for} @[help:problems#pb]
+//	I have @[help:problems#pb] {who ~[can]/~[can] ~[someone]} ~[help:verb] [me?]
+//	~[I need] @[help:problems#aid needed] ~[emoji:sad?]
+
+//%[inform-problems](120)
+//	I have ~[difficulty] with @[help:problems#pb]
+//	~[difficulty?] with @[help:problems#pb]
+//	~[I need] @[help:problem#aid needed] <~~ this is a problem => clash see above
+
+%[what-support-service](120)
+	~[get info about] [the?] ~[support service]
+	~[explain] what [the?] ~[support service] ~[means] [please?]
+	~[request definition$support service]
+	~[request definition$UCL Support Services]
+	~[request definition$UCLouvain student support service]
+
+//%[where-help-special-students](120)
+
+%[what-aide-handi-unit](120)
+	~[get info about] [the?] ~[aide handi]
+	~[explain] what [the?] ~[aide handi] ~[means] [please?]
+	~[request definition$Aide Handi Unit]
+	~[request definition$handi help support]
+	~[request definition$Handi student support service]
+
+%[where-second-hand-furniture](120)
+	~[get info about?] ~[how to] ~[acquire] ~[second hand furniture] {for my ~[kot]/for a ~[kot]/for the ~[kot]?} [please?]
+	~[I want to acquire] ~[second hand furniture] {for my ~[kot]/for a ~[kot]/for the ~[kot]?}
+	~[I am searching for] ~[second hand furniture] {for my ~[kot]/for a ~[kot]/for the ~[kot]?}
+	{~[is it possible to]/~[am I allowed to]} ~[acquire] ~[second hand furniture] {for my ~[kot]/for a ~[kot]/for the ~[kot]?}
+
+//%[where-get-buddies](120)
+
+%[where-to-go-no-place-to-stay](120)
+	~[get info about?] ~[what to do] {if/when} I have ~[no place to stay]
+	I have ~[no place to stay]
+	I don't know ~[what to do] I {don't have a ~[kot]/have ~[no place to stay]}
+	~[what to do] if {the/my} ~[kot] {is not/isn't} ~[available] [for a few days?] ~[when I arrive?]
+	~[I want to X who contact$a place to stay for a few days]

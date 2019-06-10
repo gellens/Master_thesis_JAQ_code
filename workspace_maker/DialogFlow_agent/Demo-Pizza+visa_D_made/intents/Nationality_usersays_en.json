@@ -1,0 +1,42 @@
+[
+  {
+    "id": "0aa707a6-654d-47d5-95f5-2835bc75c7df",
+    "data": [
+      {
+        "text": "My nationality is ",
+        "userDefined": false
+      },
+      {
+        "text": "Japanese",
+        "alias": "Nationality",
+        "meta": "@Nationality",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548576796
+  },
+  {
+    "id": "acee17ed-eb31-40d7-9da4-3c8e2df096cc",
+    "data": [
+      {
+        "text": "I am ",
+        "userDefined": false
+      },
+      {
+        "text": "Italian",
+        "alias": "Nationality",
+        "meta": "@Nationality",
+        "userDefined": true
+      },
+      {
+        "text": ".",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548576796
+  }
+]

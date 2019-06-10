@@ -1,0 +1,91 @@
+// This file contains templates for the "Exams/grades" part of the data visualization.
+
+//========== Aliases ============
+~[Transcript of Records]
+	Transcript of Records
+	transcript of records
+	ECTS Transcript of Records
+	ects transcript of records
+
+//---------- Electronic devices ---------
+~[electronic device]
+	[electronic?] device
+	iWatch
+	electronic watch
+
+//========= Intents =============
+%[when-exams](120)
+	{when/at what time} are ~[exams] ~[organized?]
+	when {do/would} {I/~[student#plural]} {take/sit} ~[exams]
+	~[get info about] ~[exam] sessions {period/periods?}
+	~[I am searching for] ~[information] about ~[exam] sessions
+
+%[how-many-times-exams](120)
+	how many times ~[am I allowed to] {take/sit} a ~[exam]
+	~[get info about] {number of/how many} times to {take/sit} a ~[exam]
+	~[what to do] {if/when} I ~[fail][ed?] an ~[exam]
+	{~[how to]/~[am I allowed to]} drop [out of?] an ~[exam]
+	what {~[should I]/~[do I have to]} take with me {during/at} an ~[exam]
+	{~[do I have to]/~[should I]} take my {~[student] card/ID [card?]} [with me?] {during/at} an ~[exam]
+	~[am I allowed to] {retake/resit/re-sit} {a ~[exam]/my ~[exam]/[my?] ~[exams]} ~[actually?]
+	{what/which} ~[exams] ~[am I allowed to] {retake/resit/re-sit}
+	I ~[fail]ed an ~[exam] ~[am I allowed to] {[re?]take/[re?]sit} it [again?]
+
+%[rules-exams](120)
+	{~[what are]/~[is there#plural]} {rules/standards} about ~[exams] ~[at HERE]
+	{what/which} ~[exams] ~[am I allowed to] {take/sit}
+	~[get info about] ~[exam] [rules?]
+	~[how to] {take/sit} {an ~[exam]/~[exams]}
+
+%[can-I-have-phone-exam](80)
+	{~[what if]/~[am I allowed to]} {have/take} a {~[phone]/~[electronic device]} {on me/with me/in my pocket[s?]?} {during/at} a ~[exam]
+
+%[what-if-cheat](120)
+	~[what if] I cheat {during/in/at} {a ~[exam]/~[exams]}
+	~[what is] the ~[punishment] {for ~[student#plural] who cheat/if I cheat} {during/in/at} {a ~[exam]/~[exams]}
+	what ~[type of?] ~[punishment] {would/will/do} I get if I {cheat/help someone} {during/in/at} {a ~[exam]/~[exams]}
+	~[am I allowed to] {cheat/help someone} {during/at} ~[exams]
+
+%[take-exams-from-home-uni](120)
+	~[am I allowed to] {take/sit} [my?] ~[exams] {from/at/in} my ~[home university]
+	~[get info about] {taking/sitting} ~[exams] {from/at/in} ~[home university]
+	~[I want to X who contact$take exams from my home university]
+	~[I want] to {take/sit} [my?] ~[exams] {from/at/in} my ~[home university]
+
+%[take-exams-from-home](120)
+	~[am I allowed to] {take/sit} [my?] ~[exams] {from/at/in} my {home/house/~[kot]/home country}
+	~[get info about] {taking/sitting} ~[exams] {from/at/in} {home/house/~[kot]/home country}
+	~[I want] to {take/sit} [my?] ~[exams] {from/at/in} my {home/house/~[kot]/home country}
+	~[I want to X who contact$take exams from home]
+
+%[how-to-register-exams](120)
+	~[how to] ~[register] {to/into/at} ~[exams] ~[actually?]
+	~[get info about] ~[exam] ~[registration]
+	~[is it possible to] ~[register] {into/in/at} ~[exams] {online/from my ~[myUCL] account}
+
+%[when-register-exams](120)
+	when {~[should I]/~[do I have to]} ~[register] {to/into/at} ~[exams] ~[actually?]
+	when is the ~[deadline] to ~[register] {to/into/at} ~[exams] ~[actually?]
+	~[is there#singular] a ~[deadline] to ~[register] {to/into/at} ~[exams] ~[actually?]
+
+%[what-var-evaluation](120)
+	{what/which} ~[type of?] {variables/~[elements]} are taken into account ~[in order to] ~[grade:verb] {~[exams]/~[courses]}
+	~[what is] taken into account ~[in order to] ~[grade:verb] {~[exams]/~[courses]}
+	how are {~[exams]/~[courses]} ~[graded]
+
+%[what-grading-syst](120)
+	~[what is] the ~[grading:noun] system ~[at HERE?]
+	~[what is] the distribution of ~[grade:noun]s ~[at HERE?]
+	~[what is] the ~[required] ~[grade:noun] ~[in order to] pass a {~[course]/~[exam]}
+	~[what are] the ~[grading:noun] rules {for ~[exams]?}
+
+%[what-is-transcript-of-records](120)
+	~[request definition$Transcript of Records]
+	~[request definition$transcript of records]
+	~[request definition$ECTS Transcript of Records]
+	~[request definition$ects transcript of records]
+	{~[is there#singular]/~[can I] ~[acquire]} a ~[document] {that says/[that?] states/stating} {which/what} {~[courses]/~[exams]} I [have?] passed
+
+%[when-transcript-of-records-sent](50)
+	when is {the/my} ~[Transcript of Records] sent {to my ~[home university]?}
+	when {will/would} {the/my} ~[Transcript of Records] be sent {to my ~[home university]?}

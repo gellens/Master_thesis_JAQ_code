@@ -1,0 +1,28 @@
+{
+  "id": "256d7631-c134-4eb7-8e3b-9ddacb5e32d9",
+  "name": "arrival UCL",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "The first people to receive you and help manage your stay at UCL will be the persons in charge of exchanges in \u003ca href\u003d\"//uclouvain.be/en/study/les-facultes.html\"\u003eyour host faculty\u003c/a\u003e. Each faculty organises welcome sessions specifically for exchange students. Other actors will also help you integrate, such as the \u003ca href\u003d\"http://www.cgei.be/\"\u003eInternational Student Council (\u003ci\u003eCoordination générale des étudiants internationaux, CGEI\u003c/i\u003e)\u003c/a\u003e and the\u003ca href\u003d\"http://www.esnlln.org/\"\u003e International Erasmus Student Network (IESN)\u003c/a\u003e."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1541414451,
+  "fallbackIntent": false,
+  "events": []
+}

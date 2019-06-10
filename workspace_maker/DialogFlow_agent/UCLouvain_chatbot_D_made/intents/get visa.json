@@ -1,0 +1,28 @@
+{
+  "id": "3b3e5a0c-8d8d-4155-8540-b3fea5496272",
+  "name": "get visa",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "You do not need a visa if you are a national of one of the 28 countries of the European Union, Iceland, Liechtenstein, Monaco, Norway or Switzerland. If you do need a visa, the Enrolment Office will provide you with a registration authorisation letter to add to the student visa application you submit to your Belgian embassy or consulate. In either case, all students must register with their commune of residence within eight days of arrival in Belgium. \u003ca href\u003d\"http://diplomatie.belgium.be/en/services/travel_to_belgium/visa_for_belgium\"\u003eComplete information on Belgian visas\u003c/a\u003e."
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1541414419,
+  "fallbackIntent": false,
+  "events": []
+}

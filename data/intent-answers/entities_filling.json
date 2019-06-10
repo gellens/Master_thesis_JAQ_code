@@ -1,0 +1,100 @@
+{
+    "conditions": [
+        {
+            "options": {
+                "student origin: EU": [
+                    "AT",
+                    "BE",
+                    "BG",
+                    "CZ",
+                    "HR",
+                    "CY",
+                    "DK",
+                    "EE",
+                    "FI",
+                    "FR",
+                    "DE",
+                    "GB",
+                    "GR",
+                    "HU",
+                    "IE",
+                    "IT",
+                    "LV",
+                    "LT",
+                    "LU",
+                    "MT",
+                    "NL",
+                    "PL",
+                    "PT",
+                    "RO",
+                    "SI",
+                    "SK",
+                    "ES",
+                    "SE"
+                ],
+                "student origin: non-EU": []
+            },
+            "entity": "nationality"
+        },
+        {
+            "options": {
+                "student origin: no_need_visa": [
+                    "AT",
+                    "BE",
+                    "BG",
+                    "CZ",
+                    "HR",
+                    "CY",
+                    "DK",
+                    "EE",
+                    "FI",
+                    "FR",
+                    "DE",
+                    "GB",
+                    "GR",
+                    "HU",
+                    "IE",
+                    "IT",
+                    "LV",
+                    "LT",
+                    "LU",
+                    "MT",
+                    "NL",
+                    "PL",
+                    "PT",
+                    "RO",
+                    "SI",
+                    "SK",
+                    "ES",
+                    "SE",
+                    "IS",
+                    "LI",
+                    "MC",
+                    "NO",
+                    "CH"
+                ],
+                "student origin: need_visa": []
+            },
+            "entity": "nationality"
+        },
+        {
+            "options": {
+                "fac: LSM": ["LSM"],
+                "fac: other" : []
+            },
+            "entity": "faculty"
+        }
+    ],
+    "entities_filling": {
+        "nationality": {
+            "question": "First, could you tell me your nationality?",
+            "fallback": "I am afraid I was actually expecting you to say where you are coming from.",
+            "ack": "Got it. What do you want to know?"
+        },
+        "faculty": {
+            "question": "Okay, could you tell me which faculty you are interested in?",
+            "fallback": "I'm sorry I was expecting a faculty name there.",
+            "ack": "Okay, I got it. What do you want to know?"
+        }
+    }
+}

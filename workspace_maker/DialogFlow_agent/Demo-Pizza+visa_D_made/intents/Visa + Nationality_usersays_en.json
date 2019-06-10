@@ -1,0 +1,68 @@
+[
+  {
+    "id": "0f7f687c-ac22-4d37-aac2-b90d569068dc",
+    "data": [
+      {
+        "text": "I\u0027m ",
+        "userDefined": false
+      },
+      {
+        "text": "Turkish",
+        "alias": "Nationality",
+        "meta": "@Nationality",
+        "userDefined": true
+      },
+      {
+        "text": ", do I need a visa ?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548577112
+  },
+  {
+    "id": "d6cc0e71-2fc0-43eb-abd6-f657c0ccd389",
+    "data": [
+      {
+        "text": "My nationality is ",
+        "userDefined": false
+      },
+      {
+        "text": "Italian",
+        "alias": "Nationality",
+        "meta": "@Nationality",
+        "userDefined": true
+      },
+      {
+        "text": ", is it required for me to have a visa ?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548577112
+  },
+  {
+    "id": "8d8c98cb-a00f-48b0-8b5f-450c425dc4e0",
+    "data": [
+      {
+        "text": "I am ",
+        "userDefined": false
+      },
+      {
+        "text": "Japanese",
+        "alias": "Nationality",
+        "meta": "@Nationality",
+        "userDefined": true
+      },
+      {
+        "text": ", do I need a Visa ?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1548577112
+  }
+]

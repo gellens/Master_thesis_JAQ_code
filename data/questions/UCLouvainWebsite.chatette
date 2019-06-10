@@ -1,0 +1,114 @@
+// This file contains the intents for the "UCLouvain website" part of the visualization.
+
+~[myUCL]
+	myUCL
+	myucl
+	~[UCL]
+
+~[virtual dashboard]
+	{virtual/personal?} ~[myUCL?] dashboard
+
+~[moodle]
+	moodle
+~[moodle:long]
+	[the?rand] ~[moodle] ~[platform?rand]
+
+~[ADE]
+	{ADE/ade} ~[platform?]
+	ADE Web Direct Planning
+	{ade/ADE} web direct planning
+
+//============ Intents =================
+%[what-websites-used-by-students](120)
+	{what/which} ~[websites] {are/get} ~[typically?] used by ~[student#plural]
+	{what/which} ~[websites] do ~[student#plural] ~[typically?] use
+	~[is there#plural] ~[websites] {that/which} are ~[typically?] used by ~[student#plural]
+
+%[what-ucl-website](100)
+	~[what is] {the address of/the url of/the URL of?} the ~[official] ~[website] of ~[UCL]
+	does ~[UCL] have a ~[official?] ~[website]
+	where ~[can I] find ~[official] ~[information] about ~[UCL]
+
+%[what-myucl-for](100)
+	~[what is] {a/the/my} ~[myUCL] account [meant?] for
+	~[what is] the ~[purpose] of {a/the/my} ~[myUCL] account
+	~[get info about] {the/my} ~[myUCL] account
+
+%[activate-myucl](100)
+	~[how to] activate {the/my} ~[myUCL] account [please?]
+	~[how to] ~[acquire] {the/my/a} ~[myUCL] account [please?]
+	~[get info about] {~[acquiring]/activation of} {the/my/a} ~[myUCL] account
+
+%[how-set-up-dashboard](60)
+	~[how to] ~[organize] {the/my} ~[virtual dashboard]
+
+%[what-moodle](120)
+	~[what is] ~[moodle] ~[actually?]
+	~[get info about] ~[moodle]
+	~[request definition$moodle]
+	~[is there#singular] an online ~[course] ~[platform] {at ~[UCL]?}
+
+%[get-moodle-account](120)
+	~[get info about?] ~[how to] ~[acquire] a ~[moodle] account [please?]
+	~[get info about] ~[acquiring] a ~[moodle] account
+	do I have a ~[moodle] account
+	am I {given/provided} a ~[moodle] account ~[when I arrive?]
+
+%[how-find-course-moodle](120)
+	~[how to] {search [for?]/seek/find/look for} {a course/courses} on ~[moodle:long]
+	~[get info about] {searching/finding} {a course/courses} on ~[moodle:long]
+
+%[how-register-course-moodle](120)
+	~[how to] ~[register] {to/into} {a course/courses} on ~[moodle:long]
+	~[get info about] ~[registering] [in?]to {a course/courses} on ~[moodle:long]
+	~[I want to X who contact$register into a course on moodle]
+
+%[how-unregister-course-moodle](120)
+	~[how to] ~[unregister] from {a course/courses} on ~[moodle:long]
+	~[get info about] ~[unregistering] from {a course/courses} on ~[moodle:long]
+	~[I want to X who contact$unregister from a course on moodle]
+
+%[what-service-schedule](80)
+	{what/which} ~[platform] is used to {make/show/build} ~[schedules] {at/in} ~[UCL]
+
+%[where-get-schedule](120)
+	~[get info about?] ~[how to] {~[acquire]/~[get access to]/know} {my/the} [course?] ~[schedule]
+	~[get info about] [course?] ~[schedule]
+	~[how to] know {when/what time} my {~[courses]/~[lectures]} are
+	~[how to] know {when/what time} ~[I have to] {go to/follow} my {~[courses]/~[lectures]}
+	where is my {~[course]/~[lecture]?} ~[schedule]
+
+%[what-password-ade](120)
+	{where ~[can I] ~[acquire]/~[what is]} the {~[password]/~[username]} to ~[get access to] {my [course?] ~[schedule]/the [course?] ~[schedule] ~[platform]/~[ADE]}
+	~[what are] the {~[username] and ~[password]/~[password] and ~[username]} on {~[ADE]/the [course?] ~[schedule] ~[platform]}
+	{where ~[can I] ~[acquire]/~[what is]} the {~[password]/~[username]} of [the?rand] ~[ADE] ~[platform?rand]
+	~[I want to X who contact$get access to ADE]
+
+%[do-i-get-email-address](120)
+	{do/will/would} I ~[acquire] {a/my [own?]} ~[student#singular?] ~[email] {address/[in?]box} {when ~[registering]?} {as a ~[student]?} {at ~[UCL]?}
+	~[what is] my [own?] ~[student?] ~[email] {address/[in?]box}
+	~[what are] ~[standard?] {~[student]/teachers/professors/assistants/employees?} ~[email] addresses like {at ~[UCL]?}
+
+%[how-access-email-inbox](120)
+	~[get info about?] ~[how to] ~[get access to] my ~[student?] ~[email] {inbox/address}
+	~[I want to X who contact$get access to my student email address]
+
+%[check-email-frequently](120)
+	~[should I] ~[check out] ~[the emails I receive] ~[frequently]
+	how ~[frequently] ~[should I] ~[check out] ~[the emails I receive]
+	{do/will} {I/~[student#plural]} ~[get] {a lot/lots} of ~[emails] {at ~[UCL]?}
+
+%[can-i-use-other-email-address](120)
+	~[am I allowed to] {use/utilize/work with} an[ ?]other ~[email] address {than my ~[student#singular] one/than my ~[student#singular] address/than the one I was given/than the address I was provided by the ~[UCL]?}
+	~[I want] to use my [own?] ~[email] address {[rather?] than my ~[student#singular] one/[rather?] than my ~[student#singular] address/[rather?] than the one I was given/[rather?] than the address I was provided by the ~[UCL]?}
+
+%[is-there-wifi-ucl](120)
+	~[how to] {get/have} {an internet connection/a ~[wifi] connection/[the?] ~[wifi]} in[side?] ~[UCL]{'s buildings?}
+	does ~[UCL] ~[offer] {an internet connection/a ~[wifi] connection/[the?] ~[wifi]} {to ~[student#plural]?} in[side?] ~[UCL]{'s buildings?}
+	~[I want to X who contact$get access to the internet connection of UCLouvain]
+
+%[how-connect-eduroam](120)
+	~[get info about?] ~[how to] {use/utilize/connect to} {the ~[wifi] connection/[the?rand] eduroam [connection?rand]/the eduroam network} {~[offered] to ~[student#plural] by ~[UCL]?} {in[side?] ~[UCL]?}
+	~[I want to X who contact$connect to the eduroam network]
+	~[I want to X who contact$use the internet connection inside UCLouvain buildings]
+	I {can't/cannot} {use/utilize/connect to} the eduroam {internet/~[wifi?]} connection {inside ~[UCL] buildings?}

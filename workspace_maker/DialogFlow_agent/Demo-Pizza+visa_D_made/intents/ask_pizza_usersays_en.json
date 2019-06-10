@@ -1,0 +1,91 @@
+[
+  {
+    "id": "2a4e6692-bee1-4223-9aa9-b6ceb7f968c9",
+    "data": [
+      {
+        "text": "Would it be possible to have a pizza with ",
+        "userDefined": false
+      },
+      {
+        "text": "cheese",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      },
+      {
+        "text": " ?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1539677288
+  },
+  {
+    "id": "5509a4e2-36ba-4d48-88ee-8ac3b7a65aa3",
+    "data": [
+      {
+        "text": "I would like a ",
+        "userDefined": false
+      },
+      {
+        "text": "prosciutto",
+        "alias": "pizza_type",
+        "meta": "@pizza_type",
+        "userDefined": true
+      },
+      {
+        "text": " pizza.",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1539677288
+  },
+  {
+    "id": "f4d80fef-4708-446e-ad06-a1c21b2bd274",
+    "data": [
+      {
+        "text": "i\u0027ll take the ",
+        "userDefined": false
+      },
+      {
+        "text": "4 cheeses",
+        "alias": "pizza_type",
+        "meta": "@pizza_type",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1539677288
+  },
+  {
+    "id": "a4fb0818-0f95-419f-bae0-b5be2105326b",
+    "data": [
+      {
+        "text": "I\u0027d like to have ",
+        "userDefined": false
+      },
+      {
+        "text": "5",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      },
+      {
+        "text": " pizza ",
+        "userDefined": false
+      },
+      {
+        "text": "margaritta",
+        "alias": "pizza_type",
+        "meta": "@pizza_type",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1539677288
+  }
+]

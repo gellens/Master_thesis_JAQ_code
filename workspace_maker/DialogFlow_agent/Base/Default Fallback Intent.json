@@ -1,0 +1,42 @@
+{
+  "id": "53882253-cbf9-467d-bb8e-cab36d9edfb0",
+  "name": "Default Fallback Intent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.unknown",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": [
+            "I didn\u0027t get that. Can you rephrase it?",
+            "I missed what you said. Could you rephrase?",
+            "Sorry, could you say that again?",
+            "I\u0027m afraid I didn\u0027t catch that, could you rephrase?",
+            "I\u0027m sorry, can you rephrase that?",
+            "Sorry, I didn\u0027t catch that. Can you rephrase?",
+            "Excuse me, what did you say?",
+            "Sorry, what did you say?",
+            "I am afraid I couldn\u0027t understand that. Ask me again?",
+            "Sorry, could you rephrase that?",
+            "Sorry, I didn\u0027t get that. Would you mind repeating?",
+            "I missed that, could you rephrase it?",
+            "I didn\u0027t understand what you said. Could you ask me in another way?"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": true,
+  "events": []
+}

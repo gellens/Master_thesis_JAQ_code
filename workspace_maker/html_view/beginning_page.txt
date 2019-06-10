@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FAQ UCLouvain</title>
+</head>
+
+<body style="padding-left: 30px; padding-right: 30px;">
+    <h1 style="margin-bottom: 0px;">FAQ for exchange/foreign students</h1>
+    <p style="margin-top: 0px; font-size: 0.7em;">This is the matirial used for our chatbot, it comes from multiple pages mostly from the UCLouvain website</p>
+    <br>
+    

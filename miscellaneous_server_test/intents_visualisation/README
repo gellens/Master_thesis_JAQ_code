@@ -1,0 +1,11 @@
+source: https://cloud.google.com/solutions/assessing-the-quality-of-training-phrases-in-dialogflow-intents
+
+To plot the figure run:
+```bash
+python intents_visualisation.py
+```
+
+The above script needs the file `data_intents.json` that can be generated from the generated file of the workspace_maker placed in the folder data/data_small with the commande:
+```bash
+python extract_sources.py
+```

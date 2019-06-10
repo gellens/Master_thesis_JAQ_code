@@ -1,0 +1,314 @@
+{
+    "intents_complex": {
+        "how-register-commune": {
+            "options": {
+                "student origin: EU": [
+                    "AT",
+                    "BE",
+                    "BG",
+                    "CZ",
+                    "HR",
+                    "CY",
+                    "DK",
+                    "EE",
+                    "FI",
+                    "FR",
+                    "DE",
+                    "GB",
+                    "GR",
+                    "HU",
+                    "IE",
+                    "IT",
+                    "LV",
+                    "LT",
+                    "LU",
+                    "MT",
+                    "NL",
+                    "PL",
+                    "PT",
+                    "RO",
+                    "SI",
+                    "SK",
+                    "ES",
+                    "SE"
+                ],
+                "student origin: non-EU": []
+            },
+            "entity": "nationality",
+            "options_answers": {
+                "student origin: EU": "Within 8 days after your arrival in Belgium, you must register with the local government of the town you reside in, by reporting to its Foreigners Department (\"Service des Étrangers\" in French) with documents specified by the town, which will charge a fee. It is advised to go there with a signed housing contract, your \"notice of registration and invoice\" and proof of registration from UCLouvain, your ID or passport In the following days, a police officer will come to your housing to verify your address. When your registration is complete, you will be sent a Registered Foreign Certificate (\"Certificat d'Inscription au Registre des Étrangers\" in French).<br><br>This validation is valid for 5 years.",
+                "student origin: non-EU": "Within 8 days after your arrival in Belgium, you must register with the municipality which you reside in, by reporting to its Foreigners Department (\"Service des Étrangers\" in French) with your ID or passport and visa, your accommodation lease and a passport-type photo of yourself. In the following days, a police officer will come to your housing to verify your address. You will then need to go back to the Foreigners Department to complete the process, and pay an €18 fee. When the registration process is completed, you will be sent a Registered Foreign Cerrtificate (\"Certificat d'Inscription au Registre des Étrangers\").<br><br>This registration is valid for one year."
+            }
+        },
+        "do-i-need-visa": {
+            "options": {
+                "student origin: no_need_visa": [
+                    "AT",
+                    "BE",
+                    "BG",
+                    "CZ",
+                    "HR",
+                    "CY",
+                    "DK",
+                    "EE",
+                    "FI",
+                    "FR",
+                    "DE",
+                    "GB",
+                    "GR",
+                    "HU",
+                    "IE",
+                    "IT",
+                    "LV",
+                    "LT",
+                    "LU",
+                    "MT",
+                    "NL",
+                    "PL",
+                    "PT",
+                    "RO",
+                    "SI",
+                    "SK",
+                    "ES",
+                    "SE",
+                    "IS",
+                    "LI",
+                    "MC",
+                    "NO",
+                    "CH"
+                ],
+                "student origin: need_visa": []
+            },
+            "entity": "nationality",
+            "options_answers": {
+                "student origin: need_visa": "If you are staying for more than 3 months, you have to ask for a visa.<br><br>To get it, you need to apply for a visa at the Belgian embassy or consulate in your home country.<br><br>The university can provide you with a registration authorisation letter to give the embassy. Some faculties can also provide you with a letter proving your intentions of enrolment.<br>Do this as soon as possible as it can take up to 60 days to get a visa.",
+                "student origin: no_need_visa": "You do not need to have a visa."
+            }
+        },
+        "do-i-need-mutuelle": {
+            "options": {
+                "student origin: EU": [
+                    "AT",
+                    "BE",
+                    "BG",
+                    "CZ",
+                    "HR",
+                    "CY",
+                    "DK",
+                    "EE",
+                    "FI",
+                    "FR",
+                    "DE",
+                    "GB",
+                    "GR",
+                    "HU",
+                    "IE",
+                    "IT",
+                    "LV",
+                    "LT",
+                    "LU",
+                    "MT",
+                    "NL",
+                    "PL",
+                    "PT",
+                    "RO",
+                    "SI",
+                    "SK",
+                    "ES",
+                    "SE"
+                ],
+                "student origin: non-EU": []
+            },
+            "entity": "nationality",
+            "options_answers": {
+                "student origin: EU": "You don't need to subscribe to a health insurance if you have the European Health Insurance Card. If you don't have it, you should apply for it.<br>If you want to be reimbursed of a part of your health fees, you can subscribe to a health insurance.",
+                "student origin: non-EU": "It is mandatory for you to subscribe to a health insurance. You are free to choose the one you think suits you best."
+            }
+        },
+        "can-i-work": {
+            "options": {
+                "student origin: EU": [
+                    "AT",
+                    "BE",
+                    "BG",
+                    "CZ",
+                    "HR",
+                    "CY",
+                    "DK",
+                    "EE",
+                    "FI",
+                    "FR",
+                    "DE",
+                    "GB",
+                    "GR",
+                    "HU",
+                    "IE",
+                    "IT",
+                    "LV",
+                    "LT",
+                    "LU",
+                    "MT",
+                    "NL",
+                    "PL",
+                    "PT",
+                    "RO",
+                    "SI",
+                    "SK",
+                    "ES",
+                    "SE"
+                ],
+                "student origin: non-EU": []
+            },
+            "entity": "nationality",
+            "options_answers": {
+                "student origin: EU": "You are allowed to work, without needing a work permit.",
+                "student origin: non-EU": "If you plan on working or on pursuing a paid internship, you need to get a Type C work permit."
+            }
+        },
+        "registration-cost": {
+            "options": {
+                "student origin: EU": [
+                    "AT",
+                    "BE",
+                    "BG",
+                    "CZ",
+                    "HR",
+                    "CY",
+                    "DK",
+                    "EE",
+                    "FI",
+                    "FR",
+                    "DE",
+                    "GB",
+                    "GR",
+                    "HU",
+                    "IE",
+                    "IT",
+                    "LV",
+                    "LT",
+                    "LU",
+                    "MT",
+                    "NL",
+                    "PL",
+                    "PT",
+                    "RO",
+                    "SI",
+                    "SK",
+                    "ES",
+                    "SE"
+                ],
+                "student origin: non-EU": []
+            },
+            "entity": "nationality",
+            "options_answers": {
+                "student origin: EU": "The tuition fees are identical across all Belgian French-speaking universities: usually €835/year even though it can vary a little depending on your economic status and other factors.<br>You can calculate your own tuition fees on <a href=\"https://uclouvain.be/en/study/inscriptions/tuition-fees.html\">this webpage</a>.",
+                "student origin: non-EU": "For students from outside EU, the tuition fees can vary between €0 and €4000, depending on your economic situation and other factors.<br>You can calculate your own tuition fees on <a href=\"https://uclouvain.be/en/study/inscriptions/tuition-fees.html\">this webpage</a>."
+            }
+        },
+        "where-faculty-offices": {
+            "options": {
+                "fac: LSM": [
+                    "LSM"
+                ],
+                "fac: other": []
+            },
+            "entity": "faculty",
+            "options_answers": {
+                "fac: LSM": "The offices of the LSM faculty are located near the centre of Louvain-la-Neuve, in the building \"Collège des Doyens\", Place des Doyens, 1 1348 Louvain-la-Neuve.",
+                "fac: other": "I'm afraid I don't have this information. You should easily find it on the <a href=\"https://uclouvain.be\">website of the university</a>."
+            }
+        },
+        "how-to-enrol-ucl": {
+            "options": {
+                "student origin: EU": [
+                    "AT",
+                    "BE",
+                    "BG",
+                    "CZ",
+                    "HR",
+                    "CY",
+                    "DK",
+                    "EE",
+                    "FI",
+                    "FR",
+                    "DE",
+                    "GB",
+                    "GR",
+                    "HU",
+                    "IE",
+                    "IT",
+                    "LV",
+                    "LT",
+                    "LU",
+                    "MT",
+                    "NL",
+                    "PL",
+                    "PT",
+                    "RO",
+                    "SI",
+                    "SK",
+                    "ES",
+                    "SE"
+                ],
+                "student origin: non-EU": []
+            },
+            "entity": "nationality",
+            "options_answers": {
+                "student origin: EU": "To register, you must first complete an online application form. This form is available starting on the 1st of December and the deadline to fill it in is August 31.<br>When your online application is complete and your accompanying documents are received by the university, your file will be assessed and, if approved, the Enrolment Office will send you a registration authorisation.<br><br>You can bypass the application procedure if you have a Belgian degree and directly start registering online.<br><br>Once you registered into the university, you will need to register into your faculty and into the municipality you'll live in (thus certainly the City Hall of Louvain-la-Neuve).<br><br>You can get more information in <a href=\"https://uclouvain.be/en/study/inscriptions\">this section</a>.",
+                "student origin: non-EU": "To register, you must first complete an online application form. This form is available starting on the 1st of December and the deadline to fill it in is April 30.<br>When your online application is complete and your accompanying documents are received by the university, your file will be assessed and, if approved, the Enrolment Office will send you a registration authorisation.<br><br>Once you registered into the university, you will need to register into your faculty and into the municipality you'll live in (thus certainly the City Hall of Louvain-la-Neuve).<br><br>You can get more information in <a href=\"https://uclouvain.be/en/study/inscriptions\">this section</a>."
+            }
+        },
+        "LSM-welcome-event": {
+            "options": {
+                "student origin: EU": [
+                    "AT",
+                    "BE",
+                    "BG",
+                    "CZ",
+                    "HR",
+                    "CY",
+                    "DK",
+                    "EE",
+                    "FI",
+                    "FR",
+                    "DE",
+                    "GB",
+                    "GR",
+                    "HU",
+                    "IE",
+                    "IT",
+                    "LV",
+                    "LT",
+                    "LU",
+                    "MT",
+                    "NL",
+                    "PL",
+                    "PT",
+                    "RO",
+                    "SI",
+                    "SK",
+                    "ES",
+                    "SE"
+                ],
+                "student origin: non-EU": []
+            },
+            "entity": "nationality",
+            "options_answers": {
+                "student origin: EU": "The LSM organizes a mandatory information session at the beginning of each term, where you can learn how to finalize your course registration and get other useful information.<br><br>You will need to bring the proof your health insurance covering, and will receive your student card and your access card.",
+                "student origin: non-EU": "The LSM organizes a mandatory information session at the beginning of each term, where you can learn how to finalize your course registration and get other useful information.<br><br>You will need to bring the proof your health insurance covering, your visa and passport, and will receive your student card and your access card."
+            }
+        }
+    },
+    "entities_filling": {
+        "nationality": {
+            "question": "First, could you tell me your nationality?",
+            "fallback": "I am afraid I was actually expecting you to say where you are coming from.",
+            "ack": "Got it. What do you want to know?"
+        },
+        "faculty": {
+            "question": "Okay, could you tell me which faculty you are interested in?",
+            "fallback": "I'm sorry I was expecting a faculty name there.",
+            "ack": "Okay, I got it. What do you want to know?"
+        }
+    }
+}

@@ -1,0 +1,570 @@
+// This file contains the intents for the "Belgium" part of the visualization.
+// It can use aliases and slots from `common.chatette`.
+
+//============= Nouns =================
+~[mutuelle]
+	mutuelle
+	mutuelle
+	mutuelle
+	mutualite
+	mutualité
+	health insurance
+	health insurance
+	health insurance
+	health insurance
+	health insurance
+~[health insurance]
+	health insurance
+	health insurance
+	[health?] insurance
+
+~[EU health card]
+	EU health [insurance?] card
+	European health [insurance?] card
+	European Health Insurance Card
+	EHIC
+
+~[mutualite chretienne]
+	mutualite chretienne
+	Mutualite Chretienne
+	mutualité chrétienne
+	Mutualité Chrétienne
+
+~[work permit]
+	~[job] ~[permit]
+
+~[social security]
+	social security
+
+~[VAT]
+	VAT
+	vat
+	value-added tax
+	Value-Added Tax
+
+~[bus#singular]
+	bus
+	bus
+	bus
+	bus
+	bus
+	bus
+	bus
+	bus
+	bus
+	bus
+	bus // More probability to generate "bus"
+	coach
+~[bus#plural]
+	buses
+	buses
+	buses
+	buses
+	buses
+	buses
+	buses
+	buses
+	buses
+	buses
+	buses
+	buses // More probability to generate "buses"
+	coaches
+
+~[taxi#singular]
+	taxi
+	taxi
+	taxi
+	[taxi?]cab
+~[taxi#plural]
+	taxis
+	taxis
+	taxis
+	[taxi?]cabs
+
+~[driving rules]
+	road ~[rule#plural]
+	driving ~[rule#plural]
+
+~[bike]
+	bike
+	bicycle
+~[bike:verb]
+	bike
+	{use/ride} {the/a} ~[bike]
+~[biking:verb]
+	biking
+	{using/riding} {the/a} ~[bike]
+
+~[plane]
+	[air?]plane
+	aircraft
+	aeroplane
+
+~[public transport]
+	[public?] transport[ation?]
+
+~[postal service#singular]
+	post[al?] service
+	mail service
+~[postal service#plural]
+	post[al?] services
+	mail services
+
+~[electricity]
+	electricity
+	power
+
+~[waste]
+	waste
+	garbage
+	trash
+	rubbish
+
+~[childcare]
+	childcare
+	{child/day/infant} care
+	babysitting
+
+~[life cost]
+	[everyday?] life ~[fees]
+	~[usual] ~[fees]
+
+~[shop]
+	shop
+	shop
+	shop
+	store
+	store
+	store
+	[super?]market
+	[super?]market
+	boutique
+
+//=============== Intents ===================
+%[is-belgium-nice](120)
+	is it ~[nice] {in ~[Belgium]/~[at HERE]}
+	{will/would} I ~[like] {to ~[live]/~[living:verb]} {in ~[Belgium]/~[at HERE]}
+	{will/would} I ~[like] ~[Belgium]
+
+%[what-is-belgium](120)
+	~[get info about?] ~[Belgium] [please?]
+	~[what is] ~[Belgium]
+	{what/which} ~[type of] country is ~[Belgium]
+
+%[double-nationality](120)
+	am I ~[considered?] ~[european] {as/if} I have a ~[double nationality]
+	I have {two/2/several/more than one/more than 1} {nationalities/origins/citizenships}[,?] am I ~[considered?] ~[european]
+
+%[can-i-leave](60)
+	~[am I allowed to] {leave/travel outside} ~[Belgium] {during my ~[studies]?}
+	~[I want] to {leave/travel outside} ~[Belgium] during my ~[studies]
+	~[I want to X who contact$leave Belgium during my studies]
+
+%[to-do-bf-leaving-belgium](120)
+	~[should I] do ~[something special] before  ~[leaving] ~[Belgium]
+	~[is there] ~[something special] {I have to/to/I should} do before ~[leaving] ~[Belgium]
+	~[I want to X who contact$leave Belgium for good]
+	~[I want to X who contact$leave Belgium]
+
+%[should-i-register-commune](120)
+	~[should I] {register/subscribe} {with/at} {the/my} ~[commune] ~[when I arrive?]
+	~[do I have to] {register/subcribe} {with/at} {the/my} ~[commune] ~[when I arrive?]
+
+%[how-register-commune](120)
+	~[how to] {register/subscribe} {with/at} {the/my} ~[commune] [please?]
+	{~[I want] to?} {register/subscribe} with the ~[commune]
+	~[I want to X who contact$register with the municipality]
+
+%[what-doc-commune-registration](120)
+	{what/which} ~[documents] ~[should I] ~[bring] {when/to} {register/subscribe} {[in?]to/at} {the/my} ~[commune]
+	~[should I] ~[bring] [some?] ~[documents] [with me?] {when/to/in order to} {register/subscribe} {into/to/at/with} {the/my} ~[commune]
+
+%[when-city-hall-open](120)
+	when is the ~[commune] [offices?] open
+	~[what are] the opening {hours/time periods} of {the/my} ~[commune] [offices?]
+	~[get info about] [the?] opening {hours/time periods} of {the/my?} ~[commune] [offices?]
+
+%[do-i-need-visa](120)
+	{do/will/would} I need a visa {in ~[Belgium]/~[to study in BE]/~[at HERE]}
+	~[should I] {~[acquire]/ask for} a visa {~[to study in BE]?}
+	is it ~[required] to {have/possess} a visa {~[to study in BE]?}
+
+%[do-i-need-passport](100)
+	do I need a {passport/ID/ID card} {in ~[Belgium]/~[to study in BE]/~[at HERE]}[\??/80]
+	~[should I] ~[acquire] a {passport/ID/ID card} {~[to study in BE]?}[\??/80]
+
+%[what-mutuelle](50)
+	~[get info about?] ~[mutuelle]
+	~[request definition$mutuelle]
+	~[request definition$mutualite]
+	~[request definition$health insurance]
+
+%[what-mutuelle-does](120)
+	what does a ~[mutuelle] do
+	what ~[should I] ~[acquire] a ~[mutuelle] for
+	why ~[should I] ~[acquire] a ~[mutuelle]
+
+%[do-i-need-mutuelle](120)
+	do I need a ~[mutuelle] {in ~[Belgium]/to come to ~[Belgium]/to go to ~[Belgium]/~[at HERE]?}
+	{~[do I have to]/~[should I]} ~[acquire] a ~[mutuelle] {in ~[Belgium]/to come to ~[Belgium]/to go to ~[Belgium]/~[at HERE]?}
+
+%[what-eu-health-card](120)
+	~[what is] [the?] ~[EU health card] [for?]
+	~[get info about?] ~[EU health card]
+	what {does/would} the ~[EU health card] give me access to
+	~[request definition$EU health card]
+
+%[how-get-eu-health-card](120)
+	~[how to] ~[acquire] a ~[EU health card]
+	~[I want to X who contact$get the EU health card]
+
+%[what-mutuelle-exist](120)
+	{how many/what/which} ~[mutuelle] {~[can I]/~[should I]} {register/subscribe} with
+	{what/which} ~[mutuelle] exist
+	{~[can I] ~[acquire]/~[do you have]} a ~[list] of ~[mutuelle]s
+
+%[contact-partenamut](50)
+	~[how to] ~[contact] partenamut [please?]
+	~[contact] partenamut
+	~[I am searching for] the ~[contact information] of [the?] partenamut
+%[contact-mutualite-chretienne](50)
+	~[how to] ~[contact] ~[mutualite chretienne] [please?]
+	~[contact] ~[mutualite chretienne]
+	~[I am searching for] the ~[contact information] of [the?] ~[mutualite chretienne]
+
+%[additional-insurance](120)
+	~[get info about] ~[additional] ~[health insurance] [please?]
+	are {all/every} {medical/therapeutic/health related} ~[fees] ~[refunded] by ~[mandatory?] ~[mutuelle]
+	does [the?] ~[mandatory?] ~[mutuelle] ~[refund] {all/every} {medical/therapeutic/health related} ~[fees]
+	~[should I] take a ~[additional] ~[health insurance]
+
+%[university-health-insurance](120)
+	~[is there] a ~[health insurance] ~[offered] by [the?] ~[UCL]
+	does [the?] ~[UCL] ~[offer] a ~[health insurance]
+	~[get info about] ~[UCL] ~[health insurance]
+
+%[cost-social-security](120)
+	~[should I] pay for ~[social security]
+	what {is/would be/will be} the ~[cost] of ~[social security] {for me/for a student?}
+	~[get info about] [the?] ~[cost] of ~[social security]
+
+%[social-security-coverage](120)
+	~[get info about?] ~[social security]
+	what {is/will be/would be} the coverage of ~[social security]
+	what is {covered/dealt with} by [the?] ~[social security]
+	what does ~[social security] {cover/deal with}
+
+%[need-work-permit](120)
+	~[get info about?] ~[work permit] [please?]
+	~[should I] ~[acquire] a ~[work permit] {if ~[I want] to work during my ~[studies]?}
+
+%[can-i-work](120)
+	~[am I allowed to] {get a ~[job]/~[work]} {during my ~[studies]?}
+	~[I want] to {get a ~[job]/~[work]} during my ~[studies]
+
+%[certificate-family-allowance](80)
+	~[how to] ~[acquire] a {certificate/document/paper} for my [family?] allowance fund
+
+%[should-pay-taxes](50)
+	{~[should I]/~[do I have to]} pay [for?] tax[es?]
+
+%[vat-in-belgium](120)
+	what is the ~[standard] {~[VAT]/tax rate/tax rate on products} ~[at HERE?]
+
+%[how-move-around-in-belgium](120)
+	~[how to] ~[move around] {in ~[Belgium]?}
+	~[what is] ~[the best way] to ~[move around] {in ~[Belgium]?}
+	~[what are] the ~[available] ~[public transport] {in ~[Belgium]?}
+	~[is there#singular] a {train/~[bus]/~[taxi]/metro/tram[way?]} station in ~[lln]
+	~[how to] ~[arrive] {to/in} ~[lln]
+	~[is it possible to] ~[arrive] {to/in} ~[lln] by {train/~[bus]/~[taxi]/[underground] metro/tram[way?]/~[plane]}
+	{what/which} ~[public transport] {~[can I]/~[should I]} {take/get on} ~[in order to] {go/come/~[arrive]} ~[at HERE]
+
+%[how-come-to-belgium](120)
+	~[how to] ~[arrive] {to/in} ~[Belgium]
+	~[what is] ~[the best way] to ~[arrive] {in ~[Belgium]?}
+	{~[should I]/~[do I have to]} {take/get on} a ~[plane] to ~[arrive] {in/to} ~[Belgium]
+	~[is it possible to] ~[arrive] {in/to} ~[Belgium] by {train/~[bus]/~[taxi]/~[plane]}
+
+%[train-ticket-cost](120)
+	how much {money/euros?} does a train ticket cost
+	how much {money/euros?} is a train ticket sold [out?] for
+	~[what is] the ~[cost] of a train ticket [please?]
+	~[get info about] [the?] ~[cost] of {[a?] train ticket/train tickets}
+	~[is there#plural] ~[discount#plural] on train {tickets/bills}
+	~[how to] ~[acquire] ~[discount#plural] on train {tickets/bills}
+
+%[discounted-train-tickets](120) // TODO: remove this question?
+	~[get info about] ~[discounted] train {tickets/passes}
+	{~[give me]/~[tell me]} more about ~[discounted] train {tickets/passes}
+	{what/which} train {tickets/passes} are ~[discounted]
+
+%[how-to-trains](120)
+	~[get info about?] how {do I/~[can I]} {take/get on/use} {the train/trains}
+	~[get info about?] how to {take/get on/use} {the train/trains}
+
+%[are-there-buses](120)
+	~[is there#plural] ~[bus#plural] {in ~[Belgium]/~[at HERE]?}
+	~[can I] ~[travel] by ~[bus#singular] {in ~[Belgium]/~[at HERE]?}
+	~[get info about] ~[bus#plural] {in ~[Belgium]/~[at HERE]?}
+	~[can I] ~[arrive] {in/to} ~[lln] {by/with the} ~[bus#singular]
+
+%[how-to-bus](120)
+	~[how to] {take/get on/use} {the ~[bus#singular]/~[bus#plural]}
+	~[I am searching for] ~[information] {about/on} how to {take/get on/use} {the ~[bus#singular]/~[bus#plural]} {in ~[Belgium]/~[at HERE]?}
+	~[get info about] how to {take/get on/use} {the ~[bus#singular]/~[bus#plural]} {in ~[Belgium]/~[at HERE]?}
+
+%[are-there-taxi](120)
+	~[is there#plural] {~[taxi#plural]/~[taxi#singular] services} {in ~[Belgium]?}
+	does there exist ~[taxi#singular] services {in ~[Belgium]?}
+	~[get info about] {~[taxi#plural]/~[taxi#singular] services}
+
+%[how-to-taxi](120)
+	~[get info about?] how {do I/~[can I]} {take/~[call]/use/request} {the ~[taxi#singular]/~[taxi#plural]}
+	~[get info about?] how to {take/~[call]/use/request} {the ~[taxi#singular]/~[taxi#plural]}
+
+//%[who-can-drive](80)
+//	~[am I allowed to] drive in ~[Belgium]
+
+//%[rent-car](120)
+
+%[driving-rules](120)
+	~[get info about?] ~[what are?] [the?] ~[driving rules] {in ~[Belgium]?} [please?]
+	~[what are] [the?] ~[rule#plural] on the road {in ~[Belgium]?}
+	~[how to] drive in ~[Belgium]
+
+%[possible-to-bike](120)
+	~[get info about] ~[biking:verb] {in ~[Belgium]/~[at HERE]}
+	~[can I] ~[bike:verb] ~[easily?] {in ~[Belgium]/~[at HERE]?}
+	~[how to] ~[bike:verb] {in ~[Belgium]/~[at HERE]}
+
+%[get-around-lln](120)
+	~[how to] ~[move around] {in/at?} ~[lln]
+	~[what is] ~[the best way] to ~[move around] {in/at?} ~[lln]
+
+%[how-get-phone-subscription](120)
+	~[what to do] {if ~[I want]?} to ~[acquire] a ~[phone] ~[subscription]
+	~[how to] ~[acquire] a ~[phone] ~[subscription] [please?]
+	~[get info about] ~[acquiring] a ~[phone] ~[subscription]
+	~[I want to acquire] a ~[phone] ~[subscription]
+
+%[what-kinds-phone-subscriptions](120)
+	{what/which} ~[type of?] ~[phone] ~[subscription#plural] {~[is there#plural]/exist} {in ~[Belgium]?}
+	what are ~[phone] ~[subscription#plural] like in ~[Belgium]
+	what do ~[phone] ~[subscription#plural] look like in ~[Belgium]
+
+//%[how-get-internet](120)
+//	~[what to do] {if ~[I want]?} to ~[acquire] {the internet/an internet connection}
+//	~[how to] ~[acquire] {the internet/an internet connection}
+//	~[get info about] ~[acquiring] {the internet/an internet connection}
+//	~[I want to acquire] an internet connection
+
+%[is-there-post](120)
+	~[is there#plural] ~[postal service#plural] {in ~[Belgium]/~[at HERE]?}
+	~[how to] send {~[post letter#plural]/a ~[post letter#singular]} {from ~[Belgium]/in ~[Belgium]/~[at HERE]?}
+
+%[television-services](120)
+	~[how to] ~[acquire] a ~[TV connection]
+	~[get info about] ~[acquiring] a ~[TV connection]
+	{who/what agency} can install a ~[TV connection]
+
+%[electricity-services](120)
+	~[how to] {get/be provided with} ~[electricity]
+	~[get info about] ~[acquiring] a ~[electricity] connection
+	{who/what agency} can install a ~[electricity] connection [please?]
+
+%[power-plugs-and-tension](120)
+	~[what are] the ~[standard?] ~[specificities] {for/~[concerning]} ~[electricity] [provision?] in ~[Belgium]
+	~[what are] the standards ~[concerning] ~[electricity] [provision?] in ~[Belgium]
+	~[is there#plural] ~[specificities] {for/~[concerning]} ~[electricity] [provision?] {in ~[Belgium]/~[at HERE]}
+
+%[how-waste-management](120)
+	~[what are] the ~[standard?] ~[specificities] {for/~[concerning]} ~[waste] ~[management] in ~[Belgium]
+	~[what are] the standards ~[concerning] ~[waste] ~[management] in ~[Belgium]
+	~[is there#plural] ~[specificities] {for/~[concerning]} ~[waste] ~[management] {in ~[Belgium]/~[at HERE]}
+	~[get info about] ~[waste] ~[management]
+
+%[waste-categories](120)
+	~[what are] [the?] ~[main] ~[categories] {of/for} ~[waste] {in ~[Belgium]?}
+	how is ~[waste] ~[categorized] in ~[Belgium]
+
+%[waste-collection-schedule](120)
+	what is the ~[schedule] {for/~[concerning]} ~[waste] collection
+	{~[how to]/~[what to do] to} ~[acquire] the ~[schedule] {for/~[concerning]} ~[waste] collection {~[at HERE]?}
+	~[get info about] [the?] ~[schedule] {for/~[concerning]} ~[waste] collection
+	when is {the/my} ~[waste] collected
+
+%[i-dont-want-recycle](120)
+	~[what if?] ~[I don't want] to {recycle/sort/collect} {the/my} ~[waste]
+	~[what if?] I don't care about the {environment/~[waste] collection}
+	~[what if] I don't {recycle/sort/collect} {the/my} ~[waste]
+
+%[how-health-system-work](120)
+	how does the health {system/organization/organisation} ~[function] {in ~[Belgium]?}
+	~[what is] the health {system/organization/organisation} like {in ~[Belgium]?}
+
+%[are-there-pharmacies](120)
+	~[is there#plural] ~[pharmacies] {in ~[Belgium]/~[at HERE]}
+	~[what to do] {if ~[I want]/if ~[I need]?} to ~[acquire] ~[remedies]
+	~[I am searching for] {~[pharmacies]/a ~[pharmacy]}
+
+%[what-emergency-phone-nb](120)
+	~[what are] ~[important?] emergency ~[phone?] numbers {in ~[Belgium]/in[side?] ~[UCL]?}
+	~[get info about] ~[important?] ~[UCL?] emergency ~[phone] numbers [please?]
+	{~[can I] ~[acquire]/~[do you have]} a ~[list] of emergency ~[phone] numbers
+	~[how to] {report/declare} {accident[s?]/fight[s?]/theft[s?]/open door[s?]/open window[s?]/security ~[problem][s?]}
+	~[what is] the ~[phone?] number of the {police[men?]/firefighters}
+	~[how to] ~[call] {the police[men?]/the firefighters/an ambulance}
+
+%[are-there-childcare-facilities](120)
+	~[is there#plural] ~[childcare] {services/facilities} ~[organized?] in ~[Belgium]
+	for who[m?] are ~[childcare] {services/facilities} in ~[Belgium]
+	for who[m?] are ~[belgian] ~[childcare] {services/facilities}
+	who are ~[childcare] {services/facilities} in ~[Belgium] for
+	who are ~[belgian] ~[childcare] {services/facilities} for
+
+%[childcare-facilities-lln](120)
+	[where?] ~[is there#plural] ~[childcare] {services/facilities} {in/at} ~[lln]
+	where are ~[childcare] {services/facilities} in ~[lln] [please?]
+	~[get info about] ~[childcare] {services/facilities} in ~[lln]
+	~[I am searching for] {a ~[childcare] facility/~[childcare] facilities?} {in/at} ~[lln]
+
+%[cost-childcare](120)
+	~[how much money] ~[costs:verb] [a?] ~[childcare] service ~[at HERE?]
+	how much [money] does a ~[childcare] facility ~[cost:verb] ~[at HERE?]
+	~[what is] [the?] ~[cost] of ~[childcare] {services/facilities} ~[at HERE]
+	~[get info about?] ~[cost] of ~[childcare] {services/facilities}
+
+%[what-school-system](120)
+	~[what is] the ~[scholarly] {system/scheme} [for children?] [like?] {in ~[Belgium]?}
+	what does the ~[scholarly] {system/scheme} look like {in ~[Belgium]?}
+	~[get info about?] [the?] ~[scholarly] {system/scheme} [for children?]
+
+%[schools-in-lln](120)
+	{what/which} schools ~[is there#plural] in ~[lln]
+	~[is there#plural] schools [for children?] in ~[lln]
+	~[I am searching for] a school {in ~[lln]?}
+
+%[belgian-study-system](120)
+	~[what is] the ~[belgian] {study/~[academic]} system
+	~[what is] the {study/~[academic]} system in ~[Belgium]
+	~[get info about] [the?] ~[belgian] {study/~[academic]} system
+	~[get info about] [the?] {study/~[academic]} system {in ~[Belgium]}
+
+%[what-bachelor](80)
+	~[what is] a bachelor ~[degree?]
+	~[get info about?] bachelor ~[degrees?]
+	~[request definition$bachelor]
+
+%[what-master](80)
+	~[what is] a master ~[degree?]
+	~[get info about?] master ~[degrees?]
+	~[request definition$master]
+
+%[what-advanced-master](80)
+	~[what is] an advanced master ~[degree?]
+	~[get info about?] advanced master ~[degrees?]
+	~[request definition$advanced master]
+
+%[how-much-budget](120)
+	~[get info about?] ~[how much money] ~[should I] ~[budget:verb] {for ~[MY STAY]?}
+	~[get info about?] ~[how much money] {do/would} I need {for ~[MY STAY]?}
+	{is it ~[expensive]/how ~[expensive] is it} {to ~[live]/~[living:verb]} in ~[Belgium]{\??}
+	~[what is] the ~[budget:noun] of {a year/an academic year}{\??}
+	~[what is] the ~[usual] ~[life cost] ~[at HERE?]
+	~[get info about] ~[life cost]
+	~[what is] the {largest/biggest/most expensive} ~[fees] ~[I should] expect ~[at HERE?]
+	~[how much money] does it ~[cost:verb] to {stay/~[live]} in ~[Belgium]
+
+%[typical-everyday-costs](120)
+	what ~[type of] ~[fees] ~[should I] expect ~[at HERE?]
+	~[what are] ~[usual] {[everday?] life/living?} ~[fees] ~[at HERE?]
+	how ~[expensive] are the ~[usual] {[everyday?] life/living} ~[fees] ~[at HERE]
+	{~[what is] the?} ~[cost] of {a [pint of?] beer/a newspaper/a [package of?] coffee/1 liter of milk/one litre of milk/a sandwich/chocolate/bread}
+	how ~[expensive] is {a [pint of?] beer/a newspaper/a [package of?] coffee/1 liter of milk/one litre of milk/a sandwich/chocolate/bread}
+
+%[cost-books](120)
+	~[what is] the ~[cost] of ~[books:noun] [please?]
+	~[get info about] {~[cost] of ~[books:noun]/~[books:noun] ~[cost]}
+	{~[how much money] does it ~[cost:verb]/is it ~[expensive]} to ~[acquire] ~[books:noun]
+	~[how much money] do ~[books:noun] ~[cost:verb]
+	how ~[expensive] are ~[books:noun]
+	{how ~[expensive]/is it ~[expensive]} to ~[acquire] ~[books:noun]
+	how ~[expensive] are ~[books:noun]
+
+%[how-much-budget-food](120)
+	~[what is] the ~[usual] ~[cost] of ~[food] ~[at HERE?]
+	~[get info about] ~[usual] {~[cost] of ~[food]/~[food] ~[cost]}
+	~[get info about?] ~[how much money] ~[should I] ~[budget:verb] {for ~[food]/to eat}
+	~[get info about?] ~[how much money] {do/would} I need {for ~[food]/to eat}
+	~[how much money] does {~[food]/eating/drinking} ~[cost:verb]
+	how ~[expensive] is ~[food]
+	{is it ~[expensive]/how ~[expensive] is it} to {eat/drink} {in ~[Belgium]?}
+
+%[how-much-budget-housing](120)
+	~[get info about?] ~[how much money] ~[should I] {~[budget:verb]/pay} for ~[kot]
+	~[get info about?] ~[how much money] {do/would} I need for ~[kot]
+	~[how much money] does it ~[cost:verb] for a ~[kot]
+	~[how much money] does a ~[kot] ~[cost:verb]
+	{how ~[expensive] is it/is it ~[expensive]} to ~[acquire] a ~[kot] in ~[Belgium]
+
+%[how-much-budget-culture](120)
+	~[what is] the ~[usual] ~[cost] for {~[cultural events]/~[leisure service]/~[party:noun]} ~[at HERE?]
+	~[get info about] ~[usual] ~[cost] for {~[cultural events]/~[leisure service]/~[party:noun]}
+	~[get info about?] ~[how much money] ~[should I] ~[budget:verb] for [attending to?] ~[cultural events]
+	~[get info about?] ~[how much money] {do/would} I need for [attending to?] ~[cultural events]
+	{~[get info about]/~[I am searching for]} [the?] ~[cost] of {~[leisure service]/~[party:noun]}
+	~[how much money] does it ~[cost:verb] to go to [the?] {~[leisure service]/~[party:noun]} in ~[Belgium]
+	~[how much money] does it ~[cost:verb] to go out {in ~[Belgium]?}
+	{how ~[expensive] is it/is it ~[expensive]} to go to [the?] {~[leisure service]/~[party:noun]}
+	{how ~[expensive] is it/is it ~[expensive]} to go out {in ~[Belgium]?}
+
+%[registration-cost](220)
+	~[what is] the {~[cost] of ~[registration]/~[registration] ~[cost]/~[cost] of the studies/~[cost] to ~[study]} {at ~[UCL]?}
+	~[get info about] {~[tuition fees]/~[cost] of ~[registration]/~[registration] ~[cost]/~[cost] of the studies/~[cost] to ~[study]} {at ~[UCL]?}
+	~[how much money] are the ~[tuition fees] {for a year/for 1 year/for one year?}
+	{~[what are] [the?]/~[is there#plural]} ~[tuition fees] {at ~[UCL]?}
+	~[how much money] does it ~[cost:verb] to {~[register]/~[study]} [for?] {one year/a year/1 year} {at ~[UCL]?}
+	{how ~[expensive] is it/is it ~[expensive]} to {~[register]/~[study]} [for?] {one year/a year/1 year} {at ~[UCL]?}
+	~[how much money] {do/would} I need to {~[register]/~[study]} [for?] {one year/a year/1 year} {at ~[UCL]?}
+	~[how much money] {do/will} I [have to?] pay {for [studying for?] one year in ~[UCL]/for [studying for?] a ~[quadrimester] at ~[UCL]?}
+
+%[religion-allowed-belgium](70)
+	~[am I allowed to] {have/practise/profess} {my [own?]/a} ~[religion] in ~[Belgium]
+
+%[what-religion-belgium](120)
+	~[what are] the {most ~[important]/largest/biggest/most followed} ~[religions] in ~[Belgium]
+	{what/which} ~[religions] are {followed/professed/believed [in?]} in ~[Belgium]
+	{what/which} ~[religions] do {people/folks} {have/believe in} in ~[Belgium]
+
+%[religion-allowed-ucl](120)
+	~[am I allowed to] {have/practise/profess} {my [own?]/a} ~[religion] {at/in} ~[UCL]
+	~[do I have to] be {christian/catholic} {to be allowed [to come?]/to be allowed [to enrol]/to be allowed [to register]?} {at/in} ~[UCL]
+	~[do I have to] {have/practice/profess} {christianity/catholism/the christian religion} {to be allowed [to come?]/to be allowed [to enrol]/to be allowed [to register]?} {at/in} ~[UCL]
+
+%[religion-places-lln](120)
+	~[is there#singular] a ~[religion place] in ~[lln]
+	~[is there#plural] ~[religion places] in ~[lln]
+	~[get info about] ~[religion places] in ~[lln]
+	~[I want] to practise my ~[religion] in ~[lln]
+
+%[is-there-leisure](120)
+	{~[is there#singular]/~[I am searching for]} a ~[ANY LEISURE] in ~[lln]
+	{~[is there#plural]/~[I am searching for]} ~[ANY LEISURE]s in ~[lln]
+	~[I want] to {go/find/have fun in/have a good time in} a ~[ANY LEISURE]
+	~[I want] to {have fun/have a good time}
+	~[I want] to {eat/drink/dine} {in/at} a {~[restaurant]/~[bar]}
+
+%[is-there-shops](120)
+	{~[is there#singular]/~[I am searching for]} a ~[shop] in ~[lln]
+	{~[is there#plural]/~[I am searching for]} ~[shop]s in ~[lln]
+	~[I want] to {find/go to} ~[shop]s
+	{~[is there#singular]/~[I am searching for]} a {currency/money/cash} exchange {~[shop]/house} in ~[lln]
+	~[how to] {change/exchange} {currency/money/cash} {in ~[lln]?}
+
+%[is-diploma-valid-abroad](120)
+	is {the/my} ~[UCL] ~[degree] {valid/correct} {abroad/in my home country}
+	is {the/my} ~[degree] delivered by ~[UCL] {valid/correct} {abroad/in my [home?] country}
+	~[can I] {use/utilize} {the/my} ~[UCL] ~[degree] {abroad/in my [home?] country}
+	~[can I] {use/utilize} {the/my} ~[degree] delivered by ~[UCL] {abroad/in my [home?] country}
+	~[get info about] the {validity/usability} of {the/my} ~[UCL] ~[degree] {abroad/in my [home?] country}

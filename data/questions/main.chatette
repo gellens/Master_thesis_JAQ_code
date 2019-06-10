@@ -1,0 +1,22 @@
+// This file references all the files that Chatette should read.
+// Chatette should be executed with this file as input.
+
+|common.chatette
+|uni_common.chatette
+
+|answers.chatette
+|SmallTalk.chatette
+
+|Welcome.chatette
+|WelcomeEvents.chatette
+|Belgium.chatette
+|Accommodation.chatette
+|Language.chatette
+|UCLouvainPresentation.chatette
+|Contact.chatette
+|Registration.chatette
+|UCLouvainWebsite.chatette
+|StudyOrganization.chatette
+|Schedule.chatette
+|ECTS.chatette
+|Exams.chatette

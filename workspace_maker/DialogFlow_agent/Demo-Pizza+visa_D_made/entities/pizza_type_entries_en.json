@@ -1,0 +1,27 @@
+[
+  {
+    "value": "margherita",
+    "synonyms": [
+      "margherita",
+      "marguerite",
+      "nature",
+      "simple",
+      "margarita"
+    ]
+  },
+  {
+    "value": "prosciutto",
+    "synonyms": [
+      "prosciutto",
+      "ham"
+    ]
+  },
+  {
+    "value": "quattro fromaggi",
+    "synonyms": [
+      "quattro fromaggi",
+      "four cheese",
+      "cheeses"
+    ]
+  }
+]

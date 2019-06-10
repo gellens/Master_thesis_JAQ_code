@@ -1,0 +1,14 @@
+[
+  {
+    "action": "smalltalk.agent.bad",
+    "customAnswers": [
+      "I am sorry, if you a trouble to get an information you can contact the student exchange coordinators of your faculty."
+    ]
+  },
+  {
+    "action": "smalltalk.agent.be_clever",
+    "customAnswers": [
+      "I can be improved with user feedbacks."
+    ]
+  }
+]

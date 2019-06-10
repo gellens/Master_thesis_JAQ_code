@@ -1,0 +1,1082 @@
+// This file contains aliases and slots that are used throughout the intents.
+
+//============= Common phrases =====================
+~[is#no elision]
+	is
+	{would/will} be
+~[is#elision]
+	's
+	{'d/'ll} be
+~[are#no elision]
+	are
+	{would/will} be
+~[are#elision]
+	're
+	{'d/'ll} be
+
+~[what is]
+	what{~[is#elision]/ ~[is#no elision]}
+~[what are]
+	what ~[actually] are
+~[how to]
+	how to
+	how do {I/I/I/we}
+	{where/how} ~[can I]
+	~[I want] to
+	~[I need] to
+	~[what to do] {if ~[I want]?} to
+
+~[what if]
+	what if
+	what [exactly?] {could/would/will} {happen/you do} {if/when}
+
+~[when and where]
+	when [and where?]
+	where [and when?]
+
+~[where is]
+	where{~[is#elision]/ ~[is#no elision]} ~[located?]
+~[where are]
+	where{~[are#elision]/ ~[are#no elision]} ~[located?]
+~[located]
+	located
+	situated
+	placed
+
+~[can]
+	{can/could/would}
+~[can I]
+	~[can] I
+	is it possible [for me?] to
+~[I can]
+	I ~[can]
+	it{'s/ is} possible for me
+~[can you]
+	~[can] you [please?]
+	would you be so kind and
+
+~[am I allowed to]
+	am I {allowed/permitted} to
+	do I have the right[s?] to
+	~[can I]
+	~[is it forbidden to]
+~[do I have to]
+	do I have to
+	{will/do} I have to
+	am I {forced/suppposed} to
+	is it ~[mandatory] to
+~[is it forbidden to]
+	is it ~[forbidden] to
+	is it [not?] {allowed/permitted} to
+~[I have to]
+	I have to
+	I{'m/ am} {forced/supposed} to
+
+~[to be allowed]
+	to be {able/allowed/permitted}
+
+~[want#no elision]
+	[would?] [really?] want
+	would [really?] {like/love}
+~[want#elision]
+	'd [really?] {want/like/love}
+~[I want]
+	I ~[want#no elision]
+	I~[want#elision]
+~[I don't want]
+	I {don't/do not} [really?] want
+	I wouldn't [really?] want
+
+~[to study in BE]
+	~[in order to] {come/go/study} in ~[Belgium]
+
+~[get]
+	get
+	have
+	receive
+~[got]
+	got
+	had
+	received
+~[rent]
+	rent
+	lease
+~[acquire]
+	acquire
+	get
+	receive
+	obtain
+~[acquiring]
+	acquiring
+	getting
+	receiving
+	obtaining
+~[I want to acquire]
+	~[I want] to ~[acquire]
+
+~[do you have]
+	{do/would} you [please?] have
+
+~[give me]
+	~[can you?] give me
+	~[can I] {get/have}
+~[tell me]
+	show me
+	tell me
+
+~[I am searching for]
+	I am {looking/searching} for
+	~[I want]
+	~[I need]
+
+~[know]
+	know
+	learn
+	be informed
+
+~[is there#singular]
+	is there
+	would there be
+~[is there#plural]
+	are there
+	would there be
+
+~[would]
+	would
+	will
+~[should]
+	should
+	~[would]
+~[should I]
+	~[should] I
+	{~[should]/do} I {need/have} to
+~[I should]
+	I ~[should]
+	I ~[would?] {need/have} to
+
+~[is it possible to]
+	~[can I]
+	is it possible to
+	~[is there#singular] a possibility to
+	~[is there#plural] possibilities to
+
+~[I need]
+	I{'d/ would?} need
+
+~[someone]
+	someone
+	somebody
+	anyone
+	anybody
+	people
+
+~[what to do]
+	what ~[should I] do
+	where ~[should I] go
+	what to do
+	where to go
+	who ~[can] ~[help:verb]
+	who {~[can I]/~[should I]} {~[call]/get in touch with}
+
+~[I want to X who contact$X]
+	~[I want] to $X[,?] ~[what to do]
+	~[what to do] {if/when} ~[I want] to $X
+	~[I want] to $X
+~[who contact for X$X]
+	~[what to do] for $X
+
+~[type of]
+	type of
+	kind of
+	sort of
+~[types of]
+	types of
+	kinds of
+	sorts of
+
+~[something special]
+	something {specific/special?}
+
+~[concerning]
+	concerning
+	regarding
+	in regards to
+	about
+
+~[how much money]
+	how much [money?]
+	what
+
+~[in order to]
+	[in order?] to
+
+//----------- Large phrases ------------
+~[get info about]
+	{~[give me]/~[tell me]/~[do you have]/~[I want]/~[I want to acquire]?} ~[information] {about/on}
+	~[can you?] ~[tell me] about
+	~[I want] to ~[know] about
+	what about
+
+~[get more info about]
+	{~[give me]/~[tell me]/~[do you have]/~[I want]/~[I want to acquire]?} more ~[information] {about/on}
+	~[can you?] ~[tell me] more about
+	~[I want] to ~[know] more about
+
+~[request definition$DEF]
+	~[what is] {the ~[meaning] of?} $DEF ~[actually?]
+	~[get info about] what $DEF ~[actually?] ~[means]
+	~[define] $DEF [please?]
+	~[explain] what $DEF ~[means] [please?]
+	what does $DEF ~[mean:verb]
+	~[I want] to know what $DEF {means/is}
+	~[I am searching for] the ~[meaning] of $DEF
+
+//============= Interjections ===========
+~[hi]
+	hi
+	hello
+	greetings
+
+~[yes]
+	yes
+	yeah
+	yup
+~[no]
+	no [no?]
+	nope
+
+//============= Verbs ===================
+~[help:verb]
+	help
+	aid
+	assist
+	support
+
+~[arrive]
+	arrive
+	come
+	show up
+~[arrived]
+	arrived
+	came
+	showed up
+
+~[greet]
+	greet
+	welcome
+	meet
+	receive
+~[greeted]
+	greeted
+	welcomed
+	met
+	received
+~[greetings]
+	greetings
+	reception
+~[greeting:noun]
+	welcome
+	greeting
+	reception
+~[greeting:participle]
+	welcoming
+	greeting
+	receiving
+	meeting
+
+~[get access to]
+	access
+	{get/have} access to
+~[access to]
+	access to
+
+~[get admitted into]
+	~[get access to]
+	get admitted {in[to?]/at}
+~[admission to]
+	~[access to]
+	admission {into/to/at}
+
+~[means]
+	is
+	means
+	stands for
+~[mean:verb]
+	mean
+	stand for
+
+~[define]
+	define
+	describe
+	explain
+~[explain]
+	explain
+	describe
+
+~[call]
+	call
+	ask
+	tell
+	contact
+	reach
+~[contact]
+	contact
+	call
+	reach
+	get in touch with
+
+~[lift]
+	[give a?] lift
+	pick up
+~[lift me]
+	lift me
+	give me a lift
+	pick me up
+
+~[organize]
+	organi{s/z}e
+	set up
+	arrange
+~[organizes]
+	organi{s/z}es
+	sets up
+	arranges
+~[organized]
+	organi{s/z}ed
+	set up
+	arranged
+
+~[taking place]
+	taking place
+	organi{s/z}ed
+	occurring
+~[take place]
+	take place
+	occur
+
+~[attend]
+	attend
+	be present at
+	go to
+~[go to]
+	go to
+	get to
+	reach
+
+~[like]
+	like
+	love
+
+~[live]
+	live
+	live
+	live
+	live
+	reside
+	reside
+	reside
+	reside
+	be
+~[living:verb]
+	living
+	living
+	living
+	living
+	residing
+	residing
+	residing
+	residing
+	being
+
+~[considered]
+	considered
+	deemed
+
+~[leaving]
+	leaving
+	quitting
+	going away [from?] // TODO remove the from in some cases
+
+~[work]
+	work
+
+~[refund]
+	refund
+	reimburse
+	repay
+	indemnify
+~[refunded]
+	refunded
+	reimbursed
+	repaid
+	indemnified
+
+~[offer]
+	offer
+	give
+	furnish
+	provide
+~[offered]
+	offered
+	given
+	furnished
+	provided
+
+~[move around]
+	move around
+	travel around
+
+~[travel]
+	travel
+	~[move around]
+	roam
+
+~[function]
+	work
+	function
+
+~[budget:verb]
+	budget
+	prepare
+	plan
+
+~[check out]
+	check [out?]
+	read [through?]
+	look at
+
+~[choose]
+	choose
+	select
+	pick
+~[choosing]
+	choosing
+	selecting
+	picking
+
+~[bring]
+	bring
+	take
+	deliver
+
+~[required]
+	required
+	necessary
+	needed
+
+~[belongs to]
+	belongs to
+	is owned by
+~[belong to]
+	belong to
+	are owned by
+~[belonging to]
+	belonging to
+	being owned by
+
+~[study]
+	study
+	learn
+
+~[practice]
+	practice
+	exercise
+	rehearse
+	train
+	study
+~[practicing]
+	practicing
+	exercising
+	rehearsing
+	training
+	studying
+
+~[interest]
+	interest
+	intrigue
+
+~[intrested]
+	intrested
+	intrigued 
+	curious
+	keen
+
+~[accommodate]
+	accommodate
+	live
+	stay
+	house // Yes, that is a verb
+
+~[fail]
+	fail
+	miss
+
+~[begin]
+	begin
+	start
+~[end]
+	end
+	finish
+
+~[speak]
+	speak
+	talk
+
+//============= Nouns ===================
+~[piece of]
+	{piece/pieces} of
+
+~[information:internal]
+	information
+	info
+~[information]
+	~[information:internal]
+	{piece of/pieces of?} ~[information:internal]
+	~[advice]
+
+~[advice]
+	~[piece of?] advice
+	{tip/tips}
+	guidance
+	{recommendation/recommendations}
+	{counsel/counselling/counseling}
+	{help/aid}
+	direction
+	enlightenment
+	{instruction/instructions}
+
+~[help]
+	help
+	aid
+	assistance
+	support
+	guidance
+	advice
+
+~[contact information]
+	contact ~[information:internal][s?]
+	particulars
+
+~[link#singular]
+	link
+	hyperlink
+~[link#plural]
+	links
+	hyperlinks
+
+~[guide]
+	guide[book?]
+	manual
+	handbook
+
+~[discount#singular]
+	discount
+	[price?] {reduction/cut}
+~[discount#plural]
+	discounts
+	[price?] {reductions/cuts}
+
+~[budget:noun]
+	budget
+	price
+	cost
+
+~[party:noun]
+	party
+	party
+	party
+	celebration
+	feast
+	feast
+
+~[double nationality]
+	{double/dual} {nationality/origin/citizenship}
+
+~[job]
+	work
+	job
+
+~[permit]
+	permit
+	authorization
+	license
+
+~[additional]
+	additional
+	supplementary
+
+~[fees]
+	fees
+	charges
+	costs
+	expenses
+~[tuition fees]
+	tuition fees
+	tuition
+~[cost]
+	cost
+	price
+~[costs:verb]
+	costs
+	is [worth?]
+~[cost:verb]
+	cost
+
+~[rule#singular]
+	rule
+	ruling
+	law
+	legislation
+	guideline
+	regulation
+~[rule#plural]
+	~[rule#singular]s
+
+~[the best way]
+	the {best/easiest} {way/fashion}
+
+~[phone]
+	{mobile/cellular?} [tele?]phone
+
+~[subscription#singular]
+	subscription
+	contract
+~[subscription#plural]
+	subscriptions
+	contracts
+
+~[post letter#singular]
+	post[al?] letter
+	{post[al?]?} mail [letter?]
+~[post letter#plural]
+	post[al?] letters
+	{post[al?]?} mail [letters?]
+
+~[TV]
+	television
+	TV
+~[TV connection]
+	~[TV] connection
+	~[TV] cable
+
+~[specificities]
+	specificities
+	particularities
+
+~[management]
+	management
+	administration
+	care
+	handling
+
+~[category]
+	category
+	class
+	group
+~[categories]
+	categories
+	classes
+	groups
+
+~[pharmacy]
+	pharmacy
+	drugstore
+~[pharmacies]
+	pharmacies
+	drugstores
+
+~[remedies]
+	pills
+	medicine
+	drugs
+	remedies
+
+~[food]
+	food[stuff?]
+	aliments
+	meals
+	snacks
+
+~[religion]
+	religion
+	religion
+	religion
+	religion
+	religion
+	religion
+	spirituality
+	spirituality
+	spirituality
+	ritual
+	[religious?] beliefs
+	[religious?] beliefs
+	[religious?] beliefs
+~[religions]
+	religions
+	religions
+	religions
+	religions
+	religions
+	religions
+	religions
+	spiritualities
+	spiritualities
+	spiritualities
+	rituals
+	[religious?] beliefs
+	[religious?] beliefs
+	[religious?] beliefs
+
+~[religion place]
+	religious building
+	[protestant?] church
+	mosque
+	temple
+	chapel
+~[religion places]
+	~[religion place]s
+
+~[website]
+	[web?]site
+	web site
+	webpage
+	web page
+~[websites]
+	~[website]s
+
+~[purpose]
+	purpose
+	aim
+	goal
+	objective
+
+~[platform]
+	platform
+	service
+	~[website]
+
+~[password]
+	password
+	pass word
+~[username]
+	username
+	user name
+	login
+	identifier
+
+~[email]
+	email
+	e-mail
+	electronic mail
+~[emails]
+	~[email]s
+
+~[the emails I receive]
+	my emails
+	the ~[emails] I {~[get]/~[got]}
+	the ~[emails] I {get/got/am/was} sent
+
+~[wifi]
+	wifi
+	WiFi
+	Wi-Fi
+
+~[list]
+	list[ing?]
+	list[ing?]
+	list[ing?]
+	list[ing?]
+	list[ing?]
+	inventory
+	inventory
+	index
+	index
+	table
+	record
+
+~[event]
+	event
+	event
+	activity
+	celebration
+~[events]
+	events
+	activities
+	celebrations
+
+~[location]
+	location
+	place
+	situation
+	spot
+~[locations]
+	~[location]s
+
+~[map]
+	map
+	plan
+
+~[workload]
+	workload
+	work load
+	amount of work
+
+~[deadline]
+	deadline
+	time limit
+	due date
+
+~[organization]
+	organi{s/z}ation
+	management
+	arrangement
+
+~[punishment]
+	punishment
+	sanction
+	penalty
+
+~[element]
+	element
+	feature
+	aspect
+	component
+	factor
+~[elements]
+	~[element]s
+
+~[process]
+	process
+	procedure
+	steps
+
+~[requirement]
+	requirement
+	[pre?]condition
+	prerequisite
+~[requirements]
+	~[requirement]s
+
+~[testimony]
+	certificate
+	proof
+	evidence
+	testimony
+	attestation
+
+~[cultural events]
+	culture
+	{cultural/artistic} events
+
+~[ANY LEISURE]
+	~[leisure service]
+	~[restaurant]
+	~[bar]
+~[bar]
+	pub
+	bar
+~[restaurant]
+	restaurant
+~[leisure service]
+	cinema
+	theat{er/re}
+	concert
+
+~[meaning]
+	meaning
+	definition
+
+~[stuff]
+	stuff
+	things
+
+~[problem]
+	problem
+	problem
+	issue
+	issue
+	concern
+
+//============= Adjectives ==============
+~[useful]
+	useful
+	helpful
+	handy
+
+~[nice]
+	nice
+	likeable
+	neat
+
+~[important]
+	important
+	crucial
+	essential
+	relevant
+	significant
+~[main]
+	main
+	[most?] prominent
+	major
+	fundamental
+	primary
+
+~[scholarly]
+	scholarly
+	school
+
+~[academic]
+	academic
+	university
+	scholarly
+
+~[usual]
+	usual
+	frequent
+	routine
+	everyday
+	customary
+
+~[standard]
+	standard
+	usual
+	typical
+
+~[mandatory]
+	mandatory
+	compulsory
+	obligatory
+	enforced
+
+~[categorized]
+	categori{s/z}ed
+	classified
+	grouped
+
+~[available]
+	available
+	accessible
+
+~[discounted]
+	discounted
+	reduced
+	decreased
+	cut
+
+~[official]
+	official
+	authoritative
+~[unofficial]
+	unofficial
+
+~[recommended]
+	recommended
+	suggested
+	urged
+
+~[minimal]
+	minimal
+	minimum
+	min
+~[maximal]
+	maximal
+	maximum
+	max
+
+~[forbidden]
+	forbidden
+	banned
+	proscribed
+	off limits
+
+~[expensive]
+	costly
+	expensive
+	overpriced
+	high-priced
+
+~[intended]
+	intended
+	meant
+
+~[capable]
+	capable
+	able
+
+~[difficult]
+	difficult
+	hard
+
+//============= Adverbs =================
+~[actually]
+	actually
+	exactly
+	in fact
+
+~[easily]
+	easily
+	simply
+
+~[typically]
+	typically
+	commonly
+	usually
+	frequently
+
+~[frequently]
+	frequently
+	often
+	regularly
+
+~[very]
+	very
+	especially
+	particularly
+
+//============= Emojis =================
+~[emoji:happy]
+	:)
+	:D
+	\;)
+	(:
+	:-)
+	:-D
+	\;-)
+	(-:
+	^^
+	^_^
+~[emoji:sad]
+	:(
+	>:(
+	:'(
+	:"(
+	):
+	:-(
+	>:-(
+	:'-(
+	:"-(
+	)-:
+
+//============= Placeholders =============
+@[PLACEHOLDER:nationality]
+	Belgian
+	Belgium
+
+@[PLACEHOLDER:faculty]
+	EPL
+
+~[NAME]
+	John
+	Jack
+	Yves
+	Christine
+	Nicolas
+	Cédrick
+	Mar{y/ie/ia}
+	Simon
+	Julio
+	Antonio
+	Moham[m?]ed
+	Jacqueline
+	Carolin{e/a}
+	Constantin[e?]

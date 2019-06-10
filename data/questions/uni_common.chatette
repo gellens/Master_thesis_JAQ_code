@@ -1,0 +1,730 @@
+// This file contains aliases and slots related to university.
+
+//============ Students ===============
+~[international]
+	international
+	foreign
+~[student#singular]
+	student
+	pupil
+	[under?]graduate
+~[student#plural]
+	students
+	pupils
+	[under?]graduates
+~[international student#singular]
+	~[international] ~[student#singular]
+	~[student#singular] from abroad
+~[international student#plural]
+	~[international] ~[student#plural]
+	~[student#plural] from abroad
+~[exchange student#singular]
+	exchange ~[student#singular]
+	~[international student#singular]
+~[exchange student#plural]
+	exchange ~[student#plural]
+	~[international student#plural]
+
+~[for international students]
+	[intended?] for ~[international student#plural]
+	aimed at ~[international student#plural]
+
+~[when I arrive]
+	when I ~[would?] ~[arrive]
+	[up?]on [my?] arrival
+~[before I leave]
+	[right?] before I ~[would?] leave
+	[right?] before leaving
+	[up?]on [my?] departure
+
+~[MY STAY]
+	my {~[STAY DURATION] long?} stay
+~[STAY DURATION]
+	{a/1/one/2/two/3/three?} year[s?]
+	{a/1/one/2/two/3/three?} {quadrimester/semester/term}[s?]
+	{a/1/one/2/two/3/three?} month[s?]
+
+//============ Institutions ==============
+~[CGEI]
+	CGEI
+	cgei
+	coordination generale des etudiants internationaux
+	Coordination Generale des Etudiants Internationaux
+	coordination générale des étudiants internationaux
+	Coordination Générale des Étudiants Internationaux
+~[ESN]
+	ESN
+	esn
+	Erasmus Student Network
+	erasmus student network
+
+~[AGL]
+	AGL
+	agl
+	Assemblee Generale des etudiants de Louvain
+	Assemblée Générale des étudiants de Louvain
+	assemblee generale des etudiants de louvain
+	assemblée générale des étudiants de louvain
+
+//------------- Support services -----------
+~[support service]
+	~[UCL]['s?] [student?] support service[s?] [office?]
+	~[UCL]['s?] [Student?] Support service[s?] [office?]
+	[student?] support service[s?] [office?] of ~[UCL]
+
+//----------- KAPs and associations --------------
+~[association]
+	association
+	institution
+	club
+	cooperative
+	confederation
+	~[KAP]
+~[associations]
+	associations
+	institutions
+	clubs
+	cooperatives
+	confederations
+	~[KAPs]
+
+~[KAP]
+	KAP
+	kap
+	kot a projet
+	kot-a-projet
+	Kot-A-Projet
+	Kot A Projet
+	kot à projet
+	kot-à-projet
+~[KAPs]
+	KAP['?]s
+	kap['?]s
+	kots a projet
+	kots-a-projet
+	Kots A Projet
+	Kots-A-Projet
+	kots à projet
+	kots-a-projet
+
+//============= Locations ===================
+~[at HERE]
+	{in/at} ~[lln]
+	at ~[UCL]
+	in ~[Belgium]
+	there
+
+~[office]
+	office
+	office
+	office
+	building
+	building
+	bureau
+~[offices]
+	~[office]s
+
+//------------- Countries and cities -----------
+~[european]
+	european
+	European
+	from EU
+
+~[commune]
+	commune
+	town
+	municipality
+	City Hall
+
+~[Belgium]
+	belgium
+~[lln]
+	Louvain-la-Neuve
+	Louvain la Neuve
+	louvain-la-neuve
+	louvain la neuve
+	lln
+	LLN
+	louv
+	Louv
+	Louvain
+	louvain
+
+~[belgian]
+	belgian
+
+//------------ Neighborhoods --------------
+~[neighborhood]
+	neighbo[u?]rhood
+	neighbo[u?]rhood
+	neighbo[u?]rhood
+	neighbo[u?]rhood
+	quartier
+	district
+	district
+	area
+	area
+	zone
+	zone
+~[neighborhoods]
+	~[neighborhood]s
+
+//------------- Medical centers -------------
+~[medical]
+	medical
+	med
+	health
+	care
+~[center#singular]
+	{center/centre}
+	facility
+	institution
+	establishment
+~[center#plural]
+	{centers/centres}
+	facilities
+	institutions
+	establishments
+~[medical center#singular]
+	~[medical] ~[center#singular]
+	clinic
+	infirmary
+	hospital
+~[medical center#plural]
+	~[medical] ~[center#plural]
+	clinics
+	infirmaries
+	hospitals
+
+//------------ Other --------------------
+~[at the train station]
+	at the train {station/terminal} {of ~[lln]/~[at HERE]?}
+
+~[auditorium#singular]
+	auditorium
+	amphitheater
+	amphitheatre
+~[auditorium#plural]
+	auditoria
+	auditoriums
+	amphitheaters
+	amphitheatres
+
+~[AUDITORIUM X]
+	[the?] ~[auditorium] ~[AGOR]
+	[the?] ~[AGOR] ~[auditorium]
+	[the?] ~[auditorium] ~[BARB]
+	[the?] ~[BARB] ~[auditorium]
+	[the?] ~[auditorium] ~[COUB]
+	[the?] ~[COUB] ~[auditorium]
+	[the?] ~[auditorium] ~[DESC]
+	[the?] ~[DESC] ~[auditorium]
+	[the?] ~[auditorium] ~[DOYE]
+	[the?] ~[DOYE] ~[auditorium]
+	[the?] ~[auditorium] ~[ERAS]
+	[the?] ~[ERAS] ~[auditorium]
+	[the?] ~[auditorium] ~[ESOP]
+	[the?] ~[ESOP] ~[auditorium]
+	[the?] ~[auditorium] ~[LECL]
+	[the?] ~[LECL] ~[auditorium]
+	[the?] ~[auditorium] ~[MERC]
+	[the?] ~[MERC] ~[auditorium]
+	[the?] ~[auditorium] ~[MONT]
+	[the?] ~[MONT] ~[auditorium]
+	[the?] ~[auditorium] ~[MORE]
+	[the?] ~[MORE] ~[auditorium]
+	[the?] ~[auditorium] ~[SCES]
+	[the?] ~[SCES] ~[auditorium]
+	[the?] ~[auditorium] ~[SOCR]
+	[the?] ~[SOCR] ~[auditorium]
+	[the?] ~[auditorium] ~[STUD]
+	[the?] ~[STUD] ~[auditorium]
+	[the?] ~[auditorium] ~[SUD]
+	[the?] ~[SUD] ~[auditorium]
+
+//~[the auditorium$NAME]
+//	[the?] ~[auditorium] $NAME
+//	[the?] $NAME ~[auditorium]
+
+~[AGOR]
+	AGOR
+	agor
+	Agora
+~[BARB]
+	BARB
+	barb
+	ste barbe
+	sainte barbe
+	ste-barbe
+	sainte-barbe
+~[COUB]
+	COUB
+	coub
+	coubertin
+	pierre de coubertin
+~[DESC]
+	DESC
+	desc
+	descamps
+~[DOYE]
+	DOYE
+	doye
+	doyen
+~[ERAS]
+	ERAS
+	eras
+	erasme
+~[ESOP]
+	ESOP
+	esop
+	esope
+~[LECL]
+	LECL
+	lecl
+	leclerc
+~[MERC]
+	MERC
+	merc
+	mercator
+~[MONT]
+	MONT
+	mont
+	montesquieu
+~[MORE]
+	MORE
+	more
+	more
+~[SCES]
+	SCES
+	sces
+	sciences
+	A
+~[SOCR]
+	SOCR
+	socr
+	socrate
+~[STUD]
+	STUD
+	stud
+	studio
+~[SUD]
+	SUD
+	sud
+	croix du sud
+
+//============ University ===================
+//------------ Institution ------------------
+~[UCL]
+	UCL[ouvain?]
+	ucl[ouvain?]
+	[the?] ~[university]
+
+~[university]
+	university
+	uni
+	college
+
+~[home university]
+	{home/local} ~[university]
+
+~[physical sites]
+	[physical?] {sites/~[locations]}
+
+~[library]
+	library
+	library
+	library
+	library
+	library
+	library
+	book repository
+	bibliotheca
+~[libraries]
+	libraries
+	libraries
+	libraries
+	libraries
+	libraries
+	libraries
+	book repositories
+	bibliothecas
+
+//----------- Faculties ------------
+~[faculty#singular]
+	faculty
+	fac
+	department
+~[faculty#plural]
+	faculties
+	facs
+	departments
+
+~[MY FACULTY]
+	{a/my} ~[faculty#singular]
+	~[LSM]
+	~[EPL]
+	~[ESPO]
+	~[MEDE]
+	~[FASB]
+	~[FSP]
+	~[FSM]
+	~[LOCI]
+	~[AGRO]
+	~[SC]
+	~[DRT]
+	~[FIAL]
+	~[PSP]
+	~[TECO]
+~[MY FACULTY EXCEPT LSM]
+	{a/my} ~[faculty#singular]
+	~[EPL]
+	~[ESPO]
+	~[MEDE]
+	~[FASB]
+	~[FSP]
+	~[FSM]
+	~[LOCI]
+	~[AGRO]
+	~[SC]
+	~[DRT]
+	~[FIAL]
+	~[PSP]
+	~[TECO]
+
+~[faculty of$NAME]
+	[the?] ~[faculty#singular] of $NAME
+	the $NAME ~[faculty#singular]
+	[the?] $NAME
+
+~[LSM]
+	~[faculty of$LSM]
+	~[faculty of$lsm]
+	~[faculty of$Louvain School of Management]
+	~[faculty of$louvain school of management]
+~[EPL]
+	~[faculty of$EPL]
+	~[faculty of$epl]
+	~[faculty of$Ecole Polytechnique de Louvain]
+	~[faculty of$École Polytechnique de Louvain]
+	~[faculty of$ecole polytechnique de louvain]
+	~[faculty of$école polytechnique de louvain]
+~[ESPO]
+	~[faculty of$ESPO]
+	~[faculty of$espo]
+~[MEDE]
+	~[faculty of$MEDE]
+	~[faculty of$mede]
+	~[faculty of$Medecine]
+	~[faculty of$medecine]
+~[FASB]
+	~[faculty of$FASB]
+	~[faculty of$fasb]
+~[FSP]
+	~[faculty of$FSP]
+	~[faculty of$fsp]
+	~[faculty of$Sante publique]
+	~[faculty of$Santé publique]
+	~[faculty of$sante publique]
+	~[faculty of$santé publique]
+~[FSM]
+	~[faculty of$FSM]
+	~[faculty of$fsm]
+~[LOCI]
+	~[faculty of$LOCI]
+	~[faculty of$loci]
+~[AGRO]
+	~[faculty of$AGRO]
+	~[faculty of$agro]
+	~[faculty of$bioengineering]
+~[SC]
+	~[faculty of$SC]
+	~[faculty of$sc]
+	~[faculty of$Science]
+	~[faculty of$science]
+~[DRT]
+	~[faculty of$DRT]
+	~[faculty of$drt]
+~[FIAL]
+	~[faculty of$FIAL]
+	~[faculty of$fial]
+	~[faculty of$Philosophy]
+	~[faculty of$philosophy]
+~[PSP]
+	~[faculty of$PSP]
+	~[faculty of$psp]
+~[TECO]
+	~[faculty of$TECO]
+	~[faculty of$teco]
+	~[faculty of$Theology]
+	~[faculty of$theology]
+
+//----------- Organization -----------
+~[schedule]
+	schedule
+	timetable
+~[schedules]
+	~[schedule]s
+
+~[agenda]
+	agenda
+	schedule
+	program
+	calendar
+	timetable
+
+~[quadrimester]
+	quadrimest{er/re}
+	semest{er/re}
+	term
+
+~[holidays]
+	holidays
+	vacations
+	days off
+
+~[studies]
+	studies
+	study
+	learning
+
+~[degree]
+	degree
+	diploma
+~[degrees]
+	degrees
+	diplomas
+
+~[registration]
+	registration
+	registration
+	enrollment
+	enrolment
+	enrol[l?]ing
+~[register]
+	register
+	enrol[l?]
+	join
+	sign up
+~[registering]
+	registering
+	enrol[l?]ing
+	joining
+	signing up
+~[unregister]
+	unregister
+	sign {off/out}
+~[unregistering]
+	unregistering
+	signing {off/out}
+~[registered]
+	registered
+	enrol[l?]ed
+
+~[ECTS]
+	ECTS [credits?]
+	ects [credits?]
+	{standard[ized?]?} {work/workload?} credits
+
+~[course]
+	course
+	class
+~[courses]
+	courses
+	classes
+~[lecture]
+	lecture
+	lesson
+~[lectures]
+	~[lecture]s
+
+~[follow]
+	follow
+	take
+	get
+
+~[exam]
+	exam
+	assessment
+	examination
+	final
+	midterm
+~[exams]
+	~[exam]s
+
+~[grade:verb]
+	grade
+	rank
+	evaluate
+	assess
+~[graded]
+	graded
+	ranked
+	evaluated
+	assessed
+~[grading:noun]
+	grading
+	ranking
+	evaluation
+	assessment
+	scoring
+	mark
+~[grade:noun]
+	grade
+	ranking
+	mark
+	score
+
+~[tuition fees]
+	tuition fees // To improve the likeliness to generate "tuition fees"
+	{tuition/instruction/~[registration]} ~[fees]
+
+//----------- Materials --------------
+~[book:noun]
+	book
+	text[book?]
+	manual
+~[books:noun]
+	~[book:noun]s
+
+~[card]
+	card
+	badge
+
+~[student card]
+	~[student] ~[card]
+~[culture card]
+	{culture/cultural} ~[card]
+~[access card]
+	access ~[card]
+
+~[document]
+	document
+	file
+	paper
+	certificate
+	record
+~[documents]
+	~[document]s
+
+//----------- ID numbers --------------
+~[NOMA]
+	NOMA [number?]
+	noma [number?]
+	identification number
+	numero [de?] matricule
+~[FGS]
+	FGS [number?]
+	fgs [number?]
+
+//========== Accommodation =============
+~[kot]
+	kot
+	accommodation
+	housing
+	place
+	room
+~[kots]
+	~[kot]s
+
+~[kot owner]
+	~[kot?] [land?]owner
+	landlord
+	~[kot] {proprietor/holder}
+~[kot owners]
+	~[kot owner]s
+
+~[private:kot owner]
+	private
+	independent
+	separate
+~[privately:kot owner]
+	privately
+	independently
+
+~[housing]
+	housing
+	accommodation
+
+~[rent]
+	rent
+	lease
+	sublet
+~[rent:noun]
+	rent[al?]
+	lease
+
+//---------- Other accommodation possibilities -----------
+~[hotel]
+	hotel
+	hotel
+	hotel
+	hotel // generate hotel more often
+	hostel
+	inn
+	motel
+~[hotels]
+	~[hotel]s
+
+//=========== Sport ==============
+~[exercise]
+	exercise
+	{do/play} [some?] sport
+	do [some?] workout
+~[sport]
+	[some?] sport
+	[some?] exercise
+	[some?] fitness
+	[some?] workout
+	~[sport example]
+~[sport example]
+	badminton
+	swimming pool[s?]
+	tennis
+	squash
+	{ping-pong/ping pong/table tennis}
+	basket[ball?]
+	[mini?] foot[ball?]
+	handball
+	hockey
+	volley[ball?]
+	dance
+	[artistic?] gym[nastics?]
+	trampoline
+	aikido
+	box
+	jeet kune do
+	{jiujitsu/jiu jistu}
+	judo
+	karate
+	katori shinto ryu
+	kung fu chang
+	naginata
+	tai chi
+	qi gong
+	taekwondo
+	[yoseikan?] budo
+	yoga
+	psychomotricity
+	athletism
+	climbing
+	fencing
+	{triathlon/biathlon}
+	archery
+
+~[facility#singular]
+	facility
+	space
+	equipment
+~[facility#plural]
+	facilities
+	spaces
+	equipments
+
+~[sport membership]
+	sport membership
+	sport affiliation
+	affiliation sport
+~[sport card]
+	sport card
+	~[sport] card
+	~[sport membership] [card?]

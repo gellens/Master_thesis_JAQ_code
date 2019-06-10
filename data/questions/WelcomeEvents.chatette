@@ -1,0 +1,116 @@
+// This file contains the intents for the "Welcome events" part of the visualization.
+// It can use aliases and slots from `common.chatette`.
+
+//============ Nouns =================
+~[event#singular]
+	event
+	ceremony
+	celebration
+	action
+~[event#plural]
+	events
+	ceremonies
+	celebrations
+	actions
+
+~[welcome event#singular]
+	~[greeting:noun] ~[event#singular]
+	~[event#singular] for ~[greeting:participle] ~[international student#plural]
+	~[event#singular] to ~[greet] ~[international student#plural]
+~[welcome event#plural]
+	~[greeting:noun] ~[event#plural]
+	~[event#plural] for ~[greeting:participle] ~[international student#plural]
+	~[event#plural] to ~[greet] ~[international student#plural]
+
+~[UCL international welcome event]
+	~[UCL] ~[international] ~[greeting:noun] ~[event#singular]
+
+~[welcome party]
+	~[CGEI?] welcome party ~[a taste of belgium?]
+	~[CGEI?] ~[greeting:noun] ~[party:noun] ~[a taste of belgium]
+	~[CGEI] ~[greeting:noun] ~[party:noun] ~[a taste of belgium?]
+	~[greeting:noun] ~[party:noun] ~[a taste of belgium?] {of the ~[CGEI]}
+	~[greeting:noun] ~[party:noun] ~[a taste of belgium] {of the ~[CGEI]?}
+~[a taste of belgium]
+	[a ][taste] of belgium
+	"[a ][taste] of belgium"
+
+~[meet'n'greet]
+	meet'n'greet ~[event#singular?]
+	meet'n'greet ~[event#singular?]
+	meet & greet ~[event#singular?]
+	meet & greet ~[event#singular?]
+	meet and greet ~[event#singular?]
+	meet and greet ~[event#singular?]
+	Meet'n'Greet ~[event#singular]
+
+//============ Intents =================
+%[are-there-welcome-events](120)
+	~[get info about?] ~[welcome event]
+	~[is there#plural] ~[welcome event#plural] {that are/which are} {~[organized] ~[at HERE?]?}
+	~[is there#singular] a ~[welcome event#singular] {that is/which is} {~[organized] ~[at HERE?]?}
+	~[how to] meet {nice/kind} {people/~[student#plural]}
+
+%[which-welcome-event-to-go](120)
+	~[get info about?] {which/what} ~[welcome event#singular] ~[should I] ~[attend]
+	{which/what} ~[welcome event#singular] {is/would be} better {for me/~[for international students]?}
+	there are {several/a lot of/lots of} ~[welcome event#plural] which one ~[should I] ~[attend]
+
+%[what-UCL-welcome-event](110)
+	{~[get info about?]/~[what is]?} ~[UCL international welcome event] [please?]
+	{~[get info about?]/~[what is]?} ~[UCL international welcome event] [please?]
+	{~[get info about?]/~[what is]?} ~[UCL international welcome event] [please?]
+	~[request definition$UCLouvain internation welcome event]
+
+%[when-where-UCL-welcome-event](120)
+	~[get info about?] ~[when and where] {is/will be} the ~[UCL international welcome event] ~[taking place]
+	~[get info about?] ~[when and where] {does/will} the ~[UCL international welcome event] ~[take place]
+	~[how to] ~[attend] the ~[UCL international welcome event]
+	~[I am searching for] the ~[UCL international welcome event]
+
+%[what-welcome-party](120)
+	{~[get info about]/~[what is]} [the?] ~[welcome party]
+	~[is there#singular] a ~[welcome event#singular] ~[organized] by [the?] ~[CGEI]
+	does [the?] ~[CGEI] ~[organize] a {~[welcome event#singular]/~[welcome party]}
+	~[request definition$welcome party]
+
+%[when-where-welcome-party](120)
+	~[get info about?] ~[when and where] {is/will be} the ~[welcome party] ~[taking place]
+	~[get info about?] ~[when and where] {does/will} the ~[welcome party] ~[take place]
+	~[how to] ~[attend] the ~[welcome party]
+	~[I am searching for] the ~[welcome party]
+
+%[fac-welcome-event](120)
+	~[get info about?] ~[is there#plural] ~[welcome event#plural] {that are/which are?} ~[organized] by {each/every/all the} ~[faculty]
+	does ~[MY FACULTY EXCEPT LSM] ~[organize] {a ~[welcome event#singular]/~[welcome event#plural]}
+	~[I am searching for] ~[welcome event] ~[organized] by ~[MY FACULTY EXCEPT LSM]
+
+%[LSM-welcome-event](120)
+	~[is there#singular] a ~[welcome event#singular] ~[organized] by the ~[LSM]
+	does [the?] ~[LSM] ~[organize] a ~[welcome event#singular]
+
+%[when-where-LSM-welcome-event](120)
+	~[when and where] is [the?] ~[LSM] ~[welcome event#singular]
+	~[when and where] does [the?] ~[LSM] ~[organize] a ~[welcome event#singular]
+	~[how to] ~[attend] [the?] ~[LSM] ~[welcome event#singular]
+	~[I am searching for] the ~[LSM] ~[welcome event#singular]
+
+%[other-events-ESN](120)
+	~[is there#plural] [other?] ~[event#plural] ~[organized] during the {year/~[quadrimester]}
+	does ~[someone] ~[organize] [other?] ~[event#plural] during the {year/~[quadrimester]}
+	does [the?] ~[ESN] ~[organize] ~[event#plural] {during the year/during the semester/during the term}
+
+%[what-meet-n-greet](120)
+	~[what is] the ~[meet'n'greet] {~[organized] by [the?] ~[CGEI]?}
+	~[what is] the ~[CGEI] ~[meet'n'greet]
+	~[what is] [the?] ~[meet'n'greet] {~[organized] by [the?] ~[CGEI]?}
+	~[what is] [the?] ~[CGEI] ~[meet'n'greet]
+	~[request definition$meet and greet]
+	~[request definition$meet'n'greet]
+
+%[where-when-meet-n-greet](120)
+	~[when and where] is [the?] ~[meet'n'greet] {~[organized] by [the?] ~[CGEI]?}
+	~[when and where] is [the?] ~[CGEI] ~[meet'n'greet]
+	~[how to] ~[attend] [the?] ~[meet'n'greet] {~[organized] by [the?] ~[CGEI]?}
+	~[how to] ~[attend] [the?] ~[CGEI] ~[meet'n'greet]
+	~[I am searching for] the ~[meet'n'greet] {~[organized] by [the?] ~[CGEI]?}
