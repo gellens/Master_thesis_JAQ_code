@@ -4,7 +4,7 @@ This repository contains:
 - the data in an exploitable format, in directory `data`
 - the source code for the performed experiments, in directory `miscellaneous_server_test`
 
-All this code is associated with the master thesis *JAQ: A Chatbot for Foreign Students*, by Arnaud Gellens and Simon Gustin, 2019.
+All this code is associated with the master thesis **JAQ: A Chatbot for Foreign Students**, by *Arnaud Gellens* and *Simon Gustin* from *UCLouvain*, 2019.
 
 ## Abstract of the thesis
 The primary objective of this master thesis is to design a chatbot intended to assist international students at UCLouvain. The produced chatbot, named JAQ, is aimed to be a Proof of Concept of an additional way for those students to obtain general information about the university.
