@@ -66,7 +66,7 @@ It can be imported into *Dialogflow* using the importation feature (accessible i
 This file contains the *JavaScript* code for the webhook.
 
 ## Installation
-To run those scripts, you will need Python 3.6 or above.
+To run those scripts, you will need *Python 3.6* or above.
 
 To install the dependencies for all the scripts described above, execute the following command:
 ```sh
