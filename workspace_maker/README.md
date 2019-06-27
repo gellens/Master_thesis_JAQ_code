@@ -11,7 +11,7 @@ Everything is described hereafter, and more detail can be found in the dissertat
 ## Description of the scripts
 The scripts are layed out as shown on the following image.
 
-[Architecture of the script system](https://github.com/gellens/Master_thesis_JAQ_code/blob/master/public/workspace_creation_process_V2.svg)
+![Architecture of the script system](https://github.com/gellens/Master_thesis_JAQ_code/blob/master/public/workspace_creation_process_V2.svg)
 
 The input files are at the top of the image, while the output ones (importable in *Dialogflow*) are shown at the bottom. Files in orange are related to the complex interactions system.
 The scripts are represented by ellipses and the double-lined ellipsis represent the external dependency [*Chatette*](https://github.com/SimGus/Chatette).
