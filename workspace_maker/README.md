@@ -6,7 +6,7 @@ Everything is described hereafter, and more detail can be found in the dissertat
 
 *Note: there are a certain number of improvements that could be made to this system (notably not calling *Chatette* several times in a row). That being said, it is sufficient for our needs.*
 
-**The files `out.zip` and `Webhook/webhook.js` are files that have been generated using this system and make up the final version of *JAQ***.
+**The files `out.zip` and `Webhook/webhook.js` are files that have been generated using this system and make up the final version of *JAQ*. You can use them if you just need to import *JAQ* in your own account on *Dialogflow* (cf. below to learn how to do that).**
 
 ## Description of the scripts
 The scripts are layed out as shown on the following image.
