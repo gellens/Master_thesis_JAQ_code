@@ -1,3 +1,4 @@
+from conf import visualization_path, PYTHON # local configuration for the project 
 import json
 import io
 import os
@@ -7,16 +8,6 @@ import argparse  # used to parse the argument of this program
 from pprint import pprint
 from copy import deepcopy
 
-
-environment = "Arnaud"
-#environment = "Simon"
-
-if environment == "Arnaud":
-    visualization_path = "../data/"
-    PYTHON = "python"
-elif environment == "Simon":
-    visualization_path = "../../data/viz/"
-    PYTHON = "python3.6"
 
 
 # Utilities fonction
@@ -29,74 +20,36 @@ def parent_folder(path):
 
 
 class FAQMaker:
-    template_file_path = "tmp_chatette_input_file"
-    template_output_file_path = "tmp_chatette_output_file"
-    intent_chatette_id = True
-    DEBUG = False
-    QUITE = True # if False the program print warning message for duplicate intent generated
+    """Parse the new template format that can be found at the locaalisation just bellow"""
 
-    def __init__(self, Template_files):
-        self.Template_files = Template_files
+    template_file_path = visualization_path+"questions/main.chatette"
+    template_output_file_path = "tmp_chatette_output_file"
+    intent_chatette_id = False
+    DEBUG = False
+    QUITE = True  # if False the program print warning message for duplicate intent generated
+
+
+    special_char = set(["#", "*"])
+
+    def __init__(self, template_files):
+        self.read_entities_filling()
+        self.complex_IR = {}
+        self.template_files = template_files
 
         # IQR_array contains dictionaries {"intent": "...", "questions": "...", "response": "..."}
         # the intent field may not be defined
         self.IQR_array = []
         self.questions_merged = {}
         self.parse_input()
-        self.generate_chatette_input()
         self.ask_chatette_to_work()
         self.parse_chatette_input()
 
 
-    def append_IQR(self, title, questions):
-        response = questions[-1]
-        questions = questions[:-1]
-        self.IQR_array.append(
-            {
-                "intent": title,
-                "questions": questions,
-                "response": response
-            })
-
-
-    def parse_input(self):
-        title = None
-        questions = []
-        for Template_file in self.Template_files:
-            with open(Template_file) as f:
-                for line in f:
-                    line_clean = line.rstrip()
-                    if (line_clean == ""):  # it is an empty line -> we create the intents and the node
-                        self.append_IQR(title, questions)
-                        questions = []
-                        title = None
-                    elif (line_clean[0] == '#'):  # there is a title
-                        title = line_clean[1:]
-                    else:
-                        questions.append(line_clean)
-
-                if (len(questions) != 0):  # append the last the IQR if not yet done
-                    self.append_IQR(title, questions)
-                    questions = []
-                    title = None
-
-
-    def generate_chatette_input(self):
-        with open(self.template_file_path, 'w') as f:
-            for i in range(len(self.IQR_array)):
-                f.write("%["+str(i)+"]\n")
-                # print(self.IQR_array[i]["questions"])
-                for q in self.IQR_array[i]["questions"]:
-                    f.write("\t"+q+"\n")
-                f.write("\n")
-            f.write("|./Template/Template_synonyme.txt")
-
-
     def ask_chatette_to_work(self):
         call(["python", "-m", "chatette",  "-s", "''", "-o",
-             self.template_output_file_path, self.template_file_path])
+              self.template_output_file_path, self.template_file_path])
 
-
+    
     def merge_template_output(self, template_output, additional_template_output):
         """"/!\ WARNING : DOES MERGE ONLY 'common_examples' which are supposed to be not duplicated (not 'entity_synonyms' and 'regex_features')"""
 
@@ -165,48 +118,6 @@ class FAQMaker:
                 print("[WARN] - Found dup intent in ("+ q["intent"] +") : "+q["text"])
 
 
-
-    def rm_temp_file(self):
-        if not self.DEBUG:
-            os.remove(self.template_file_path)
-            shutil.rmtree(self.template_output_file_path)
-
-
-    def generate(self, output_file):
-        with open(output_file, 'w') as f:
-            for i in range(len(self.IQR_array)):
-                intent_ch = str(i) if self.intent_chatette_id else self.IQR_array[i]["intent"]
-                if intent_ch not in self.questions_merged:
-                    print("[WARN] !! Intent missing in chatette template:", intent_ch)
-                else:
-                    if self.IQR_array[i]["intent"] is not None:
-                        f.write("#"+self.IQR_array[i]["intent"]+"\n")
-
-
-                    for q in self.questions_merged[intent_ch]:
-                        f.write(q+"\n")
-
-                    f.write(self.IQR_array[i]["response"]+"\n\n")
-
-        self.rm_temp_file()
-
-
-class FAQMakerV2(FAQMaker):
-    """Parse the new template format that can be found at the locaalisation just bellow"""
-
-    # used to indicate the intenties handled
-    # handled_additionnal_entities = set(["student origin: EU", "student origin: non-EU"])
-
-    template_file_path = visualization_path+"questions/main.chatette"
-    intent_chatette_id = False
-
-    special_char = set(["#", "*"])
-
-    def __init__(self, template_files):
-        self.read_entities_filling()
-        self.complex_IR = {}
-        super().__init__(template_files)
-
     def read_entities_filling(self):
         """Read the file entities_filling.json"""
         entities_filling_path = visualization_path+"intent-answers/entities_filling.json"
@@ -217,15 +128,6 @@ class FAQMakerV2(FAQMaker):
             self.entities_conditions = {min(a["options"].keys()): a for a in entities_filling_json["conditions"]}
             self.handled_additionnal_entities = {i: a["entity"] for a in entities_filling_json["conditions"] for i in a["options"].keys()}
 
-
-    def generate_chatette_input(self):
-        """Overwrite this methode because the file is allready done"""
-        pass
-
-    def rm_temp_file(self):
-        """This version does not suppress the chatette file"""
-        if not self.DEBUG:
-            shutil.rmtree(self.template_output_file_path)
 
     def clean_answers(self, answers):
         """Transform the array of line of the answers to an string with new line html tag separating the previous part of the array"""
@@ -258,7 +160,7 @@ class FAQMakerV2(FAQMaker):
         complex_flow = None # used when an intentity is required to process the intent
         skiping = True # used to skip the introduction of the file or when the answer is too complex and have special context
 
-        for Template_file in self.Template_files:
+        for Template_file in self.template_files:
             with open(Template_file) as f:
                 for line in f:
                     line_clean = line.strip()
@@ -318,6 +220,31 @@ class FAQMakerV2(FAQMaker):
             return entities_filling_answers
 
 
+    def rm_temp_file(self):
+        if not self.DEBUG:
+            shutil.rmtree(self.template_output_file_path)
+
+
+    def generate_simple(self, output_file):
+        with open(output_file, 'w') as f:
+            for i in range(len(self.IQR_array)):
+                intent_ch = str(
+                    i) if self.intent_chatette_id else self.IQR_array[i]["intent"]
+                if intent_ch not in self.questions_merged:
+                    print(
+                        "[WARN] !! Intent missing in chatette template:", intent_ch)
+                else:
+                    if self.IQR_array[i]["intent"] is not None:
+                        f.write("#"+self.IQR_array[i]["intent"]+"\n")
+
+                    for q in self.questions_merged[intent_ch]:
+                        f.write(q+"\n")
+
+                    f.write(self.IQR_array[i]["response"]+"\n\n")
+
+        self.rm_temp_file()
+  
+
     def generate_complex(self, output_file):
         """generate the file entities_filling_answers"""
         
@@ -366,9 +293,10 @@ class FAQMakerV2(FAQMaker):
 
 
     def generate(self, output_file):
-        super().generate(output_file)
+        self.generate_simple(output_file)
         self.generate_complex(output_file)
         self.generate_entities_filling(output_file)
+
 
 def parse_args():
     """Parse the input argument of the program"""
@@ -379,20 +307,12 @@ def parse_args():
                         help='FAQ files parsed')
     parser.add_argument('-o', '--output', metavar='O', nargs=1,
                         help='output file')
-    parser.add_argument('-v1', '--version_1', action='store_true',
-                        help='create the workspace with the first version of the template')
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
-    fm = None
-
-    if args.version_1 is True:
-        fm = FAQMaker(args.input)
-    else:
-        fm = FAQMakerV2(args.input)
-
+    fm = FAQMaker(args.input)
     fm.generate('./FAQ/output_FAQ.txt' if args.output is None else args.output[0])
 
 if __name__ == '__main__':

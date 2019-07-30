@@ -132,83 +132,6 @@ class WorkspaceMaker:
         """Returns the final workspace into a json like object"""
         return self.workspace
 
-    
-
-
-class WorkspaceMakerWatson(WorkspaceMaker):
-    base_workspace_f = "./Watson_workspace/base_workspace_W.json"
-    base_standard_node_f = "./Watson_workspace/base_standard_node_W.json"
-    base_anythingElse_node_f = "./Watson_workspace/base_anythingElse_node_w.json"
-
-    def __init__(self, FAQ_files):
-        WorkspaceMaker.__init__(self, FAQ_files)
-
-        self.previous_sibling = "Welcome"
-        
-        with open(self.base_workspace_f) as f:
-            self.workspace = json.load(f)
-
-        with open(self.base_standard_node_f) as f:
-            self.base_standard_node = json.load(f)
-
-        with open(self.base_anythingElse_node_f) as f:
-            self.base_anythingElse_node = json.load(f)
-
-        self.workspace["workspace_id"] = self.hash_id()
-        self.parse_simple_FAQ_files()
-
-
-    def node_id_maker(self):
-        "Returns an id for a new node"
-        id = "node_"+str(self.node_counter)+"_" + str(self.unix_time_millis_now())
-        return id
-
-
-    def add_standard_node(self, title, response):
-        """Add to the dialog structure a standard node"""
-        new_node = deepcopy(self.base_standard_node)
-        new_node["previous_sibling"] = self.previous_sibling
-
-        node_id = self.node_id_maker()
-        new_node["dialog_node"] = node_id
-        self.previous_sibling = node_id
-
-        new_node["title"] = title
-        new_node["conditions"] = "#"+self.title_to_intent(title)
-        new_node["output"]["generic"][0]["values"][0]["text"] = response
-
-        self.workspace["dialog_nodes"].append(new_node)
-
-
-    def add_anythingElse_node(self):
-        """Add to the workspace being build the anything else node at the end"""
-        new_node = self.base_anythingElse_node.copy()
-        new_node["previous_sibling"] = self.previous_sibling
-
-        self.workspace["dialog_nodes"].append(new_node)
-
-
-    def add_intent(self, title, questions):
-        """Create and add to the workspace, currently build, a new intent with possibly multiple variation"""
-        new_intent = {
-            "intent": self.title_to_intent(title),
-            "examples": [
-                {
-                    "text": q
-                }
-                for q in questions],
-            "description": ""
-        }
-        self.workspace["intents"].append(new_intent)
-
-
-    def write_workspace(self, output):
-        """Write the workspace in a file"""
-        with open(output, 'w') as f:
-            f.write(json.dumps(self.workspace, 
-                               ensure_ascii=False))  # output in utf-8
-
-
 
 
 class WorkspaceMakerDialogFlow(WorkspaceMaker):
@@ -659,68 +582,10 @@ class WorkspaceMakerDialogFlow(WorkspaceMaker):
             shutil.rmtree(tmp_dir)
 
 
-class WorkspaceMakerHtml(WorkspaceMaker):
-    beginning_page_f = "./html_view/beginning_page.txt"
-    end_page_f = "./html_view/end_page.txt"
-    tmp_out = "./tmp_html.txt"
-
-    def __init__(self, FAQ_files):
-        WorkspaceMaker.__init__(self, FAQ_files)
-
-        with open(self.beginning_page_f) as f:
-            self.beginning_page = f.read()
-
-        with open(self.end_page_f) as f:
-            self.end_page = f.read()
-
-        self.page = open(self.tmp_out, "w")
-        self.page.write(self.beginning_page)
-        self.parse_simple_FAQ_files()
-
-    def node_id_maker(self):
-        "Returns an id for a new node"
-        id = "node_"+str(self.node_counter)+"_" + \
-            str(self.unix_time_millis_now())
-        return id
-
-    def add_standard_node(self, title, response):
-        """Add to the dialog structure a standard node"""
-        PS = "<p>"
-        PE = "</p>"
-        self.page.write(PS + response + PE)
-        self.page.write("</div>")
-        self.page.write("<br>")
-
-    def add_anythingElse_node(self):
-        """There is nothing to be done here"""
-        self.page.write(self.end_page)
-        self.page.close()
-
-    def add_intent(self, title, questions):
-        """Create and add to the workspace, currently build, a new intent with possibly multiple variation"""
-        H2S = "<h2>"
-        H2E = "</h2>"
-        self.page.write("<div>")
-        self.page.write(H2S + str(self.node_counter-1)+". " + questions[0] + H2E)
-
-
-    def write_workspace(self, output):
-        """Write the html representation of the workspace in a file"""
-        if os.path.isfile(output):
-            os.remove(output)
-        os.rename(self.tmp_out, output)
-
-
 
 def check_output_file(args):
     """Enforce the right extension for the output file"""
-    extension = ""
-    if args.watson:
-        extension = "json"
-    elif args.dialogflow:
-        extension = "zip"
-    elif args.html:
-        extension = "html"
+    extension = "zip"
 
     if args.output[0].split(".")[-1] != extension:
         args.output[0] += "."+extension
@@ -728,16 +593,8 @@ def check_output_file(args):
 
 def parse_args():
     """Parse the input argument of the program"""
-    parser = argparse.ArgumentParser(description='Process FAQ files to create workspace for Watson Assistant or DialogFlow.')
 
-    engine = parser.add_mutually_exclusive_group(required=True)
-    engine.add_argument('-w', '--watson', action='store_true',
-                        help='create the workspace for Watson Assistant')
-    engine.add_argument('-d', '--dialogflow', action='store_true',
-                        help='create the workspace/agent for DialogFlow')
-    engine.add_argument('-v', '--html', action='store_true',
-                        help='create the workspace/agent visualization')
-
+    parser = argparse.ArgumentParser(description='Process FAQ files to create workspace for DialogFlow.')
     parser.add_argument('-i', '--input', required=True, metavar='I', nargs='+',
                         help='FAQ files parsed')
     parser.add_argument('-o', '--output', metavar='O', nargs=1,
@@ -748,16 +605,9 @@ def parse_args():
 
 def main():
     args = parse_args()
-    wm = None
+    wm = WorkspaceMakerDialogFlow(args.input)
 
-    if args.watson:
-        wm = WorkspaceMakerWatson(args.input)
-    elif args.dialogflow:
-        wm = WorkspaceMakerDialogFlow(args.input)
-    elif args.html:
-        wm = WorkspaceMakerHtml(args.input)
-
-    wm.write_workspace('out.json' if args.output is None else args.output[0])
+    wm.write_workspace('out.zip' if args.output is None else args.output[0])
 
 
 if __name__ == '__main__':
